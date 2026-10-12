@@ -1,0 +1,79 @@
+================================================================================
+PETUNJUK MENGGANTI FOTO / GAMBAR WEBSITE NASI KULIT MAK IGUN
+================================================================================
+
+Semua gambar di website ini telah dikelompokkan dan dipisahkan ke dalam folder
+lokal yang rapi dan terstruktur, sehingga Anda sangat mudah untuk mengganti gambar
+kapan saja.
+
+Cukup timpa (replace) file gambar dengan nama file yang SAMA dan format yang sama (.jpg / .jpeg).
+Website akan otomatis menampilkan foto baru Anda!
+
+--------------------------------------------------------------------------------
+1. FOLDER: images/branding/  (Identitas & Logo)
+--------------------------------------------------------------------------------
+- logo.jpg
+  -> Logo resmi Nasi Kulit Mak Igun (tampil di navbar, hero cover, dan tab browser).
+- menu-asli.jpeg
+  -> Foto lembar papan menu fisik asli dari warung (tampil saat tombol 'Lihat Foto Menu Fisik' ditekan).
+
+--------------------------------------------------------------------------------
+2. FOLDER: images/menu/  (Foto Masing-Masing Menu Makanan & Minuman)
+--------------------------------------------------------------------------------
+* Bintang Utama & Menu Paket:
+- nasi-kulit-lengkap.jpg      -> Nasi Kulit Lengkap (Bintang Utama Rp 15.400)
+- paket-cumi.jpg              -> Paket Nasi Lengkap Cumi (Rp 27.800)
+- paket-paru.jpg              -> Paket Nasi Lengkap Paru (Rp 26.500)
+- paket-udang.jpg             -> Paket Nasi Lengkap Udang (Rp 28.800)
+- paket-ayam-kecombrang.jpg   -> Paket Nasi Lengkap Ayam Kecombrang (Rp 25.300)
+- paket-daging-kisi.jpg       -> Paket Nasi Lengkap Daging Kisi (Rp 31.300)
+
+* Lauk Oseng Viral & A La Carte:
+- cumi-oseng-kecombrang.jpg   -> Cumi Oseng Kecombrang (Rp 14.400)
+- kulit-ayam.jpg              -> Kulit Ayam Krispi Porsi (Rp 10.900)
+- paru-oseng.jpg              -> Paru Oseng Mercon (Rp 12.900)
+- daging-kisi-oseng.jpg       -> Daging Kisi Oseng (Rp 17.900)
+- ayam-oseng-kecombrang.jpg   -> Ayam Oseng Kecombrang (Rp 11.900)
+- udang-balado.jpg            -> Udang Balado (Rp 15.400)
+- ayam-rempah.jpg             -> Ayam Rempah Mak Igun (Rp 12.900)
+- babat-gongso.jpg            -> Babat Gongso (Rp 12.900)
+- iso-gongso.jpg              -> Iso Gongso (Rp 12.900)
+- ceker-oseng.jpg             -> Ceker Oseng Mercon (Rp 11.900)
+- usus-oseng.jpg              -> Usus Oseng Gurih (Rp 6.900)
+- telur-balado.jpg            -> Telur Balado (Rp 7.800)
+- terong-balado.jpg           -> Terong Balado (Rp 7.600)
+- tempe-orek.jpg              -> Tempe Orek (Rp 6.900)
+
+* Minuman Segarrr:
+- es-teh-manis.jpg            -> Es Teh / Hangat Manis (Rp 6.000)
+- es-jeruk.jpg                -> Es Jeruk Peras (Rp 10.000)
+- es-limau.jpg                -> Es Limau Segar (Rp 10.000)
+- es-coklat.jpg               -> Es Coklat Kental (Rp 12.000)
+- es-mangga.jpg               -> Es Mangga Manis (Rp 10.000)
+- teh-pucuk.jpg               -> Teh Pucuk Harum Botol (Rp 5.000)
+- air-mineral.jpg             -> Air Mineral Dingin (Rp 6.000)
+
+* Ekstra & Sambal:
+- oseng-buncis.jpg            -> Oseng Buncis Tambahan (Rp 4.900)
+- sambal-bawang.jpg           -> Sambal Bawang Juara (Rp 4.400)
+- sambal-terasi.jpg           -> Sambal Terasi Gurih (Rp 4.400)
+- nasi-jagung.jpg             -> Extra Nasi Jagung Gurih (Rp 6.300)
+- nasi-biasa.jpg              -> Extra Nasi Putih Biasa (Rp 4.400)
+- kerupuk.jpg                 -> Kerupuk Renyah (Rp 3.000)
+
+--------------------------------------------------------------------------------
+3. FOLDER: images/galeri/  (Foto Galeri & Suasana Warung)
+--------------------------------------------------------------------------------
+- galeri-1-nasi-kulit.jpg         -> Foto Galeri Nasi Kulit Lengkap
+- galeri-2-cumi-kecombrang.jpg    -> Foto Galeri Cumi Oseng Kecombrang
+- galeri-3-suasana-warung.jpg     -> Foto Galeri Suasana Outlet Jl. Pregolan 11
+- galeri-4-sambal-spesial.jpg     -> Foto Galeri Sambal Spesial
+- galeri-5-paru-kisi.jpg          -> Foto Galeri Paru & Daging Kisi
+- galeri-6-minuman-segar.jpg      -> Foto Galeri Minuman Segar
+
+--------------------------------------------------------------------------------
+TIPS:
+Ukuran foto yang disarankan untuk menu & galeri adalah rasio 4:3 atau 1:1
+dengan resolusi sekitar 600x450 pixel sampai 1200x900 pixel agar loading cepat
+dan tetap tajam di layar handphone maupun laptop.
+================================================================================
