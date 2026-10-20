@@ -1,0 +1,454 @@
+{
+  "menus": [
+    {
+      "id": "nasi-kulit-lengkap",
+      "name": "Nasi Kulit Lengkap",
+      "category": "utama",
+      "price": 15400,
+      "tag": "Bintang Utama ⭐",
+      "tagClass": "tag-star",
+      "desc": "Menu wajib & paling populer! Nasi putih/jagung, kulit ayam krispi gurih melimpah, oseng buncis renyah, serundeng wangi, ebi goreng, kuah gurih & sambal pedas nampol.",
+      "image": "images/menu/nasi-kulit-lengkap.jpg",
+      "star": true
+    },
+    {
+      "id": "paket-cumi",
+      "name": "Paket Nasi Lengkap Cumi",
+      "category": "paket",
+      "price": 27800,
+      "tag": "Paket Puas 🦑",
+      "tagClass": "tag-packet",
+      "desc": "Nasi putih/jagung + Kulit ayam krispi + Cumi Oseng Kecombrang empuk wangi pedas + Oseng buncis + Serundeng + Sambal pilihan.",
+      "image": "images/menu/paket-cumi.jpg"
+    },
+    {
+      "id": "paket-paru",
+      "name": "Paket Nasi Lengkap Paru",
+      "category": "paket",
+      "price": 26500,
+      "tag": "Paket Puas 🥩",
+      "tagClass": "tag-packet",
+      "desc": "Nasi putih/jagung + Kulit ayam krispi + Paru sapi oseng gurih kenyal legit + Oseng buncis + Serundeng + Sambal mantap.",
+      "image": "images/menu/paket-paru.jpg"
+    },
+    {
+      "id": "paket-udang",
+      "name": "Paket Nasi Lengkap Udang",
+      "category": "paket",
+      "price": 28800,
+      "tag": "Paket Puas 🦐",
+      "tagClass": "tag-packet",
+      "desc": "Nasi putih/jagung + Kulit krispi gurih + Udang Balado segar bumbu meresap + Oseng buncis + Serundeng + Sambal.",
+      "image": "images/menu/paket-udang.jpg"
+    },
+    {
+      "id": "paket-ayam-kecombrang",
+      "name": "Paket Nasi Lengkap Ayam Kecombrang",
+      "category": "paket",
+      "price": 25300,
+      "tag": "Aroma Juara 🌸",
+      "tagClass": "tag-packet",
+      "desc": "Nasi putih/jagung + Kulit krispi + Ayam oseng bunga kecombrang wangi menggugah selera + Pelengkap lengkap.",
+      "image": "images/menu/paket-ayam-kecombrang.jpg"
+    },
+    {
+      "id": "paket-daging-kisi",
+      "name": "Paket Nasi Lengkap Daging Kisi",
+      "category": "paket",
+      "price": 31300,
+      "tag": "Menu Sultan 👑",
+      "tagClass": "tag-packet",
+      "desc": "Paket istimewa dengan potongan daging kisi sapi empuk berbumbu rempah oseng gurih khas King Abdi + Kulit crispy lengkap.",
+      "image": "images/menu/paket-daging-kisi.jpg"
+    },
+    {
+      "id": "cumi-oseng-kecombrang",
+      "name": "Cumi Oseng Kecombrang",
+      "category": "lauk",
+      "price": 14400,
+      "tag": "Viral Banget 🔥",
+      "tagClass": "tag-viral",
+      "desc": "Cumi segar dipotong empuk, dioseng bersama irisan bunga kecombrang dan cabai rawit pedas harum khas Mak Igun.",
+      "image": "images/menu/cumi-oseng-kecombrang.jpg"
+    },
+    {
+      "id": "kulit-ayam-ala-carte",
+      "name": "Kulit Ayam Krispi (Porsi)",
+      "category": "lauk",
+      "price": 10900,
+      "tag": "Best Seller 🍗",
+      "tagClass": "tag-star",
+      "desc": "Extra porsi kulit ayam goreng tepung khas Mak Igun yang super renyah kriuk-kriuk tahan lama dengan bumbu gurih meresap.",
+      "image": "images/menu/kulit-ayam.jpg"
+    },
+    {
+      "id": "paru-oseng",
+      "name": "Paru Oseng Mercon",
+      "category": "lauk",
+      "price": 12900,
+      "tag": "Pedas Nampol 🌶️",
+      "tagClass": "tag-viral",
+      "desc": "Paru sapi pilihan yang diungkep empuk kemudian dioseng pedas gurih, tanpa bau amis, legit dan renyah.",
+      "image": "images/menu/paru-oseng.jpg"
+    },
+    {
+      "id": "daging-kisi-oseng",
+      "name": "Daging Kisi Oseng",
+      "category": "lauk",
+      "price": 17900,
+      "tag": "Daging Empuk 🥩",
+      "tagClass": "tag-viral",
+      "desc": "Potongan urat dan daging kisi sapi lembut dioseng dengan bumbu rempah gurih pedas khas racikan Nusantara.",
+      "image": "images/menu/daging-kisi-oseng.jpg"
+    },
+    {
+      "id": "ayam-oseng-kecombrang",
+      "name": "Ayam Oseng Kecombrang",
+      "category": "lauk",
+      "price": 11900,
+      "tag": "Wangi Khas 🌺",
+      "tagClass": "tag-viral",
+      "desc": "Suwiran daging ayam empuk ditumis dengan irisan kecombrang segar dan bumbu oseng spesial.",
+      "image": "images/menu/ayam-oseng-kecombrang.jpg"
+    },
+    {
+      "id": "udang-balado",
+      "name": "Udang Balado",
+      "category": "lauk",
+      "price": 15400,
+      "tag": "Seafood Favorit 🦐",
+      "tagClass": "tag-viral",
+      "desc": "Udang manis segar berbalut bumbu balado pedas manis gurih yang pas di lidah.",
+      "image": "images/menu/udang-balado.jpg"
+    },
+    {
+      "id": "ayam-rempah",
+      "name": "Ayam Rempah Mak Igun",
+      "category": "lauk",
+      "price": 12900,
+      "tag": "Bumbu Meresap 🍗",
+      "tagClass": "tag-viral",
+      "desc": "Potongan ayam goreng rempah gurih khas bumbu tradisional nusantara dengan aroma rempah kuat.",
+      "image": "images/menu/ayam-rempah.jpg"
+    },
+    {
+      "id": "babat-gongso",
+      "name": "Babat Gongso",
+      "category": "lauk",
+      "price": 12900,
+      "tag": "Gongso Juara 🍲",
+      "tagClass": "tag-viral",
+      "desc": "Babat sapi bersih dan empuk dimasak gongso manis gurih pedas khas citarasa Jawa Timur.",
+      "image": "images/menu/babat-gongso.jpg"
+    },
+    {
+      "id": "iso-gongso",
+      "name": "Iso Gongso",
+      "category": "lauk",
+      "price": 12900,
+      "tag": "Jeroan Gurih 🥣",
+      "tagClass": "tag-viral",
+      "desc": "Usus sapi pilihan (iso) dimasak tumis gongso dengan kecap manis dan rempah pilihan.",
+      "image": "images/menu/iso-gongso.jpg"
+    },
+    {
+      "id": "ceker-oseng",
+      "name": "Ceker Oseng Mercon",
+      "category": "lauk",
+      "price": 11900,
+      "tag": "Kenyal Pedas 🌶️",
+      "tagClass": "tag-viral",
+      "desc": "Ceker ayam super empuk lepas tulang berselimut bumbu pedas mercon nampol.",
+      "image": "images/menu/ceker-oseng.jpg"
+    },
+    {
+      "id": "usus-oseng",
+      "name": "Usus Oseng Gurih",
+      "category": "lauk",
+      "price": 6900,
+      "tag": "Ekonomis Enak 🥢",
+      "tagClass": "tag-viral",
+      "desc": "Usus ayam bersih dioseng bumbu kuning pedas manis gurih.",
+      "image": "images/menu/usus-oseng.jpg"
+    },
+    {
+      "id": "telur-balado",
+      "name": "Telur Balado",
+      "category": "lauk",
+      "price": 7800,
+      "tag": "Klasik Mantap 🥚",
+      "tagClass": "tag-viral",
+      "desc": "Telur bulat goreng disiram sambal balado merah merona gurih.",
+      "image": "images/menu/telur-balado.jpg"
+    },
+    {
+      "id": "terong-balado",
+      "name": "Terong Balado",
+      "category": "lauk",
+      "price": 7600,
+      "tag": "Sayur Balado 🍆",
+      "tagClass": "tag-viral",
+      "desc": "Potongan terong ungu lembut bermandikan sambal balado harum.",
+      "image": "images/menu/terong-balado.jpg"
+    },
+    {
+      "id": "tempe-orek",
+      "name": "Tempe Orek",
+      "category": "lauk",
+      "price": 6900,
+      "tag": "Pelengkap Sedap 🥜",
+      "tagClass": "tag-viral",
+      "desc": "Tempe manis gurih renyah dimasak kecap dengan potongan cabai.",
+      "image": "images/menu/tempe-orek.jpg"
+    },
+    {
+      "id": "es-teh-manis",
+      "name": "Es Teh / Hangat Manis",
+      "category": "minuman",
+      "price": 6000,
+      "tag": "Favorit Segar 🥤",
+      "tagClass": "tag-drink",
+      "desc": "Teh melati wangi seduh tradisional dengan es batu dingin menyegarkan tenggorokan.",
+      "image": "images/menu/es-teh-manis.jpg"
+    },
+    {
+      "id": "es-jeruk",
+      "name": "Es Jeruk Peras",
+      "category": "minuman",
+      "price": 10000,
+      "tag": "Jeruk Asli 🍊",
+      "tagClass": "tag-drink",
+      "desc": "Perasan jeruk segar asli dengan gula murni dan es batu dingin pelepas dahaga.",
+      "image": "images/menu/es-jeruk.jpg"
+    },
+    {
+      "id": "es-limau",
+      "name": "Es Limau Segar",
+      "category": "minuman",
+      "price": 10000,
+      "tag": "Asam Segar 🍋",
+      "tagClass": "tag-drink",
+      "desc": "Minuman jeruk limau khas yang asam manis semriwing, cocok sehabis makan pedas.",
+      "image": "images/menu/es-limau.jpg"
+    },
+    {
+      "id": "es-coklat",
+      "name": "Es Coklat Kental",
+      "category": "minuman",
+      "price": 12000,
+      "tag": "Manis Legit 🍫",
+      "tagClass": "tag-drink",
+      "desc": "Coklat pekat manis creamy disajikan dengan es batu dingin nikmat.",
+      "image": "images/menu/es-coklat.jpg"
+    },
+    {
+      "id": "es-mangga",
+      "name": "Es Mangga Manis",
+      "category": "minuman",
+      "price": 10000,
+      "tag": "Buah Segar 🥭",
+      "tagClass": "tag-drink",
+      "desc": "Rasa mangga tropis harum dan manis dingin yang sangat menyegarkan.",
+      "image": "images/menu/es-mangga.jpg"
+    },
+    {
+      "id": "teh-pucuk",
+      "name": "Teh Pucuk Harum (Botol)",
+      "category": "minuman",
+      "price": 5000,
+      "tag": "Kemasan Botol 🍃",
+      "tagClass": "tag-drink",
+      "desc": "Teh Pucuk Harum dingin dalam kemasan botol praktis.",
+      "image": "images/menu/teh-pucuk.jpg"
+    },
+    {
+      "id": "air-mineral",
+      "name": "Air Mineral Dingin",
+      "category": "minuman",
+      "price": 6000,
+      "tag": "Air Mineral 💧",
+      "tagClass": "tag-drink",
+      "desc": "Air mineral kemasan botol dingin menyegarkan.",
+      "image": "images/menu/air-mineral.jpg"
+    },
+    {
+      "id": "oseng-buncis",
+      "name": "Oseng Buncis (Porsi Tambahan)",
+      "category": "ekstra",
+      "price": 4900,
+      "tag": "Sayur Renyah 🥬",
+      "tagClass": "tag-packet",
+      "desc": "Tumis buncis muda potong iris yang renyah dan gurih khas pelengkap Mak Igun.",
+      "image": "images/menu/oseng-buncis.jpg"
+    },
+    {
+      "id": "sambal-bawang",
+      "name": "Sambal Bawang Juara",
+      "category": "ekstra",
+      "price": 4400,
+      "tag": "Super Pedas 🌶️",
+      "tagClass": "tag-viral",
+      "desc": "Sambal bawang ulek kasar dengan siraman minyak panas gurih, pedasnya bikin nagih!",
+      "image": "images/menu/sambal-bawang.jpg"
+    },
+    {
+      "id": "sambal-terasi",
+      "name": "Sambal Terasi Gurih",
+      "category": "ekstra",
+      "price": 4400,
+      "tag": "Aroma Terasi 🦐",
+      "tagClass": "tag-viral",
+      "desc": "Sambal terasi matang beraroma sedap dan rasa pedas manis gurih yang medok.",
+      "image": "images/menu/sambal-terasi.jpg"
+    },
+    {
+      "id": "nasi-jagung",
+      "name": "Extra Nasi Jagung Gurih",
+      "category": "ekstra",
+      "price": 6300,
+      "tag": "Nasi Khas 🌽",
+      "tagClass": "tag-packet",
+      "desc": "Nasi jagung khas Jawa Timur yang pulen, gurih dan harum, jodoh sempurna kulit krispi.",
+      "image": "images/menu/nasi-jagung.jpg"
+    },
+    {
+      "id": "nasi-biasa",
+      "name": "Extra Nasi Putih Biasa",
+      "category": "ekstra",
+      "price": 4400,
+      "tag": "Nasi Pulen 🍚",
+      "tagClass": "tag-packet",
+      "desc": "Nasi putih hangat pulen satu porsi.",
+      "image": "images/menu/nasi-biasa.jpg"
+    },
+    {
+      "id": "kerupuk",
+      "name": "Kerupuk Renyah",
+      "category": "ekstra",
+      "price": 3000,
+      "tag": "Kriuk Renyah 🥨",
+      "tagClass": "tag-packet",
+      "desc": "Kerupuk putih blek kaleng khas warung nusantara.",
+      "image": "images/menu/kerupuk.jpg"
+    }
+  ],
+  "cover": {
+    "logo": "images/branding/logo.jpg",
+    "badge1": "👑 Kolaborasi Ivan Gunawan & King Abdi",
+    "badge2": "📍 Cabang Surabaya Pusat",
+    "title1": "KULIT KRISPI GURIH",
+    "title2": "PEDASNYA BIKIN NAGIH!",
+    "tagline": "Nikmati sensasi gurih renyah <strong>Kulit Ayam Krispi melimpah</strong> berpadu dengan oseng cumi kecombrang, paru empuk, dan aneka sambal sedap khas Nusantara.",
+    "highlight1Icon": "💰",
+    "highlight1Title": "Mulai Rp 15.400",
+    "highlight1Desc": "Harga ramah di kantong, porsi kenyang",
+    "highlight2Icon": "🌙",
+    "highlight2Title": "Buka Sampai Malam",
+    "highlight2Desc": "10.00 – 00.00 WIB setiap hari",
+    "highlight3Icon": "🍚",
+    "highlight3Title": "Nasi Putih / Nasi Jagung",
+    "highlight3Desc": "Pilihan nasi jagung khas Jatim yang gurih",
+    "cta1Text": "Buka Daftar Menu Lengkap",
+    "cta2Text": "Simulasi Pesanan (Order WA)",
+    "cta3Text": "📍 Lokasi Jl. Pregolan 11",
+    "sticker1": "🔥 PALING VIRAL DI SURABAYA!",
+    "sticker2": "👑 RACIKAN KING ABDI & IVAN GUNAWAN",
+    "sticker3": "✨ 100% KULIT CRISPY JUARA",
+    "sticker4": "🌶️ SAMBAL BAWANG GURIH NAMPOL"
+  },
+  "gallery": [
+    {
+      "id": "gal-1",
+      "title": "Nasi Kulit Lengkap Bintang Utama",
+      "badge": "Menu Favorit",
+      "image": "images/galeri/galeri-1-nasi-kulit.jpg",
+      "desc": "Porsi melimpah dengan kulit krispi gurih, oseng buncis, ebi goreng, serundeng, dan sambal khas racikan King Abdi."
+    },
+    {
+      "id": "gal-2",
+      "title": "Cumi Oseng Kecombrang Gurih Pedas",
+      "badge": "Viral Banget",
+      "image": "images/galeri/galeri-2-cumi-kecombrang.jpg",
+      "desc": "Aroma wangi bunga kecombrang berpadu dengan cumi kenyal empuk dan cabai rawit pedas nendang."
+    },
+    {
+      "id": "gal-3",
+      "title": "Suasana Outlet Nyaman & Ramai",
+      "badge": "Suasana Outlet",
+      "image": "images/galeri/galeri-3-suasana-warung.jpg",
+      "desc": "Dine-in area yang bersih, sejuk, dan ramah keluarga di Jalan Pregolan No. 11 Surabaya."
+    },
+    {
+      "id": "gal-4",
+      "title": "Sambal Bawang & Sambal Terasi Medok",
+      "badge": "Sambal Juara",
+      "image": "images/galeri/galeri-4-sambal-spesial.jpg",
+      "desc": "Ulekan sambal pedas nampol dengan racikan minyak gurih yang bikin suapan nasi tak ingin berhenti."
+    },
+    {
+      "id": "gal-5",
+      "title": "Paru Oseng & Daging Kisi Lembut",
+      "badge": "Lauk Spesial",
+      "image": "images/galeri/galeri-5-paru-kisi.jpg",
+      "desc": "Potongan jeroan dan daging sapi empuk yang dimasak meresap tanpa amis, gurih legit."
+    },
+    {
+      "id": "gal-6",
+      "title": "Minuman Dingin Pelepas Dahaga",
+      "badge": "Pelepas Dahaga",
+      "image": "images/galeri/galeri-6-minuman-segar.jpg",
+      "desc": "Es teh manis wangi melati, es limau asam segar, dan es jeruk peras sehabis makan pedas."
+    }
+  ],
+  "location": {
+    "branchName": "Cabang Surabaya Pusat",
+    "address": "Jl. Pregolan No. 11, Tegalsari, Kec. Tegalsari, Kota Surabaya, Jawa Timur 60262",
+    "openHoursText": "Buka Setiap Hari: Pukul 10.00 – 00.00 WIB (Tengah Malam)",
+    "openHour": 10,
+    "closeHour": 24,
+    "facilities": "Makan di Tempat (Dine-in), Bungkus Bawa Pulang (Takeaway), Pesan Antar Online (GoFood, GrabFood, ShopeeFood), Tempat Bersih & Nyaman, Parkir Tersedia.",
+    "paymentMethods": "QRIS (BCA, Mandiri, GoPay, OVO, Dana, ShopeePay), Transfer Bank, dan Tunai (Cash).",
+    "mapsUrl": "https://maps.google.com/?q=Nasi+Kulit+Mak+Igun+Jl.+Pregolan+No.+11+Surabaya",
+    "mapEmbedSrc": "https://maps.google.com/maps?q=Jl.+Pregolan+No.+11,+Tegalsari,+Surabaya&t=&z=16&ie=UTF8&iwloc=&output=embed",
+    "mapTitle": "Peta Lokasi Jl. Pregolan 11 Surabaya",
+    "mapBadge": "Tegalsari, Surabaya",
+    "otherBranch": "Cabang Tenggilis: Jl. Raya Tenggilis No. 60, Surabaya Timur (Instagram: @nasikulitmakigun.tenggilis)"
+  },
+  "contact": {
+    "announcement": "🔥 Cabang Surabaya Pusat: Jl. Pregolan No. 11, Tegalsari • Buka Setiap Hari 10:00 - 00:00 WIB",
+    "waNumber": "087777728228",
+    "waDisplay": "0877-7772-8228",
+    "igBranchHandle": "@nasikulitmakigun.surabayapusat",
+    "igBranchUrl": "https://www.instagram.com/nasikulitmakigun.surabayapusat/?hl=en",
+    "igOfficialHandle": "@nasikulitmakigun",
+    "igOfficialUrl": "https://www.instagram.com/nasikulitmakigun/?hl=en",
+    "gofoodUrl": "https://gofood.link",
+    "grabfoodUrl": "https://food.grab.com",
+    "shopeefoodUrl": "https://shopee.co.id/shopeefood",
+    "phoneHotline": "087777728228"
+  },
+  "settings": {
+    "announcement": "🔥 Cabang Surabaya Pusat: Jl. Pregolan No. 11, Tegalsari • Buka Setiap Hari 10:00 - 00:00 WIB",
+    "waNumber": "087777728228",
+    "waDisplay": "0877-7772-8228",
+    "address": "Jl. Pregolan No. 11, Tegalsari, Surabaya",
+    "openHoursText": "Setiap Hari: 10.00 – 00.00 WIB",
+    "openHour": 10,
+    "closeHour": 24
+  },
+  "promo": {
+    "active": true,
+    "autoPopup": true,
+    "badge": "🔥 PROMO SPESIAL GAJIAN",
+    "title": "PAKET BUNDLING PUAS GAJIAN!",
+    "subtitle": "Makan Enak Berdua Makin Hemat & Kenyang",
+    "description": "Beli 2 Paket Nasi Lengkap (Cumi / Paru / Udang), dapatkan potongan diskon langsung Rp 5.000 + GRATIS 1 Es Teh Manis Segar racikan Mak Igun!",
+    "code": "MAKIGUNHEMAT",
+    "discountAmount": 5000,
+    "minPurchase": 45000,
+    "bonusText": "GRATIS 1 Es Teh Manis Segar",
+    "validUntil": "Berlaku s/d 31 Oktober 2026",
+    "bannerImage": "images/menu/paket-cumi.jpg",
+    "terms": "Berlaku khusus pemesanan WhatsApp, Takeaway, dan Dine-in di Cabang Surabaya Pusat."
+  }
+}

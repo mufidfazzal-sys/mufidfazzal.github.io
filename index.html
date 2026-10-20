@@ -23,7 +23,26 @@
   <!-- ================= TOP ANNOUNCEMENT BAR ================= -->
   <div class="announcement-bar">
     <span class="badge-live">LIVE</span>
-    <span>🔥 Cabang Surabaya Pusat: Jl. Pregolan No. 11, Tegalsari • Buka Setiap Hari 10:00 - 00:00 WIB</span>
+    <span id="topAnnouncementText">🔥 Cabang Surabaya Pusat: Jl. Pregolan No. 11, Tegalsari • Buka Setiap Hari 10:00 - 00:00 WIB</span>
+  </div>
+
+  <!-- ================= PROMO RIBBON STRIP BANNER ================= -->
+  <div class="promo-strip-banner" id="promoStripBanner">
+    <div class="container promo-strip-container">
+      <div class="promo-strip-left">
+        <span class="promo-strip-badge" id="stripPromoBadge">🔥 PROMO SPESIAL GAJIAN</span>
+        <span class="promo-strip-text" id="stripPromoText">Beli 2 Paket Nasi Lengkap Diskon Langsung Rp 5.000 + GRATIS Es Teh!</span>
+      </div>
+      <div class="promo-strip-right">
+        <div class="promo-strip-code-wrap">
+          <span class="promo-strip-code-label">KODE:</span>
+          <span class="promo-strip-code-badge" id="stripPromoCode">MAKIGUNHEMAT</span>
+        </div>
+        <button class="promo-strip-btn" id="btnOpenPromoModal">
+          🎁 Klaim Promo
+        </button>
+      </div>
+    </div>
   </div>
 
   <!-- ================= STICKY NAVBAR ================= -->
@@ -82,77 +101,77 @@
 
         <!-- Floating sticker badges inspired by Instagram stories & pop-art stickers -->
         <div class="badge-pill badge-yellow floating-sticker sticker-1" style="--rot: -8deg;">
-          <span>🔥 PALING VIRAL DI SURABAYA!</span>
+          <span id="coverSticker1">🔥 PALING VIRAL DI SURABAYA!</span>
         </div>
         <div class="badge-pill badge-purple floating-sticker sticker-2" style="--rot: 10deg;">
-          <span>👑 RACIKAN KING ABDI & IVAN GUNAWAN</span>
+          <span id="coverSticker2">👑 RACIKAN KING ABDI & IVAN GUNAWAN</span>
         </div>
         <div class="badge-pill badge-orange floating-sticker sticker-3" style="--rot: 6deg;">
-          <span>✨ 100% KULIT CRISPY JUARA</span>
+          <span id="coverSticker3">✨ 100% KULIT CRISPY JUARA</span>
         </div>
         <div class="badge-pill badge-yellow floating-sticker sticker-4" style="--rot: -10deg;">
-          <span>🌶️ SAMBAL BAWANG GURIH NAMPOL</span>
+          <span id="coverSticker4">🌶️ SAMBAL BAWANG GURIH NAMPOL</span>
         </div>
       </div>
 
       <div class="cover-content">
         <!-- Badge row -->
         <div class="cover-badge-row">
-          <span class="badge-pill badge-purple">
+          <span class="badge-pill badge-purple" id="coverBadge1">
             👑 Kolaborasi Ivan Gunawan & King Abdi
           </span>
-          <span class="badge-pill badge-yellow">
+          <span class="badge-pill badge-yellow" id="coverBadge2">
             📍 Cabang Surabaya Pusat
           </span>
         </div>
 
         <!-- Big Hero Logo Card -->
         <div class="cover-logo-wrapper">
-          <img src="images/branding/logo.jpg" alt="Logo Utama Nasi Kulit Mak Igun" class="cover-logo-img">
+          <img id="coverLogoImg" src="images/branding/logo.jpg" alt="Logo Utama Nasi Kulit Mak Igun" class="cover-logo-img">
         </div>
 
         <!-- Big Punchy Title -->
-        <h1 class="cover-title">
+        <h1 class="cover-title" id="coverTitle">
           KULIT KRISPI GURIH<br>
           <span>PEDASNYA BIKIN NAGIH!</span>
         </h1>
 
         <!-- Tagline -->
-        <p class="cover-tagline">
+        <p class="cover-tagline" id="coverTagline">
           Nikmati sensasi gurih renyah <strong>Kulit Ayam Krispi melimpah</strong> berpadu dengan oseng cumi kecombrang, paru empuk, dan aneka sambal sedap khas Nusantara.
         </p>
 
         <!-- Highlights 3 Box Grid -->
-        <div class="cover-highlights-grid">
+        <div class="cover-highlights-grid" id="coverHighlightsGrid">
           <div class="highlight-box">
-            <span class="icon">💰</span>
-            <span class="title">Mulai Rp 15.400</span>
-            <span class="desc">Harga ramah di kantong, porsi kenyang</span>
+            <span class="icon" id="coverHighlight1Icon">💰</span>
+            <span class="title" id="coverHighlight1Title">Mulai Rp 15.400</span>
+            <span class="desc" id="coverHighlight1Desc">Harga ramah di kantong, porsi kenyang</span>
           </div>
           <div class="highlight-box">
-            <span class="icon">🌙</span>
-            <span class="title">Buka Sampai Malam</span>
-            <span class="desc">10.00 – 00.00 WIB setiap hari</span>
+            <span class="icon" id="coverHighlight2Icon">🌙</span>
+            <span class="title" id="coverHighlight2Title">Buka Sampai Malam</span>
+            <span class="desc" id="coverHighlight2Desc">10.00 – 00.00 WIB setiap hari</span>
           </div>
           <div class="highlight-box">
-            <span class="icon">🍚</span>
-            <span class="title">Nasi Putih / Nasi Jagung</span>
-            <span class="desc">Pilihan nasi jagung khas Jatim yang gurih</span>
+            <span class="icon" id="coverHighlight3Icon">🍚</span>
+            <span class="title" id="coverHighlight3Title">Nasi Putih / Nasi Jagung</span>
+            <span class="desc" id="coverHighlight3Desc">Pilihan nasi jagung khas Jatim yang gurih</span>
           </div>
         </div>
 
         <!-- CTA Action Buttons -->
         <div class="cover-actions">
-          <a href="#menu" class="btn-primary">
+          <a href="#menu" class="btn-primary" id="coverCta1">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-            Buka Daftar Menu Lengkap
+            <span id="coverCta1Text">Buka Daftar Menu Lengkap</span>
           </a>
-          <button class="btn-secondary cart-toggle-trigger">
+          <button class="btn-secondary cart-toggle-trigger" id="coverCta2">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-            Simulasi Pesanan (Order WA)
+            <span id="coverCta2Text">Simulasi Pesanan (Order WA)</span>
           </button>
-          <a href="#alamat" class="btn-outline">
-            📍 Lokasi Jl. Pregolan 11
+          <a href="#alamat" class="btn-outline" id="coverCta3">
+            <span id="coverCta3Text">📍 Lokasi Jl. Pregolan 11</span>
           </a>
         </div>
 
@@ -240,75 +259,23 @@
       <div class="container">
         <!-- Section Header -->
         <div class="section-head">
-          <span class="section-subtitle">Galeri Visual Instagram</span>
-          <h2 class="section-title">Kenikmatan & Suasana <span>Mak Igun</span></h2>
-          <p class="section-desc">
+          <span class="section-subtitle" id="gallerySubtitle">Galeri Visual Instagram</span>
+          <h2 class="section-title" id="galleryTitle">Kenikmatan & Suasana <span>Mak Igun</span></h2>
+          <p class="section-desc" id="galleryDesc">
             Intip hidangan menggoda selera, kriuknya kulit ayam renyah keemasan, dan kehangatan suasana warung Nasi Kulit Mak Igun cabang Surabaya Pusat.
           </p>
         </div>
 
-        <!-- Gallery Grid with local organized images in images/galeri/ -->
-        <div class="gallery-grid">
-          <div class="gallery-card" data-title="Nasi Kulit Lengkap Bintang Utama" data-desc="Porsi melimpah dengan kulit krispi gurih, oseng buncis, ebi goreng, serundeng, dan sambal khas racikan King Abdi.">
-            <span class="gallery-badge">Menu Favorit</span>
-            <img src="images/galeri/galeri-1-nasi-kulit.jpg" alt="Nasi Kulit Lengkap" loading="lazy">
-            <div class="gallery-overlay">
-              <h4>Nasi Kulit Lengkap</h4>
-              <p>Kulit ayam renyah kriuk dengan nasi pulen & bumbu rempah</p>
-            </div>
-          </div>
-
-          <div class="gallery-card" data-title="Cumi Oseng Kecombrang Gurih Pedas" data-desc="Aroma wangi bunga kecombrang berpadu dengan cumi kenyal empuk dan cabai rawit pedas nendang.">
-            <span class="gallery-badge">Viral Banget</span>
-            <img src="images/galeri/galeri-2-cumi-kecombrang.jpg" alt="Cumi Oseng Kecombrang" loading="lazy">
-            <div class="gallery-overlay">
-              <h4>Cumi Oseng Kecombrang</h4>
-              <p>Lauk paling favorit incaran pecinta pedas harum</p>
-            </div>
-          </div>
-
-          <div class="gallery-card" data-title="Suasana Outlet Nyaman & Ramai" data-desc="Dine-in area yang bersih, sejuk, dan ramah keluarga di Jalan Pregolan No. 11 Surabaya.">
-            <span class="gallery-badge">Suasana Outlet</span>
-            <img src="images/galeri/galeri-3-suasana-warung.jpg" alt="Suasana Warung Mak Igun" loading="lazy">
-            <div class="gallery-overlay">
-              <h4>Warung Mak Igun Pregolan</h4>
-              <p>Tempat asyik buat makan siang, santap malam, hingga nongkrong larut malam</p>
-            </div>
-          </div>
-
-          <div class="gallery-card" data-title="Sambal Bawang & Sambal Terasi Medok" data-desc="Ulekan sambal pedas nampol dengan racikan minyak gurih yang bikin suapan nasi tak ingin berhenti.">
-            <span class="gallery-badge">Sambal Juara</span>
-            <img src="images/galeri/galeri-4-sambal-spesial.jpg" alt="Sambal Khas Mak Igun" loading="lazy">
-            <div class="gallery-overlay">
-              <h4>Sambal Spesial Mak Igun</h4>
-              <p>Pedas, gurih, dan sedap mantap!</p>
-            </div>
-          </div>
-
-          <div class="gallery-card" data-title="Paru Oseng & Daging Kisi Lembut" data-desc="Potongan jeroan dan daging sapi empuk yang dimasak meresap tanpa amis, gurih legit.">
-            <span class="gallery-badge">Lauk Spesial</span>
-            <img src="images/galeri/galeri-5-paru-kisi.jpg" alt="Paru Oseng Mak Igun" loading="lazy">
-            <div class="gallery-overlay">
-              <h4>Paru & Kisi Oseng</h4>
-              <p>Tekstur kenyal empuk berpadu bumbu rempah melimpah</p>
-            </div>
-          </div>
-
-          <div class="gallery-card" data-title="Minuman Dingin Pelepas Dahaga" data-desc="Es teh manis wangi melati, es limau asam segar, dan es jeruk peras sehabis makan pedas.">
-            <span class="gallery-badge">Pelepas Dahaga</span>
-            <img src="images/galeri/galeri-6-minuman-segar.jpg" alt="Es Minuman Segar Mak Igun" loading="lazy">
-            <div class="gallery-overlay">
-              <h4>Minuman Segarrr</h4>
-              <p>Bikin tenggorokan adem kembali seketika</p>
-            </div>
-          </div>
+        <!-- Gallery Grid (populated dynamically via JS) -->
+        <div class="gallery-grid" id="galleryGrid">
+          <!-- Cards rendered by script.js -->
         </div>
 
         <!-- Follow IG CTA -->
         <div style="margin-top: 40px; text-align: center;">
-          <a href="https://www.instagram.com/nasikulitmakigun.surabayapusat/?hl=en" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+          <a id="galleryIgBtn" href="https://www.instagram.com/nasikulitmakigun.surabayapusat/?hl=en" target="_blank" rel="noopener noreferrer" class="btn-secondary">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-            Follow Instagram @nasikulitmakigun.surabayapusat
+            <span id="galleryIgBtnText">Follow Instagram @nasikulitmakigun.surabayapusat</span>
           </a>
         </div>
       </div>
@@ -333,14 +300,14 @@
               <span class="status-indicator-dot"></span> BUKA SEKARANG • 10.00 - 00.00 WIB
             </div>
 
-            <h3 class="location-branch-name">Cabang Surabaya Pusat</h3>
+            <h3 class="location-branch-name" id="locBranchName">Cabang Surabaya Pusat</h3>
 
             <ul class="location-detail-list">
               <li class="location-detail-item">
                 <div class="detail-icon-circle">📍</div>
                 <div class="detail-text">
                   <h4>Alamat Lengkap</h4>
-                  <p>Jl. Pregolan No. 11, Tegalsari, Kec. Tegalsari, Kota Surabaya, Jawa Timur 60262</p>
+                  <p id="locAddressText">Jl. Pregolan No. 11, Tegalsari, Kec. Tegalsari, Kota Surabaya, Jawa Timur 60262</p>
                 </div>
               </li>
 
@@ -348,7 +315,7 @@
                 <div class="detail-icon-circle">⏰</div>
                 <div class="detail-text">
                   <h4>Jam Operasional</h4>
-                  <p>Buka <strong>Setiap Hari</strong>: Pukul <strong>10.00 – 00.00 WIB</strong> (Tengah Malam)</p>
+                  <p id="locHoursText">Buka <strong>Setiap Hari</strong>: Pukul <strong>10.00 – 00.00 WIB</strong> (Tengah Malam)</p>
                 </div>
               </li>
 
@@ -356,7 +323,7 @@
                 <div class="detail-icon-circle">🛵</div>
                 <div class="detail-text">
                   <h4>Fasilitas & Layanan</h4>
-                  <p>Makan di Tempat (Dine-in), Bungkus Bawa Pulang (Takeaway), Pesan Antar Online (GoFood, GrabFood, ShopeeFood), Tempat Bersih & Nyaman, Parkir Tersedia.</p>
+                  <p id="locFacilitiesText">Makan di Tempat (Dine-in), Bungkus Bawa Pulang (Takeaway), Pesan Antar Online (GoFood, GrabFood, ShopeeFood), Tempat Bersih & Nyaman, Parkir Tersedia.</p>
                 </div>
               </li>
 
@@ -364,24 +331,24 @@
                 <div class="detail-icon-circle">💳</div>
                 <div class="detail-text">
                   <h4>Metode Pembayaran</h4>
-                  <p>QRIS (BCA, Mandiri, GoPay, OVO, Dana, ShopeePay), Transfer Bank, dan Tunai (Cash).</p>
+                  <p id="locPaymentText">QRIS (BCA, Mandiri, GoPay, OVO, Dana, ShopeePay), Transfer Bank, dan Tunai (Cash).</p>
                 </div>
               </li>
             </ul>
 
             <div style="display: flex; flex-wrap: wrap; gap: 12px;">
-              <a href="https://maps.google.com/?q=Nasi+Kulit+Mak+Igun+Jl.+Pregolan+No.+11+Surabaya" target="_blank" rel="noopener noreferrer" class="btn-primary">
+              <a id="locMapsBtn" href="https://maps.google.com/?q=Nasi+Kulit+Mak+Igun+Jl.+Pregolan+No.+11+Surabaya" target="_blank" rel="noopener noreferrer" class="btn-primary">
                 📍 Buka Google Maps
               </a>
-              <a href="https://wa.me/6287777728228?text=Halo%20Nasi%20Kulit%20Mak%20Igun%20Surabaya%20Pusat,%20saya%20mau%20tanya%20arah%20lokasi" target="_blank" rel="noopener noreferrer" class="btn-outline">
+              <a id="locWaBtn" href="https://wa.me/6287777728228?text=Halo%20Nasi%20Kulit%20Mak%20Igun%20Surabaya%20Pusat,%20saya%20mau%20tanya%20arah%20lokasi" target="_blank" rel="noopener noreferrer" class="btn-outline">
                 💬 Tanya Arah via WA
               </a>
             </div>
 
             <!-- Other Branch in Surabaya -->
-            <div class="other-branch-card">
+            <div class="other-branch-card" id="locOtherBranchCard">
               <h5>ℹ️ Cabang Surabaya Lainnya:</h5>
-              <p style="font-size: 0.88rem; color: var(--color-text-main);">
+              <p id="locOtherBranchText" style="font-size: 0.88rem; color: var(--color-text-main);">
                 <strong>Cabang Tenggilis:</strong> Jl. Raya Tenggilis No. 60, Surabaya Timur (Instagram: <em>@nasikulitmakigun.tenggilis</em>)
               </p>
             </div>
@@ -390,10 +357,11 @@
           <!-- Google Maps Embed Wrapper -->
           <div class="map-wrapper">
             <div class="map-header">
-              <h4>Peta Lokasi Jl. Pregolan 11 Surabaya</h4>
-              <span class="badge-pill badge-yellow" style="font-size: 0.75rem; padding: 3px 8px;">Tegalsari, Surabaya</span>
+              <h4 id="locMapTitle">Peta Lokasi Jl. Pregolan 11 Surabaya</h4>
+              <span id="locMapBadge" class="badge-pill badge-yellow" style="font-size: 0.75rem; padding: 3px 8px;">Tegalsari, Surabaya</span>
             </div>
             <iframe 
+              id="locMapIframe"
               class="map-iframe"
               title="Peta Lokasi Nasi Kulit Mak Igun Jl. Pregolan 11 Surabaya"
               src="https://maps.google.com/maps?q=Jl.+Pregolan+No.+11,+Tegalsari,+Surabaya&t=&z=16&ie=UTF8&iwloc=&output=embed"
@@ -424,8 +392,8 @@
           <div class="contact-channel-card channel-ig">
             <div class="channel-icon">📸</div>
             <h4>Instagram Cabang</h4>
-            <p>Info menu terbaru, promo harian, dan keseruan cabang Surabaya Pusat.</p>
-            <a href="https://www.instagram.com/nasikulitmakigun.surabayapusat/?hl=en" target="_blank" rel="noopener noreferrer" class="btn-outline" style="width: 100%;">
+            <p id="contactIgBranchDesc">Info menu terbaru, promo harian, dan keseruan cabang Surabaya Pusat.</p>
+            <a id="contactIgBranchLink" href="https://www.instagram.com/nasikulitmakigun.surabayapusat/?hl=en" target="_blank" rel="noopener noreferrer" class="btn-outline" style="width: 100%;">
               @nasikulitmakigun.surabayapusat
             </a>
           </div>
@@ -435,7 +403,7 @@
             <div class="channel-icon">💬</div>
             <h4>WhatsApp Pemesanan</h4>
             <p>Fast response untuk pesanan porsi banyak, reservasi, & kemitraan.</p>
-            <a href="https://wa.me/6287777728228?text=Halo%20Nasi%20Kulit%20Mak%20Igun%20Surabaya%20Pusat,%20saya%20ingin%20memesan" target="_blank" rel="noopener noreferrer" class="btn-primary" style="background-color: #25D366; border-color: #128C7E; width: 100%;">
+            <a id="contactWaLink" href="https://wa.me/6287777728228?text=Halo%20Nasi%20Kulit%20Mak%20Igun%20Surabaya%20Pusat,%20saya%20ingin%20memesan" target="_blank" rel="noopener noreferrer" class="btn-primary" style="background-color: #25D366; border-color: #128C7E; width: 100%;">
               0877-7772-8228 (Chat WA)
             </a>
           </div>
@@ -445,7 +413,7 @@
             <div class="channel-icon">👑</div>
             <h4>Instagram Official</h4>
             <p>Akun resmi pusat Nasi Kulit Mak Igun seluruh cabang Indonesia.</p>
-            <a href="https://www.instagram.com/nasikulitmakigun/?hl=en" target="_blank" rel="noopener noreferrer" class="btn-outline" style="width: 100%;">
+            <a id="contactIgOfficialLink" href="https://www.instagram.com/nasikulitmakigun/?hl=en" target="_blank" rel="noopener noreferrer" class="btn-outline" style="width: 100%;">
               @nasikulitmakigun
             </a>
           </div>
@@ -455,7 +423,7 @@
             <div class="channel-icon">🤝</div>
             <h4>Info Kemitraan</h4>
             <p>Tertarik membuka franchise / cabang di kotamu? Hubungi manajemen.</p>
-            <a href="tel:087777728228" class="btn-outline" style="width: 100%;">
+            <a id="contactPartnershipLink" href="tel:087777728228" class="btn-outline" style="width: 100%;">
               Hubungi Hotline 0877-7772-8228
             </a>
           </div>
@@ -463,19 +431,19 @@
 
         <!-- Online Delivery Partner Section -->
         <div class="delivery-partners-wrap">
-          <h3>Mager Keluar Rumah? Pesan via Aplikasi Delivery Favoritmu!</h3>
+          <h3 id="deliveryTitle">Mager Keluar Rumah? Pesan via Aplikasi Delivery Favoritmu!</h3>
           <p style="color: var(--color-text-muted); font-size: 0.95rem;">
             Cari <strong>"Nasi Kulit Mak Igun - Surabaya Pusat / Pregolan"</strong> di aplikasi favoritmu:
           </p>
 
           <div class="delivery-badges-row">
-            <a href="https://gofood.link" target="_blank" rel="noopener noreferrer" class="delivery-badge-btn badge-gofood">
+            <a id="deliveryGoFoodLink" href="https://gofood.link" target="_blank" rel="noopener noreferrer" class="delivery-badge-btn badge-gofood">
               <span>🛵 Pesan di GoFood</span>
             </a>
-            <a href="https://food.grab.com" target="_blank" rel="noopener noreferrer" class="delivery-badge-btn badge-grabfood">
+            <a id="deliveryGrabFoodLink" href="https://food.grab.com" target="_blank" rel="noopener noreferrer" class="delivery-badge-btn badge-grabfood">
               <span>🏍️ Pesan di GrabFood</span>
             </a>
-            <a href="https://shopee.co.id/shopeefood" target="_blank" rel="noopener noreferrer" class="delivery-badge-btn badge-shopeefood">
+            <a id="deliveryShopeeFoodLink" href="https://shopee.co.id/shopeefood" target="_blank" rel="noopener noreferrer" class="delivery-badge-btn badge-shopeefood">
               <span>🥡 Pesan di ShopeeFood</span>
             </a>
           </div>
@@ -548,17 +516,17 @@
         <div class="footer-col">
           <h4>Cabang & Info</h4>
           <p style="font-size: 0.88rem; opacity: 0.9; margin-bottom: 8px;">
-            <strong>Surabaya Pusat:</strong><br>
-            Jl. Pregolan No. 11, Tegalsari, Surabaya<br>
-            Buka: 10.00 – 00.00 WIB
+            <strong id="footerBranchTitle">Surabaya Pusat:</strong><br>
+            <span id="footerAddressText">Jl. Pregolan No. 11, Tegalsari, Surabaya</span><br>
+            <span id="footerHoursText">Buka: 10.00 – 00.00 WIB</span>
           </p>
           <p style="font-size: 0.88rem; opacity: 0.9; margin-bottom: 12px;">
             <strong>WhatsApp Hotline:</strong><br>
-            <a href="https://wa.me/6287777728228" style="color: var(--color-yellow); text-decoration: underline;">0877-7772-8228</a>
+            <a id="footerWaLink" href="https://wa.me/6287777728228" style="color: var(--color-yellow); text-decoration: underline;">0877-7772-8228</a>
           </p>
           <p style="font-size: 0.88rem; opacity: 0.9;">
             <strong>Instagram:</strong><br>
-            <a href="https://www.instagram.com/nasikulitmakigun.surabayapusat/?hl=en" target="_blank" rel="noopener noreferrer" style="color: var(--color-yellow);">@nasikulitmakigun.surabayapusat</a>
+            <a id="footerIgLink" href="https://www.instagram.com/nasikulitmakigun.surabayapusat/?hl=en" target="_blank" rel="noopener noreferrer" style="color: var(--color-yellow);">@nasikulitmakigun.surabayapusat</a>
           </p>
         </div>
       </div>
@@ -568,7 +536,7 @@
           © 2026 <strong>Nasi Kulit Mak Igun</strong>. Hak Cipta Dilindungi.
         </div>
         <div>
-          Desain Website terinspirasi dari identitas resmi Instagram @nasikulitmakigun.surabayapusat
+          <span>Desain Website terinspirasi dari identitas resmi Instagram @nasikulitmakigun.surabayapusat</span>
         </div>
       </div>
     </div>
@@ -616,11 +584,32 @@
 
         <!-- Form Wrap if items exist -->
         <div id="cartOrderFormWrap" style="display: none;">
+          <!-- Voucher / Promo Code Box -->
+          <div class="cart-voucher-box">
+            <label class="cart-voucher-label">🎁 Punya Kode Promo / Voucher?</label>
+            <div class="cart-voucher-input-group">
+              <input type="text" id="cartVoucherCodeInput" class="form-input voucher-code-input" placeholder="Masukkan kode (cth: MAKIGUNHEMAT)" style="text-transform: uppercase;">
+              <button type="button" id="btnApplyCartVoucher" class="btn-voucher-apply">Gunakan</button>
+            </div>
+            <div id="cartVoucherMessage" class="cart-voucher-msg" style="display: none;"></div>
+          </div>
+
           <!-- Total Price Display -->
           <div class="cart-total-box">
             <div class="cart-total-row">
-              <span>Estimasi Subtotal:</span>
-              <span id="cartTotalDisplay" style="color: var(--color-orange-dark);">Rp 0</span>
+              <span>Subtotal Menu:</span>
+              <span id="cartSubtotalDisplay" style="font-weight: 700;">Rp 0</span>
+            </div>
+            <div class="cart-total-row cart-discount-row" id="cartDiscountRow" style="display: none; color: #2E7D32;">
+              <span>Potongan Voucher (<strong id="cartDiscountCodeLabel">MAKIGUNHEMAT</strong>):</span>
+              <span id="cartDiscountAmountDisplay" style="font-weight: 700;">-Rp 0</span>
+            </div>
+            <div class="cart-total-row cart-total-final" style="border-top: 1.5px dashed rgba(90, 22, 121, 0.2); padding-top: 8px; margin-top: 6px;">
+              <span style="font-size: 1.05rem; font-weight: 800;">Total Estimasi Bayar:</span>
+              <span id="cartTotalDisplay" style="color: var(--color-orange-dark); font-size: 1.25rem; font-weight: 800;">Rp 0</span>
+            </div>
+            <div id="cartBonusNotice" class="cart-bonus-notice" style="display: none;">
+              ✨ Bonus: <strong id="cartBonusNoticeText">GRATIS 1 Es Teh Manis Segar</strong>
             </div>
             <div style="font-size: 0.78rem; color: var(--color-text-muted); margin-top: 4px;">
               * Belum termasuk PB 1 atau biaya ongkir jika memesan via kurir delivery.
@@ -683,6 +672,66 @@
       <div style="padding: 16px; background-color: #000; text-align: center;">
         <img id="galleryModalImg" src="" alt="Pratinjau Galeri" class="lightbox-img" />
         <p id="galleryModalDesc" style="color: #FFFFFF; font-size: 0.9rem; margin-top: 12px;"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= FLOATING PROMO BADGE (BOTTOM-LEFT) ================= -->
+  <button id="floatingPromoBtn" class="floating-promo-btn" title="Klaim Promo Spesial Mak Igun">
+    <span class="floating-promo-pulse"></span>
+    <span class="floating-promo-icon">🎁</span>
+    <span class="floating-promo-label">Promo Spesial</span>
+  </button>
+
+  <!-- ================= MODAL: PROMO SPESIAL POP-UP ================= -->
+  <div class="modal-overlay" id="promoModal">
+    <div class="modal-card promo-modal-card">
+      <div class="modal-header promo-modal-header">
+        <div class="promo-header-badge-wrap">
+          <span class="promo-modal-pill-badge" id="promoModalBadge">🔥 PROMO SPESIAL GAJIAN</span>
+        </div>
+        <button class="modal-close-btn" aria-label="Tutup Modal">&times;</button>
+      </div>
+      <div class="modal-body promo-modal-body">
+        <div class="promo-media-container">
+          <img id="promoModalImage" src="images/menu/paket-cumi.jpg" alt="Banner Promo Mak Igun" class="promo-modal-img" />
+          <div class="promo-floating-tag" id="promoDiscountBadge">HEMAT Rp 5.000</div>
+        </div>
+        <div class="promo-content-wrap">
+          <h3 id="promoModalTitle" class="promo-display-title">PAKET BUNDLING PUAS GAJIAN!</h3>
+          <p id="promoModalSubtitle" class="promo-display-sub">Makan Enak Berdua Makin Hemat & Kenyang</p>
+          <div class="promo-description-box" id="promoModalDesc">
+            Beli 2 Paket Nasi Lengkap (Cumi / Paru / Udang), dapatkan potongan diskon langsung Rp 5.000 + GRATIS 1 Es Teh Manis Segar racikan Mak Igun!
+          </div>
+
+          <!-- Coupon Box with Copy button -->
+          <div class="promo-coupon-container">
+            <div class="promo-coupon-left">
+              <span class="promo-coupon-title">KODE VOUCHER DISKON:</span>
+              <span class="promo-coupon-code" id="promoVoucherCode">MAKIGUNHEMAT</span>
+            </div>
+            <button type="button" class="btn-copy-coupon" id="btnCopyPromoCode" title="Salin Kode Voucher">
+              📋 Salin Kode
+            </button>
+          </div>
+
+          <div class="promo-terms-row">
+            <span id="promoModalValidity">⏳ Berlaku s/d 31 Oktober 2026</span>
+            <span id="promoModalMinSpend">💰 Min. Belanja Rp 45.000</span>
+          </div>
+          <div id="promoModalBonus" class="promo-bonus-notice">
+            🎉 Bonus Ekstra: <strong id="promoModalBonusText">GRATIS 1 Es Teh Manis Segar</strong>
+          </div>
+
+          <div class="promo-action-buttons">
+            <button type="button" id="btnClaimPromoAction" class="btn-primary promo-claim-btn">
+              🍗 Klaim & Buka Menu Promo
+            </button>
+            <button type="button" class="promo-dismiss-btn modal-close-btn-action">
+              Nanti Saja
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>

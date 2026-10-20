@@ -5,8 +5,8 @@
  * Semua path gambar menggunakan folder lokal: images/menu/
  */
 
-// Data Menu Lengkap Mak Igun sesuai foto lembar menu resmi
-const MENU_ITEMS = [
+// Data Menu Lengkap Bawaan Pabrik Mak Igun sesuai foto lembar menu resmi
+const DEFAULT_MENU_ITEMS = [
   {
     id: 'nasi-kulit-lengkap',
     name: 'Nasi Kulit Lengkap',
@@ -340,13 +340,173 @@ const MENU_ITEMS = [
   }
 ];
 
-// Shopping cart state
+// Konfigurasi Informasi Toko Bawaan (Legacy fallback)
+const DEFAULT_SITE_SETTINGS = {
+  announcement: "🔥 Cabang Surabaya Pusat: Jl. Pregolan No. 11, Tegalsari • Buka Setiap Hari 10:00 - 00:00 WIB",
+  waNumber: "087777728228",
+  waDisplay: "0877-7772-8228",
+  address: "Jl. Pregolan No. 11, Tegalsari, Surabaya",
+  openHoursText: "Setiap Hari: 10.00 – 00.00 WIB",
+  openHour: 10,
+  closeHour: 24
+};
+
+// Konfigurasi Cover Depan Bawaan
+const DEFAULT_COVER_DATA = {
+  logo: "images/branding/logo.jpg",
+  badge1: "👑 Kolaborasi Ivan Gunawan & King Abdi",
+  badge2: "📍 Cabang Surabaya Pusat",
+  title1: "KULIT KRISPI GURIH",
+  title2: "PEDASNYA BIKIN NAGIH!",
+  tagline: "Nikmati sensasi gurih renyah <strong>Kulit Ayam Krispi melimpah</strong> berpadu dengan oseng cumi kecombrang, paru empuk, dan aneka sambal sedap khas Nusantara.",
+  highlight1Icon: "💰",
+  highlight1Title: "Mulai Rp 15.400",
+  highlight1Desc: "Harga ramah di kantong, porsi kenyang",
+  highlight2Icon: "🌙",
+  highlight2Title: "Buka Sampai Malam",
+  highlight2Desc: "10.00 – 00.00 WIB setiap hari",
+  highlight3Icon: "🍚",
+  highlight3Title: "Nasi Putih / Nasi Jagung",
+  highlight3Desc: "Pilihan nasi jagung khas Jatim yang gurih",
+  cta1Text: "Buka Daftar Menu Lengkap",
+  cta2Text: "Simulasi Pesanan (Order WA)",
+  cta3Text: "📍 Lokasi Jl. Pregolan 11",
+  sticker1: "🔥 PALING VIRAL DI SURABAYA!",
+  sticker2: "👑 RACIKAN KING ABDI & IVAN GUNAWAN",
+  sticker3: "✨ 100% KULIT CRISPY JUARA",
+  sticker4: "🌶️ SAMBAL BAWANG GURIH NAMPOL"
+};
+
+// Konfigurasi 6 Foto Galeri Bawaan
+const DEFAULT_GALLERY_ITEMS = [
+  {
+    id: "gal-1",
+    title: "Nasi Kulit Lengkap Bintang Utama",
+    badge: "Menu Favorit",
+    image: "images/galeri/galeri-1-nasi-kulit.jpg",
+    desc: "Porsi melimpah dengan kulit krispi gurih, oseng buncis, ebi goreng, serundeng, dan sambal khas racikan King Abdi."
+  },
+  {
+    id: "gal-2",
+    title: "Cumi Oseng Kecombrang Gurih Pedas",
+    badge: "Viral Banget",
+    image: "images/galeri/galeri-2-cumi-kecombrang.jpg",
+    desc: "Aroma wangi bunga kecombrang berpadu dengan cumi kenyal empuk dan cabai rawit pedas nendang."
+  },
+  {
+    id: "gal-3",
+    title: "Suasana Outlet Nyaman & Ramai",
+    badge: "Suasana Outlet",
+    image: "images/galeri/galeri-3-suasana-warung.jpg",
+    desc: "Dine-in area yang bersih, sejuk, dan ramah keluarga di Jalan Pregolan No. 11 Surabaya."
+  },
+  {
+    id: "gal-4",
+    title: "Sambal Bawang & Sambal Terasi Medok",
+    badge: "Sambal Juara",
+    image: "images/galeri/galeri-4-sambal-spesial.jpg",
+    desc: "Ulekan sambal pedas nampol dengan racikan minyak gurih yang bikin suapan nasi tak ingin berhenti."
+  },
+  {
+    id: "gal-5",
+    title: "Paru Oseng & Daging Kisi Lembut",
+    badge: "Lauk Spesial",
+    image: "images/galeri/galeri-5-paru-kisi.jpg",
+    desc: "Potongan jeroan dan daging sapi empuk yang dimasak meresap tanpa amis, gurih legit."
+  },
+  {
+    id: "gal-6",
+    title: "Minuman Dingin Pelepas Dahaga",
+    badge: "Pelepas Dahaga",
+    image: "images/galeri/galeri-6-minuman-segar.jpg",
+    desc: "Es teh manis wangi melati, es limau asam segar, dan es jeruk peras sehabis makan pedas."
+  }
+];
+
+// Konfigurasi Lokasi & Alamat Bawaan
+const DEFAULT_LOCATION_DATA = {
+  branchName: "Cabang Surabaya Pusat",
+  address: "Jl. Pregolan No. 11, Tegalsari, Kec. Tegalsari, Kota Surabaya, Jawa Timur 60262",
+  openHoursText: "Buka Setiap Hari: Pukul 10.00 – 00.00 WIB (Tengah Malam)",
+  openHour: 10,
+  closeHour: 24,
+  facilities: "Makan di Tempat (Dine-in), Bungkus Bawa Pulang (Takeaway), Pesan Antar Online (GoFood, GrabFood, ShopeeFood), Tempat Bersih & Nyaman, Parkir Tersedia.",
+  paymentMethods: "QRIS (BCA, Mandiri, GoPay, OVO, Dana, ShopeePay), Transfer Bank, dan Tunai (Cash).",
+  mapsUrl: "https://maps.google.com/?q=Nasi+Kulit+Mak+Igun+Jl.+Pregolan+No.+11+Surabaya",
+  mapEmbedSrc: "https://maps.google.com/maps?q=Jl.+Pregolan+No.+11,+Tegalsari,+Surabaya&t=&z=16&ie=UTF8&iwloc=&output=embed",
+  mapTitle: "Peta Lokasi Jl. Pregolan 11 Surabaya",
+  mapBadge: "Tegalsari, Surabaya",
+  otherBranch: "Cabang Tenggilis: Jl. Raya Tenggilis No. 60, Surabaya Timur (Instagram: @nasikulitmakigun.tenggilis)"
+};
+
+// Konfigurasi Kontak & Media Sosial Bawaan
+const DEFAULT_CONTACT_DATA = {
+  announcement: "🔥 Cabang Surabaya Pusat: Jl. Pregolan No. 11, Tegalsari • Buka Setiap Hari 10:00 - 00:00 WIB",
+  waNumber: "087777728228",
+  waDisplay: "0877-7772-8228",
+  igBranchHandle: "@nasikulitmakigun.surabayapusat",
+  igBranchUrl: "https://www.instagram.com/nasikulitmakigun.surabayapusat/?hl=en",
+  igOfficialHandle: "@nasikulitmakigun",
+  igOfficialUrl: "https://www.instagram.com/nasikulitmakigun/?hl=en",
+  gofoodUrl: "https://gofood.link",
+  grabfoodUrl: "https://food.grab.com",
+  shopeefoodUrl: "https://shopee.co.id/shopeefood",
+  phoneHotline: "087777728228"
+};
+
+// Konfigurasi Promo & Voucher Bawaan
+const DEFAULT_PROMO_DATA = {
+  active: true,
+  autoPopup: true,
+  badge: "🔥 PROMO SPESIAL GAJIAN",
+  title: "PAKET BUNDLING PUAS GAJIAN!",
+  subtitle: "Makan Enak Berdua Makin Hemat & Kenyang",
+  description: "Beli 2 Paket Nasi Lengkap (Cumi / Paru / Udang), dapatkan potongan diskon langsung Rp 5.000 + GRATIS 1 Es Teh Manis Segar racikan Mak Igun!",
+  code: "MAKIGUNHEMAT",
+  discountAmount: 5000,
+  minPurchase: 45000,
+  bonusText: "GRATIS 1 Es Teh Manis Segar",
+  validUntil: "Berlaku s/d 31 Oktober 2026",
+  bannerImage: "images/menu/paket-cumi.jpg",
+  terms: "Berlaku khusus pemesanan WhatsApp, Takeaway, dan Dine-in di Cabang Surabaya Pusat."
+};
+
+// Akun Admin Bawaan
+const DEFAULT_ADMIN_CRED = {
+  username: "admin",
+  password: "makigun123"
+};
+
+// Kunci Penyimpanan Lokal (LocalStorage Keys)
+const STORAGE_KEYS = {
+  MENUS: 'makigun_menus_v1',
+  COVER: 'makigun_cover_v1',
+  GALLERY: 'makigun_gallery_v1',
+  LOCATION: 'makigun_location_v1',
+  CONTACT: 'makigun_contact_v1',
+  SETTINGS: 'makigun_settings_v1',
+  PROMO: 'makigun_promo_v1',
+  PROMO_SHOWN_SESSION: 'makigun_promo_shown_session_v1',
+  AUTH: 'makigun_admin_auth_v1',
+  SESSION: 'makigun_admin_session_v1'
+};
+
+// State Aktif Aplikasi
+let currentMenuItems = [];
+let currentCoverData = { ...DEFAULT_COVER_DATA };
+let currentGalleryItems = [];
+let currentLocationData = { ...DEFAULT_LOCATION_DATA };
+let currentContactData = { ...DEFAULT_CONTACT_DATA };
+let currentSettings = { ...DEFAULT_SITE_SETTINGS };
+let currentPromoData = { ...DEFAULT_PROMO_DATA };
+let appliedVoucher = null;
 let cart = [];
 
 // DOM Ready
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
-  renderMenu(MENU_ITEMS);
+  loadAllData();
+  initPromo();
   initMenuFilters();
   initMenuSearch();
   initModals();
@@ -357,7 +517,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Format Rupiah
 function formatRupiah(number) {
-  return 'Rp ' + number.toLocaleString('id-ID');
+  return 'Rp ' + (number || 0).toLocaleString('id-ID');
 }
 
 // 1. Navbar & Mobile Drawer
@@ -414,7 +574,7 @@ function renderMenu(items) {
   const menuGrid = document.getElementById('menuGrid');
   if (!menuGrid) return;
 
-  if (items.length === 0) {
+  if (!items || items.length === 0) {
     menuGrid.innerHTML = `
       <div style="grid-column: 1/-1; text-align: center; padding: 50px 20px;">
         <h4 style="font-family: var(--font-heading); color: var(--color-purple); font-size: 1.3rem;">Menu tidak ditemukan 😢</h4>
@@ -424,26 +584,35 @@ function renderMenu(items) {
     return;
   }
 
-  menuGrid.innerHTML = items.map(item => `
-    <article class="menu-card ${item.star ? 'featured-star' : ''}" data-category="${item.category}">
-      <span class="card-top-tag ${item.tagClass}">${item.tag}</span>
-      <div class="menu-card-img-wrap">
-        <img class="menu-card-img" src="${item.image}" alt="${item.name}" loading="lazy" onerror="this.src='images/branding/logo.jpg'" />
-      </div>
-      <div class="menu-card-body">
-        <h4 class="menu-card-title">${item.name}</h4>
-        <p class="menu-card-desc">${item.desc}</p>
-        <div class="menu-card-footer">
-          <div class="menu-card-price">
-            ${formatRupiah(item.price)}
-          </div>
-          <button class="add-cart-btn" onclick="addToCart('${item.id}')" title="Tambahkan ${item.name} ke pesanan">
-            <span>+ Pesan</span>
-          </button>
+  menuGrid.innerHTML = items.map(item => {
+    const isAvailable = item.available !== false;
+    return `
+      <article class="menu-card ${item.star ? 'featured-star' : ''} ${!isAvailable ? 'sold-out' : ''}" data-category="${item.category}">
+        <span class="card-top-tag ${item.tagClass || 'tag-star'}">${item.tag || 'Spesial'}</span>
+        <div class="menu-card-img-wrap">
+          <img class="menu-card-img" src="${item.image || 'images/branding/logo.jpg'}" alt="${item.name}" loading="lazy" onerror="this.src='images/branding/logo.jpg'" />
         </div>
-      </div>
-    </article>
-  `).join('');
+        <div class="menu-card-body">
+          <h4 class="menu-card-title">${item.name}</h4>
+          <p class="menu-card-desc">${item.desc || ''}</p>
+          <div class="menu-card-footer">
+            <div class="menu-card-price">
+              ${formatRupiah(item.price)}
+            </div>
+            ${isAvailable ? `
+              <button class="add-cart-btn" onclick="addToCart('${item.id}')" title="Tambahkan ${item.name} ke pesanan">
+                <span>+ Pesan</span>
+              </button>
+            ` : `
+              <button class="add-cart-btn" disabled title="Menu sedang habis">
+                <span>Habis</span>
+              </button>
+            `}
+          </div>
+        </div>
+      </article>
+    `;
+  }).join('');
 }
 
 // 3. Filter Menu by Category
@@ -460,9 +629,9 @@ function initMenuFilters() {
 
       const category = tab.getAttribute('data-category');
       if (category === 'all') {
-        renderMenu(MENU_ITEMS);
+        renderMenu(currentMenuItems);
       } else {
-        const filtered = MENU_ITEMS.filter(item => item.category === category);
+        const filtered = currentMenuItems.filter(item => item.category === category);
         renderMenu(filtered);
       }
     });
@@ -483,19 +652,20 @@ function initMenuSearch() {
     document.querySelector('.category-tab-btn[data-category="all"]')?.classList.add('active');
 
     if (!keyword) {
-      renderMenu(MENU_ITEMS);
+      renderMenu(currentMenuItems);
       return;
     }
 
-    const filtered = MENU_ITEMS.filter(item => 
+    const filtered = currentMenuItems.filter(item => 
       item.name.toLowerCase().includes(keyword) || 
-      item.desc.toLowerCase().includes(keyword)
+      (item.desc && item.desc.toLowerCase().includes(keyword)) ||
+      (item.tag && item.tag.toLowerCase().includes(keyword))
     );
     renderMenu(filtered);
   });
 }
 
-// 5. Modals Management (Cart, Physical Menu Lightbox, Gallery Lightbox)
+// 5. Modals Management
 function initModals() {
   // Modal Closes
   document.querySelectorAll('.modal-close-btn').forEach(btn => {
@@ -523,27 +693,29 @@ function initModals() {
     });
   }
 
-  // Gallery Card Click to open Lightbox
-  const galleryCards = document.querySelectorAll('.gallery-card');
+  // Gallery Card Click to open Lightbox (Event Delegation for Dynamic Cards)
+  const galleryGrid = document.getElementById('galleryGrid');
   const galleryModal = document.getElementById('galleryModal');
   const galleryModalImg = document.getElementById('galleryModalImg');
   const galleryModalTitle = document.getElementById('galleryModalTitle');
   const galleryModalDesc = document.getElementById('galleryModalDesc');
 
-  galleryCards.forEach(card => {
-    card.addEventListener('click', () => {
+  if (galleryGrid) {
+    galleryGrid.addEventListener('click', (e) => {
+      const card = e.target.closest('.gallery-card');
+      if (!card) return;
       const img = card.querySelector('img');
       const title = card.getAttribute('data-title') || 'Nasi Kulit Mak Igun';
       const desc = card.getAttribute('data-desc') || 'Cabang Surabaya Pusat';
 
       if (galleryModal && galleryModalImg) {
-        galleryModalImg.src = img.src;
+        galleryModalImg.src = img ? img.src : '';
         if (galleryModalTitle) galleryModalTitle.textContent = title;
         if (galleryModalDesc) galleryModalDesc.textContent = desc;
         galleryModal.classList.add('active');
       }
     });
-  });
+  }
 }
 
 // 6. Cart / Order Simulation
@@ -551,6 +723,8 @@ function initCart() {
   const cartToggleBtns = document.querySelectorAll('.cart-toggle-trigger');
   const cartModal = document.getElementById('cartModal');
   const sendWhatsAppBtn = document.getElementById('sendWhatsAppBtn');
+  const applyVoucherBtn = document.getElementById('btnApplyCartVoucher');
+  const voucherInput = document.getElementById('cartVoucherCodeInput');
 
   cartToggleBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -564,11 +738,28 @@ function initCart() {
   if (sendWhatsAppBtn) {
     sendWhatsAppBtn.addEventListener('click', handleWhatsAppOrder);
   }
+
+  if (applyVoucherBtn && voucherInput) {
+    applyVoucherBtn.addEventListener('click', () => {
+      applyCartVoucher(voucherInput.value);
+    });
+    voucherInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        applyCartVoucher(voucherInput.value);
+      }
+    });
+  }
 }
 
 function addToCart(itemId) {
-  const item = MENU_ITEMS.find(i => i.id === itemId);
+  const item = currentMenuItems.find(i => i.id === itemId);
   if (!item) return;
+
+  if (item.available === false) {
+    alert(`Maaf, menu "${item.name}" saat ini sedang habis!`);
+    return;
+  }
 
   const existing = cart.find(c => c.id === itemId);
   if (existing) {
@@ -605,8 +796,14 @@ function updateCartBadges() {
 function updateCartModal() {
   const container = document.getElementById('cartItemsList');
   const totalDisplay = document.getElementById('cartTotalDisplay');
+  const subtotalDisplay = document.getElementById('cartSubtotalDisplay');
   const emptyState = document.getElementById('cartEmptyState');
   const formWrap = document.getElementById('cartOrderFormWrap');
+  const discountRow = document.getElementById('cartDiscountRow');
+  const discountCodeLabel = document.getElementById('cartDiscountCodeLabel');
+  const discountAmountDisplay = document.getElementById('cartDiscountAmountDisplay');
+  const bonusNotice = document.getElementById('cartBonusNotice');
+  const bonusNoticeText = document.getElementById('cartBonusNoticeText');
 
   if (!container || !totalDisplay) return;
 
@@ -615,6 +812,10 @@ function updateCartModal() {
     if (emptyState) emptyState.style.display = 'block';
     if (formWrap) formWrap.style.display = 'none';
     totalDisplay.textContent = 'Rp 0';
+    if (subtotalDisplay) subtotalDisplay.textContent = 'Rp 0';
+    if (discountRow) discountRow.style.display = 'none';
+    if (bonusNotice) bonusNotice.style.display = 'none';
+    appliedVoucher = null;
     return;
   }
 
@@ -640,7 +841,83 @@ function updateCartModal() {
     `;
   }).join('');
 
-  totalDisplay.textContent = formatRupiah(totalPrice);
+  if (subtotalDisplay) subtotalDisplay.textContent = formatRupiah(totalPrice);
+
+  let discount = 0;
+  if (appliedVoucher) {
+    const minSpend = currentPromoData.minPurchase || 0;
+    if (totalPrice >= minSpend) {
+      discount = appliedVoucher.discount;
+      if (discountRow) {
+        discountRow.style.display = 'flex';
+        if (discountCodeLabel) discountCodeLabel.textContent = appliedVoucher.code;
+        if (discountAmountDisplay) discountAmountDisplay.textContent = `-${formatRupiah(discount)}`;
+      }
+      if (appliedVoucher.bonusText && bonusNotice && bonusNoticeText) {
+        bonusNotice.style.display = 'block';
+        bonusNoticeText.textContent = appliedVoucher.bonusText;
+      }
+    } else {
+      if (discountRow) discountRow.style.display = 'none';
+      if (bonusNotice) bonusNotice.style.display = 'none';
+    }
+  } else {
+    if (discountRow) discountRow.style.display = 'none';
+    if (bonusNotice) bonusNotice.style.display = 'none';
+  }
+
+  const finalTotal = Math.max(0, totalPrice - discount);
+  totalDisplay.textContent = formatRupiah(finalTotal);
+}
+
+function applyCartVoucher(code) {
+  const msgEl = document.getElementById('cartVoucherMessage');
+  const cleanCode = (code || '').toUpperCase().trim();
+
+  if (!cleanCode) {
+    appliedVoucher = null;
+    if (msgEl) {
+      msgEl.style.display = 'none';
+      msgEl.textContent = '';
+    }
+    updateCartModal();
+    return;
+  }
+
+  if (currentPromoData.active && cleanCode === (currentPromoData.code || '').toUpperCase().trim()) {
+    let subtotal = 0;
+    cart.forEach(item => { subtotal += item.price * item.qty; });
+    const minSpend = currentPromoData.minPurchase || 0;
+
+    if (minSpend > 0 && subtotal < minSpend) {
+      appliedVoucher = null;
+      if (msgEl) {
+        msgEl.className = 'cart-voucher-msg error';
+        msgEl.style.display = 'block';
+        msgEl.textContent = `Minimal belanja ${formatRupiah(minSpend)} untuk menggunakan kode ${cleanCode}. (Kurang ${formatRupiah(minSpend - subtotal)})`;
+      }
+    } else {
+      appliedVoucher = {
+        code: cleanCode,
+        discount: currentPromoData.discountAmount || 0,
+        bonusText: currentPromoData.bonusText || ''
+      };
+      if (msgEl) {
+        msgEl.className = 'cart-voucher-msg success';
+        msgEl.style.display = 'block';
+        msgEl.textContent = `✅ Voucher ${cleanCode} berhasil digunakan! Diskon ${formatRupiah(currentPromoData.discountAmount)}.`;
+      }
+      showToast(`Voucher ${cleanCode} berhasil dipasang! 🎁`);
+    }
+  } else {
+    appliedVoucher = null;
+    if (msgEl) {
+      msgEl.className = 'cart-voucher-msg error';
+      msgEl.style.display = 'block';
+      msgEl.textContent = `❌ Kode voucher "${cleanCode}" tidak valid atau promo sudah berakhir.`;
+    }
+  }
+  updateCartModal();
 }
 
 function handleWhatsAppOrder() {
@@ -666,6 +943,18 @@ function handleWhatsAppOrder() {
     menuListText += `${index + 1}. *${item.name}* (x${item.qty}) = ${formatRupiah(subtotal)}\n`;
   });
 
+  let promoSectionText = '';
+  let discount = 0;
+  if (appliedVoucher && totalPrice >= (currentPromoData.minPurchase || 0)) {
+    discount = appliedVoucher.discount;
+    promoSectionText = `🎁 *Voucher Promo:* ${appliedVoucher.code} (-${formatRupiah(discount)})\n`;
+    if (appliedVoucher.bonusText) {
+      promoSectionText += `🎉 *Bonus Promo:* ${appliedVoucher.bonusText}\n`;
+    }
+  }
+
+  const finalTotal = Math.max(0, totalPrice - discount);
+
   const waMessage = `Halo Nasi Kulit Mak Igun Cabang Surabaya Pusat! 👋\n` +
     `Saya ingin memesan menu via Website Resmi:\n\n` +
     `👤 *Nama:* ${customerName}\n` +
@@ -673,11 +962,16 @@ function handleWhatsAppOrder() {
     `📝 *Catatan Tambahan:* ${customerNotes}\n\n` +
     `📋 *Daftar Menu yang Dipesan:*\n` +
     `${menuListText}\n` +
-    `💰 *Total Estimasi:* *${formatRupiah(totalPrice)}*\n` +
+    `💰 *Subtotal Menu:* ${formatRupiah(totalPrice)}\n` +
+    (promoSectionText ? `${promoSectionText}` : '') +
+    `💵 *Total Estimasi:* *${formatRupiah(finalTotal)}*\n` +
     `*(Belum termasuk PB 1 / Ongkir jika delivery)*\n\n` +
     `Mohon konfirmasi ketersediaan dan total pembayarannya ya. Terima kasih! 🙏`;
 
-  const waUrl = `https://wa.me/6287777728228?text=${encodeURIComponent(waMessage)}`;
+  const waNumClean = (currentSettings.waNumber || '087777728228').replace(/[^0-9]/g, '');
+  const waTarget = waNumClean.startsWith('0') ? '62' + waNumClean.substring(1) : waNumClean;
+
+  const waUrl = `https://wa.me/${waTarget}?text=${encodeURIComponent(waMessage)}`;
   window.open(waUrl, '_blank');
 }
 
@@ -699,26 +993,30 @@ function showToast(message) {
   }, 2500);
 }
 
-// 8. Live Status Check (10:00 - 00:00 WIB)
+// 8. Live Status Check
 function checkOpenStatus() {
   const statusBadge = document.getElementById('liveStatusBadge');
   if (!statusBadge) return;
 
   const now = new Date();
-  // Surabaya is WIB (UTC+7)
   const utcHours = now.getUTCHours();
   const wibHours = (utcHours + 7) % 24;
 
-  const isOpen = (wibHours >= 10 && wibHours < 24);
+  const openH = currentLocationData.openHour !== undefined ? currentLocationData.openHour : 10;
+  const closeH = currentLocationData.closeHour !== undefined ? currentLocationData.closeHour : 24;
+
+  const isOpen = (wibHours >= openH && wibHours < closeH);
 
   if (isOpen) {
     statusBadge.className = 'location-badge-status status-open';
-    statusBadge.innerHTML = `<span class="status-indicator-dot"></span> BUKA SEKARANG • 10.00 - 00.00 WIB`;
+    statusBadge.style.backgroundColor = '';
+    statusBadge.style.color = '';
+    statusBadge.innerHTML = `<span class="status-indicator-dot"></span> BUKA SEKARANG • ${currentLocationData.openHoursText || '10.00 - 00.00 WIB'}`;
   } else {
     statusBadge.className = 'location-badge-status';
     statusBadge.style.backgroundColor = '#FFEBEE';
     statusBadge.style.color = '#C62828';
-    statusBadge.innerHTML = `<span class="status-indicator-dot" style="background:#C62828"></span> TUTUP SEMENTARA • Buka Jam 10.00 WIB`;
+    statusBadge.innerHTML = `<span class="status-indicator-dot" style="background:#C62828"></span> TUTUP SEMENTARA • Buka Jam ${openH}.00 WIB`;
   }
 }
 
@@ -733,4 +1031,614 @@ function initFeedbackForm() {
     alert(`Terima kasih banyak ${name}! Masukan & saran Anda telah kami terima untuk kemajuan Nasi Kulit Mak Igun. ❤️`);
     form.reset();
   });
+}
+
+// ==========================================
+// DATA PERSISTENCE & RENDERING LOGIC
+// ==========================================
+
+function escapeHtml(str) {
+  if (str === null || str === undefined) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+// Render Galeri Pelanggan Secara Dinamis
+function renderGallery(items) {
+  const container = document.getElementById('galleryGrid');
+  if (!container) return;
+
+  if (!items || items.length === 0) {
+    container.innerHTML = `
+      <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: var(--color-text-muted); font-size: 0.95rem;">
+        Belum ada foto galeri yang ditambahkan. Buka Panel Admin untuk menambahkan foto.
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = items.map(item => `
+    <div class="gallery-card" data-title="${escapeHtml(item.title)}" data-desc="${escapeHtml(item.desc || '')}">
+      ${item.badge ? `<span class="gallery-badge">${escapeHtml(item.badge)}</span>` : ''}
+      <img src="${escapeHtml(item.image || 'images/branding/logo.jpg')}" alt="${escapeHtml(item.title)}" loading="lazy" onerror="this.src='images/branding/logo.jpg'">
+      <div class="gallery-overlay">
+        <h4>${escapeHtml(item.title)}</h4>
+        <p>${escapeHtml(item.desc || '')}</p>
+      </div>
+    </div>
+  `).join('');
+}
+
+// Terapkan Data Cover Depan
+function applyCoverData(cover) {
+  if (!cover) return;
+
+  // Logo
+  const logoEl = document.getElementById('coverLogoImg');
+  if (logoEl && cover.logo) logoEl.src = cover.logo;
+
+  // Badges
+  const b1 = document.getElementById('coverBadge1');
+  if (b1 && cover.badge1) b1.textContent = cover.badge1;
+  const b2 = document.getElementById('coverBadge2');
+  if (b2 && cover.badge2) b2.textContent = cover.badge2;
+
+  // Title
+  const titleEl = document.getElementById('coverTitle');
+  if (titleEl) {
+    const t1 = cover.title1 || 'KULIT KRISPI GURIH';
+    const t2 = cover.title2 || 'PEDASNYA BIKIN NAGIH!';
+    titleEl.innerHTML = `${escapeHtml(t1)}<br><span>${escapeHtml(t2)}</span>`;
+  }
+
+  // Tagline
+  const taglineEl = document.getElementById('coverTagline');
+  if (taglineEl && cover.tagline) {
+    taglineEl.innerHTML = cover.tagline;
+  }
+
+  // Highlights
+  const h1Icon = document.getElementById('coverHighlight1Icon');
+  const h1Title = document.getElementById('coverHighlight1Title');
+  const h1Desc = document.getElementById('coverHighlight1Desc');
+  if (h1Icon && cover.highlight1Icon) h1Icon.textContent = cover.highlight1Icon;
+  if (h1Title && cover.highlight1Title) h1Title.textContent = cover.highlight1Title;
+  if (h1Desc && cover.highlight1Desc) h1Desc.textContent = cover.highlight1Desc;
+
+  const h2Icon = document.getElementById('coverHighlight2Icon');
+  const h2Title = document.getElementById('coverHighlight2Title');
+  const h2Desc = document.getElementById('coverHighlight2Desc');
+  if (h2Icon && cover.highlight2Icon) h2Icon.textContent = cover.highlight2Icon;
+  if (h2Title && cover.highlight2Title) h2Title.textContent = cover.highlight2Title;
+  if (h2Desc && cover.highlight2Desc) h2Desc.textContent = cover.highlight2Desc;
+
+  const h3Icon = document.getElementById('coverHighlight3Icon');
+  const h3Title = document.getElementById('coverHighlight3Title');
+  const h3Desc = document.getElementById('coverHighlight3Desc');
+  if (h3Icon && cover.highlight3Icon) h3Icon.textContent = cover.highlight3Icon;
+  if (h3Title && cover.highlight3Title) h3Title.textContent = cover.highlight3Title;
+  if (h3Desc && cover.highlight3Desc) h3Desc.textContent = cover.highlight3Desc;
+
+  // CTA Buttons Text
+  const cta1 = document.getElementById('coverCta1Text');
+  if (cta1 && cover.cta1Text) cta1.textContent = cover.cta1Text;
+  const cta2 = document.getElementById('coverCta2Text');
+  if (cta2 && cover.cta2Text) cta2.textContent = cover.cta2Text;
+  const cta3 = document.getElementById('coverCta3Text');
+  if (cta3 && cover.cta3Text) cta3.textContent = cover.cta3Text;
+
+  // Stickers
+  const s1 = document.getElementById('coverSticker1');
+  if (s1 && cover.sticker1) s1.textContent = cover.sticker1;
+  const s2 = document.getElementById('coverSticker2');
+  if (s2 && cover.sticker2) s2.textContent = cover.sticker2;
+  const s3 = document.getElementById('coverSticker3');
+  if (s3 && cover.sticker3) s3.textContent = cover.sticker3;
+  const s4 = document.getElementById('coverSticker4');
+  if (s4 && cover.sticker4) s4.textContent = cover.sticker4;
+}
+
+// Terapkan Data Lokasi & Alamat
+function applyLocationData(loc) {
+  if (!loc) return;
+
+  const branch = document.getElementById('locBranchName');
+  if (branch && loc.branchName) branch.textContent = loc.branchName;
+
+  const addr = document.getElementById('locAddressText');
+  if (addr && loc.address) addr.textContent = loc.address;
+
+  const hours = document.getElementById('locHoursText');
+  if (hours && loc.openHoursText) hours.innerHTML = loc.openHoursText;
+
+  const fac = document.getElementById('locFacilitiesText');
+  if (fac && loc.facilities) fac.textContent = loc.facilities;
+
+  const pay = document.getElementById('locPaymentText');
+  if (pay && loc.paymentMethods) pay.textContent = loc.paymentMethods;
+
+  const mapsBtn = document.getElementById('locMapsBtn');
+  if (mapsBtn && loc.mapsUrl) mapsBtn.href = loc.mapsUrl;
+
+  const mapEmbed = document.getElementById('locMapIframe');
+  if (mapEmbed && loc.mapEmbedSrc) mapEmbed.src = loc.mapEmbedSrc;
+
+  const mapTitle = document.getElementById('locMapTitle');
+  if (mapTitle && loc.mapTitle) mapTitle.textContent = loc.mapTitle;
+
+  const mapBadge = document.getElementById('locMapBadge');
+  if (mapBadge && loc.mapBadge) mapBadge.textContent = loc.mapBadge;
+
+  const other = document.getElementById('locOtherBranchText');
+  if (other && loc.otherBranch) other.textContent = loc.otherBranch;
+
+  // Update Footer info
+  const footerBranch = document.getElementById('footerBranchTitle');
+  if (footerBranch && loc.branchName) footerBranch.textContent = loc.branchName + ':';
+
+  const footerAddr = document.getElementById('footerAddressText');
+  if (footerAddr && loc.address) footerAddr.textContent = loc.address;
+
+  const footerHours = document.getElementById('footerHoursText');
+  if (footerHours && loc.openHoursText) footerHours.textContent = loc.openHoursText;
+
+  checkOpenStatus();
+}
+
+// Terapkan Data Kontak & Medsos
+function applyContactData(contact) {
+  if (!contact) return;
+
+  // Top announcement
+  const annEl = document.getElementById('topAnnouncementText');
+  if (annEl && contact.announcement) annEl.textContent = contact.announcement;
+
+  // WhatsApp
+  if (contact.waNumber) {
+    const waClean = contact.waNumber.replace(/[^0-9]/g, '');
+    const waFormatted = waClean.startsWith('0') ? '62' + waClean.substring(1) : waClean;
+
+    document.querySelectorAll('a[href*="wa.me"]').forEach(a => {
+      try {
+        const url = new URL(a.href);
+        const textParam = url.searchParams.get('text');
+        a.href = `https://wa.me/${waFormatted}${textParam ? '?text=' + encodeURIComponent(textParam) : ''}`;
+      } catch (e) {
+        a.href = `https://wa.me/${waFormatted}`;
+      }
+    });
+
+    document.querySelectorAll('a[href*="tel:"]').forEach(a => {
+      a.href = `tel:${waClean}`;
+    });
+
+    const contactWaLink = document.getElementById('contactWaLink');
+    if (contactWaLink) {
+      contactWaLink.textContent = (contact.waDisplay || contact.waNumber) + ' (Chat WA)';
+    }
+
+    const footerWaLink = document.getElementById('footerWaLink');
+    if (footerWaLink) {
+      footerWaLink.textContent = contact.waDisplay || contact.waNumber;
+    }
+  }
+
+  // Instagram Branch
+  const igBranchLink = document.getElementById('contactIgBranchLink');
+  if (igBranchLink) {
+    if (contact.igBranchUrl) igBranchLink.href = contact.igBranchUrl;
+    if (contact.igBranchHandle) igBranchLink.textContent = contact.igBranchHandle;
+  }
+
+  const galleryIgBtn = document.getElementById('galleryIgBtn');
+  const galleryIgBtnText = document.getElementById('galleryIgBtnText');
+  if (galleryIgBtn && contact.igBranchUrl) galleryIgBtn.href = contact.igBranchUrl;
+  if (galleryIgBtnText && contact.igBranchHandle) galleryIgBtnText.textContent = `Follow Instagram ${contact.igBranchHandle}`;
+
+  const footerIgLink = document.getElementById('footerIgLink');
+  if (footerIgLink) {
+    if (contact.igBranchUrl) footerIgLink.href = contact.igBranchUrl;
+    if (contact.igBranchHandle) footerIgLink.textContent = contact.igBranchHandle;
+  }
+
+  // Instagram Official
+  const igOfficialLink = document.getElementById('contactIgOfficialLink');
+  if (igOfficialLink) {
+    if (contact.igOfficialUrl) igOfficialLink.href = contact.igOfficialUrl;
+    if (contact.igOfficialHandle) igOfficialLink.textContent = contact.igOfficialHandle;
+  }
+
+  // Delivery
+  const gofood = document.getElementById('deliveryGoFoodLink');
+  if (gofood && contact.gofoodUrl) gofood.href = contact.gofoodUrl;
+
+  const grabfood = document.getElementById('deliveryGrabFoodLink');
+  if (grabfood && contact.grabfoodUrl) grabfood.href = contact.grabfoodUrl;
+
+  const shopeefood = document.getElementById('deliveryShopeeFoodLink');
+  if (shopeefood && contact.shopeefoodUrl) shopeefood.href = contact.shopeefoodUrl;
+
+  // Partnership
+  const partnerLink = document.getElementById('contactPartnershipLink');
+  if (partnerLink && contact.phoneHotline) {
+    partnerLink.href = `tel:${contact.phoneHotline.replace(/[^0-9]/g, '')}`;
+    partnerLink.textContent = `Hubungi Hotline ${contact.phoneHotline}`;
+  }
+}
+
+function loadAllData() {
+  // 1. Menus
+  try {
+    const storedMenus = localStorage.getItem(STORAGE_KEYS.MENUS);
+    if (storedMenus) {
+      currentMenuItems = JSON.parse(storedMenus);
+    } else {
+      currentMenuItems = [...DEFAULT_MENU_ITEMS];
+      localStorage.setItem(STORAGE_KEYS.MENUS, JSON.stringify(currentMenuItems));
+    }
+  } catch (e) {
+    console.error('Gagal membaca menu dari localStorage:', e);
+    currentMenuItems = [...DEFAULT_MENU_ITEMS];
+  }
+
+  // 2. Cover Data
+  try {
+    const storedCover = localStorage.getItem(STORAGE_KEYS.COVER);
+    if (storedCover) {
+      currentCoverData = { ...DEFAULT_COVER_DATA, ...JSON.parse(storedCover) };
+    } else {
+      currentCoverData = { ...DEFAULT_COVER_DATA };
+      localStorage.setItem(STORAGE_KEYS.COVER, JSON.stringify(currentCoverData));
+    }
+  } catch (e) {
+    console.error('Gagal membaca cover dari localStorage:', e);
+    currentCoverData = { ...DEFAULT_COVER_DATA };
+  }
+
+  // 3. Gallery Items
+  try {
+    const storedGallery = localStorage.getItem(STORAGE_KEYS.GALLERY);
+    if (storedGallery) {
+      currentGalleryItems = JSON.parse(storedGallery);
+    } else {
+      currentGalleryItems = [...DEFAULT_GALLERY_ITEMS];
+      localStorage.setItem(STORAGE_KEYS.GALLERY, JSON.stringify(currentGalleryItems));
+    }
+  } catch (e) {
+    console.error('Gagal membaca galeri dari localStorage:', e);
+    currentGalleryItems = [...DEFAULT_GALLERY_ITEMS];
+  }
+
+  // 4. Location Data
+  try {
+    const storedLoc = localStorage.getItem(STORAGE_KEYS.LOCATION);
+    if (storedLoc) {
+      currentLocationData = { ...DEFAULT_LOCATION_DATA, ...JSON.parse(storedLoc) };
+    } else {
+      currentLocationData = { ...DEFAULT_LOCATION_DATA };
+      localStorage.setItem(STORAGE_KEYS.LOCATION, JSON.stringify(currentLocationData));
+    }
+  } catch (e) {
+    console.error('Gagal membaca lokasi dari localStorage:', e);
+    currentLocationData = { ...DEFAULT_LOCATION_DATA };
+  }
+
+  // 5. Contact & Socials Data
+  try {
+    const storedContact = localStorage.getItem(STORAGE_KEYS.CONTACT);
+    if (storedContact) {
+      currentContactData = { ...DEFAULT_CONTACT_DATA, ...JSON.parse(storedContact) };
+    } else {
+      currentContactData = { ...DEFAULT_CONTACT_DATA };
+      localStorage.setItem(STORAGE_KEYS.CONTACT, JSON.stringify(currentContactData));
+    }
+  } catch (e) {
+    console.error('Gagal membaca kontak dari localStorage:', e);
+    currentContactData = { ...DEFAULT_CONTACT_DATA };
+  }
+
+  // 6. Promo & Voucher Data
+  try {
+    const storedPromo = localStorage.getItem(STORAGE_KEYS.PROMO);
+    if (storedPromo) {
+      currentPromoData = { ...DEFAULT_PROMO_DATA, ...JSON.parse(storedPromo) };
+    } else {
+      currentPromoData = { ...DEFAULT_PROMO_DATA };
+      localStorage.setItem(STORAGE_KEYS.PROMO, JSON.stringify(currentPromoData));
+    }
+  } catch (e) {
+    console.error('Gagal membaca promo dari localStorage:', e);
+    currentPromoData = { ...DEFAULT_PROMO_DATA };
+  }
+
+  // Render Initial Views
+  renderMenu(currentMenuItems);
+  applyCoverData(currentCoverData);
+  renderGallery(currentGalleryItems);
+  applyLocationData(currentLocationData);
+  applyContactData(currentContactData);
+  renderPromoUI(currentPromoData);
+  checkOpenStatus();
+
+  // Sync with local server API if running on HTTP
+  if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
+    fetch('/api/data')
+      .then(res => res.json())
+      .then(data => {
+        if (!data) return;
+        if (data.menus && Array.isArray(data.menus) && data.menus.length > 0) {
+          currentMenuItems = data.menus;
+          localStorage.setItem(STORAGE_KEYS.MENUS, JSON.stringify(currentMenuItems));
+          renderMenu(currentMenuItems);
+        }
+        if (data.cover) {
+          currentCoverData = { ...DEFAULT_COVER_DATA, ...data.cover };
+          localStorage.setItem(STORAGE_KEYS.COVER, JSON.stringify(currentCoverData));
+          applyCoverData(currentCoverData);
+        }
+        if (data.gallery && Array.isArray(data.gallery)) {
+          currentGalleryItems = data.gallery;
+          localStorage.setItem(STORAGE_KEYS.GALLERY, JSON.stringify(currentGalleryItems));
+          renderGallery(currentGalleryItems);
+        }
+        if (data.location) {
+          currentLocationData = { ...DEFAULT_LOCATION_DATA, ...data.location };
+          localStorage.setItem(STORAGE_KEYS.LOCATION, JSON.stringify(currentLocationData));
+          applyLocationData(currentLocationData);
+        }
+        if (data.contact) {
+          currentContactData = { ...DEFAULT_CONTACT_DATA, ...data.contact };
+          localStorage.setItem(STORAGE_KEYS.CONTACT, JSON.stringify(currentContactData));
+          applyContactData(currentContactData);
+        }
+        if (data.promo) {
+          currentPromoData = { ...DEFAULT_PROMO_DATA, ...data.promo };
+          localStorage.setItem(STORAGE_KEYS.PROMO, JSON.stringify(currentPromoData));
+          renderPromoUI(currentPromoData);
+        }
+      })
+      .catch(() => {
+        // Silently continue in offline / file mode
+      });
+  }
+}
+
+function saveMenusToStorage(items) {
+  currentMenuItems = [...items];
+  try {
+    localStorage.setItem(STORAGE_KEYS.MENUS, JSON.stringify(currentMenuItems));
+  } catch (e) {
+    console.error('Gagal menyimpan menu ke localStorage:', e);
+  }
+
+  syncToServer();
+
+  // Re-render
+  renderMenu(currentMenuItems);
+  renderAdminMenuTable(currentMenuItems);
+  updateAdminStats();
+}
+
+function saveCoverToStorage(cover) {
+  currentCoverData = { ...currentCoverData, ...cover };
+  try {
+    localStorage.setItem(STORAGE_KEYS.COVER, JSON.stringify(currentCoverData));
+  } catch (e) {
+    console.error('Gagal menyimpan cover ke localStorage:', e);
+  }
+
+  syncToServer();
+  applyCoverData(currentCoverData);
+}
+
+function saveGalleryToStorage(items) {
+  currentGalleryItems = [...items];
+  try {
+    localStorage.setItem(STORAGE_KEYS.GALLERY, JSON.stringify(currentGalleryItems));
+  } catch (e) {
+    console.error('Gagal menyimpan galeri ke localStorage:', e);
+  }
+
+  syncToServer();
+  renderGallery(currentGalleryItems);
+  renderAdminGalleryTable(currentGalleryItems);
+}
+
+function saveLocationToStorage(loc) {
+  currentLocationData = { ...currentLocationData, ...loc };
+  try {
+    localStorage.setItem(STORAGE_KEYS.LOCATION, JSON.stringify(currentLocationData));
+  } catch (e) {
+    console.error('Gagal menyimpan lokasi ke localStorage:', e);
+  }
+
+  syncToServer();
+  applyLocationData(currentLocationData);
+}
+
+function saveContactToStorage(contact) {
+  currentContactData = { ...currentContactData, ...contact };
+  try {
+    localStorage.setItem(STORAGE_KEYS.CONTACT, JSON.stringify(currentContactData));
+  } catch (e) {
+    console.error('Gagal menyimpan kontak ke localStorage:', e);
+  }
+
+  syncToServer();
+  applyContactData(currentContactData);
+}
+
+function savePromoToStorage(promo) {
+  currentPromoData = { ...currentPromoData, ...promo };
+  try {
+    localStorage.setItem(STORAGE_KEYS.PROMO, JSON.stringify(currentPromoData));
+  } catch (e) {
+    console.error('Gagal menyimpan promo ke localStorage:', e);
+  }
+
+  syncToServer();
+  renderPromoUI(currentPromoData);
+}
+
+function syncToServer() {
+  if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
+    fetch('/api/data', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        menus: currentMenuItems,
+        cover: currentCoverData,
+        gallery: currentGalleryItems,
+        location: currentLocationData,
+        contact: currentContactData,
+        settings: currentSettings,
+        promo: currentPromoData
+      })
+    }).catch(err => console.log('Sync status:', err.message));
+  }
+}
+
+// ==========================================
+// PROMO & VOUCHER SYSTEM FUNCTIONS
+// ==========================================
+function renderPromoUI(promo) {
+  const strip = document.getElementById('promoStripBanner');
+  const floatingBtn = document.getElementById('floatingPromoBtn');
+
+  if (!promo || !promo.active) {
+    if (strip) strip.style.display = 'none';
+    if (floatingBtn) floatingBtn.style.display = 'none';
+    return;
+  }
+
+  if (strip) {
+    strip.style.display = 'block';
+    const b = document.getElementById('stripPromoBadge');
+    const t = document.getElementById('stripPromoText');
+    const c = document.getElementById('stripPromoCode');
+    if (b) b.textContent = promo.badge || '🔥 PROMO';
+    if (t) t.textContent = promo.subtitle ? `${promo.title} - ${promo.subtitle}` : promo.title;
+    if (c) c.textContent = promo.code || 'MAKIGUNHEMAT';
+  }
+
+  if (floatingBtn) {
+    floatingBtn.style.display = 'flex';
+  }
+
+  // Populate Promo Modal
+  const mb = document.getElementById('promoModalBadge');
+  const mi = document.getElementById('promoModalImage');
+  const md = document.getElementById('promoDiscountBadge');
+  const mt = document.getElementById('promoModalTitle');
+  const ms = document.getElementById('promoModalSubtitle');
+  const mdesc = document.getElementById('promoModalDesc');
+  const mc = document.getElementById('promoVoucherCode');
+  const mv = document.getElementById('promoModalValidity');
+  const mmin = document.getElementById('promoModalMinSpend');
+  const mbonus = document.getElementById('promoModalBonus');
+  const mbonustext = document.getElementById('promoModalBonusText');
+
+  if (mb) mb.textContent = promo.badge || '🔥 PROMO SPESIAL';
+  if (mi) mi.src = promo.bannerImage || 'images/menu/paket-cumi.jpg';
+  if (md) md.textContent = promo.discountAmount ? `HEMAT ${formatRupiah(promo.discountAmount)}` : 'PROMO SPESIAL';
+  if (mt) mt.textContent = promo.title || 'PAKET PROMO';
+  if (ms) ms.textContent = promo.subtitle || '';
+  if (mdesc) mdesc.textContent = promo.description || '';
+  if (mc) mc.textContent = promo.code || 'MAKIGUNHEMAT';
+  if (mv) mv.textContent = `⏳ ${promo.validUntil || 'Berlaku terbatas'}`;
+  if (mmin) mmin.textContent = promo.minPurchase ? `💰 Min. Belanja ${formatRupiah(promo.minPurchase)}` : 'Tanpa Minimum';
+
+  if (mbonus && mbonustext) {
+    if (promo.bonusText && promo.bonusText.trim() !== '') {
+      mbonus.style.display = 'block';
+      mbonustext.textContent = promo.bonusText;
+    } else {
+      mbonus.style.display = 'none';
+    }
+  }
+}
+
+function initPromo() {
+  const stripBtn = document.getElementById('btnOpenPromoModal');
+  const floatingBtn = document.getElementById('floatingPromoBtn');
+  const promoModal = document.getElementById('promoModal');
+  const copyBtn = document.getElementById('btnCopyPromoCode');
+  const claimBtn = document.getElementById('btnClaimPromoAction');
+
+  function openPromo() {
+    if (promoModal) promoModal.classList.add('active');
+  }
+
+  if (stripBtn) stripBtn.addEventListener('click', openPromo);
+  if (floatingBtn) floatingBtn.addEventListener('click', openPromo);
+
+  // Copy voucher code
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      const code = currentPromoData.code || 'MAKIGUNHEMAT';
+      navigator.clipboard.writeText(code).then(() => {
+        copyBtn.textContent = '✅ Tersalin!';
+        copyBtn.classList.add('copied');
+        showToast(`Kode voucher "${code}" berhasil disalin! 📋`);
+        setTimeout(() => {
+          copyBtn.textContent = '📋 Salin Kode';
+          copyBtn.classList.remove('copied');
+        }, 2500);
+      }).catch(() => {
+        showToast(`Kode voucher: ${code}`);
+      });
+    });
+  }
+
+  // Claim Promo Button in Popup
+  if (claimBtn) {
+    claimBtn.addEventListener('click', () => {
+      const voucherInput = document.getElementById('cartVoucherCodeInput');
+      if (voucherInput) {
+        voucherInput.value = currentPromoData.code || '';
+      }
+      applyCartVoucher(currentPromoData.code);
+      if (promoModal) promoModal.classList.remove('active');
+
+      if (cart.length > 0) {
+        const cartModal = document.getElementById('cartModal');
+        if (cartModal) cartModal.classList.add('active');
+        showToast('Voucher promo berhasil dipasang di keranjang! 🎉');
+      } else {
+        const menuSection = document.getElementById('menu');
+        if (menuSection) menuSection.scrollIntoView({ behavior: 'smooth' });
+        showToast(`Voucher ${currentPromoData.code} aktif! Silakan pilih menu paket favorit Anda 🍗`);
+      }
+    });
+  }
+
+  // Auto popup on first visit per session
+  setTimeout(() => {
+    checkAutoPromoPopup();
+  }, 1200);
+}
+
+function checkAutoPromoPopup() {
+  if (!currentPromoData.active || !currentPromoData.autoPopup) return;
+  const alreadySeen = sessionStorage.getItem(STORAGE_KEYS.PROMO_SHOWN_SESSION);
+  if (!alreadySeen) {
+    const promoModal = document.getElementById('promoModal');
+    if (promoModal) {
+      promoModal.classList.add('active');
+      sessionStorage.setItem(STORAGE_KEYS.PROMO_SHOWN_SESSION, 'true');
+    }
+  }
+}
+
+// Backward compatibility helper
+function applySiteSettings(settings) {
+  if (!settings) return;
+  if (settings.announcement) {
+    const annEl = document.getElementById('topAnnouncementText');
+    if (annEl) annEl.textContent = settings.announcement;
+  }
 }

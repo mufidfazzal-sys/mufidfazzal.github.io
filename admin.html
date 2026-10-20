@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Pengelola Admin - Nasi Kulit Mak Igun</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="images/branding/logo.jpg">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* Standalone Admin Portal Page Styles */
+    body {
+      background-color: #F8F3EC;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    .admin-page-wrap {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Standalone Login Screen */
+    .admin-login-container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 16px;
+    }
+
+    .standalone-login-card {
+      max-width: 440px;
+      width: 100%;
+      background-color: #FFFFFF;
+      border: 3px solid var(--color-purple-dark);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 20px 40px rgba(41, 11, 56, 0.2), var(--shadow-comic);
+      overflow: hidden;
+      animation: modalScaleUp 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+
+    /* Standalone Dashboard Layout */
+    .admin-standalone-dashboard {
+      max-width: 1200px;
+      width: 96%;
+      margin: 24px auto 40px;
+      background-color: #FFFFFF;
+      border: 3.5px solid var(--color-purple-dark);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 20px 50px rgba(41, 11, 56, 0.15), var(--shadow-comic);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .admin-standalone-header {
+      background: linear-gradient(90deg, var(--color-purple-dark) 0%, var(--color-purple) 70%, var(--color-orange-dark) 100%);
+      color: #FFFFFF;
+      padding: 18px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      border-bottom: 3.5px solid var(--color-yellow);
+    }
+
+    .admin-standalone-header .admin-brand-info {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .admin-standalone-header .admin-brand-info img {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 2.5px solid var(--color-yellow);
+      background-color: #FFFFFF;
+    }
+
+    .admin-standalone-header .admin-brand-info h3 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      color: var(--color-yellow);
+      margin: 0;
+      letter-spacing: 0.5px;
+    }
+
+    .admin-standalone-header .admin-brand-info span {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.9);
+      display: block;
+      margin-top: 2px;
+    }
+
+    .btn-return-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--color-purple);
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+      margin-top: 16px;
+      transition: color var(--transition-fast);
+    }
+
+    .btn-return-home:hover {
+      color: var(--color-orange-dark);
+      text-decoration: underline;
+    }
+
+    .admin-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+
+    .admin-status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #00E676;
+      box-shadow: 0 0 8px #00E676;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="admin-page-wrap">
+
+    <!-- ================= 1. VIEW LOGIN (SAAT BELUM LOGIN) ================= -->
+    <div id="adminLoginSection" class="admin-login-container">
+      <div class="standalone-login-card">
+        <div class="modal-header" style="background: linear-gradient(90deg, var(--color-purple-dark), var(--color-purple)); padding: 20px 24px;">
+          <h3 style="display: flex; align-items: center; gap: 10px; color: #FFFFFF; margin: 0; font-size: 1.2rem;">
+            <span>🔐</span> Portal Pengelola Website
+          </h3>
+        </div>
+        <div style="padding: 28px 24px;">
+          <div style="text-align: center; margin-bottom: 22px;">
+            <img src="images/branding/logo.jpg" alt="Logo Mak Igun" style="width: 76px; height: 76px; border-radius: 50%; border: 3px solid var(--color-yellow); margin-bottom: 12px;" />
+            <h4 style="font-family: var(--font-heading); color: var(--color-purple); font-size: 1.25rem; margin: 0;">Nasi Kulit Mak Igun</h4>
+            <p style="font-size: 0.88rem; color: var(--color-text-muted); margin-top: 6px; line-height: 1.4;">
+              Portal terpisah khusus pemilik & pengelola untuk mengatur menu, cover, galeri, lokasi, kontak, promo & backup data.
+            </p>
+          </div>
+
+          <form id="adminLoginForm">
+            <div id="loginErrorMsg" style="display: none; background-color: #FFEBEE; color: #C62828; padding: 12px 14px; border-radius: var(--radius-sm); font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; border: 1.5px solid #FFCDD2;">
+              ⚠️ Username atau Password salah!
+            </div>
+
+            <div class="form-group" style="margin-bottom: 16px;">
+              <label for="adminUsernameInput" class="admin-input-label">Username Admin:</label>
+              <input type="text" id="adminUsernameInput" class="admin-text-input" placeholder="Masukkan username admin..." required autocomplete="username" />
+            </div>
+
+            <div class="form-group" style="margin-bottom: 18px;">
+              <label for="adminPasswordInput" class="admin-input-label">Password Admin:</label>
+              <input type="password" id="adminPasswordInput" class="admin-text-input" placeholder="Masukkan password admin..." required autocomplete="current-password" />
+            </div>
+
+            <div style="background-color: var(--color-yellow-light); border: 1.5px dashed var(--color-orange); padding: 10px 14px; border-radius: var(--radius-sm); font-size: 0.82rem; color: var(--color-purple-dark); margin-bottom: 22px; line-height: 1.4;">
+              💡 <strong>Akun Bawaan:</strong><br>
+              Username: <code>admin</code><br>
+              Password: <code>makigun123</code><br>
+              <em>(Password dapat diganti kapan saja di tab Akun & Cadangan)</em>
+            </div>
+
+            <button type="submit" class="btn-primary" style="width: 100%; padding: 12px; font-size: 1.05rem;">
+              Masuk ke Panel Pengelola 🚀
+            </button>
+          </form>
+
+          <div style="text-align: center; margin-top: 20px;">
+            <a href="index.html" class="btn-return-home">
+              ← Kembali ke Website Utama Pengunjung
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= 2. VIEW DASHBOARD (SAAT SUDAH LOGIN) ================= -->
+    <div id="adminDashboardSection" class="admin-standalone-dashboard" style="display: none;">
+      <!-- Standalone Header -->
+      <div class="admin-standalone-header">
+        <div class="admin-brand-info">
+          <img src="images/branding/logo.jpg" alt="Logo Mak Igun" />
+          <div>
+            <h3>PANEL PENGELOLA WEBSITE</h3>
+            <span>Nasi Kulit Mak Igun • Cabang Surabaya Pusat</span>
+          </div>
+        </div>
+
+        <div class="admin-header-actions">
+          <div class="admin-status-badge">
+            <span class="admin-status-dot"></span>
+            <span>Server Terhubung (data.json)</span>
+          </div>
+          <a href="index.html" target="_blank" rel="noopener noreferrer" class="admin-header-btn admin-btn-preview" title="Buka website utama pengunjung di tab baru">
+            🌐 Buka Website Pengunjung
+          </a>
+          <button id="adminLogoutBtn" class="admin-header-btn admin-btn-logout" title="Keluar dari sesi admin">
+            🚪 Logout
+          </button>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs (7 Tab) -->
+      <div class="admin-tabs">
+        <button class="admin-tab-btn active" data-tab="menu">
+          <span>📋</span> Kelola Menu
+        </button>
+        <button class="admin-tab-btn" data-tab="cover">
+          <span>🖼️</span> Edit Cover
+        </button>
+        <button class="admin-tab-btn" data-tab="galeri">
+          <span>📸</span> Kelola Galeri
+        </button>
+        <button class="admin-tab-btn" data-tab="alamat">
+          <span>📍</span> Alamat & Lokasi
+        </button>
+        <button class="admin-tab-btn" data-tab="kontak">
+          <span>📱</span> Kontak & Medsos
+        </button>
+        <button class="admin-tab-btn" data-tab="promo">
+          <span>🎁</span> Promo Spesial
+        </button>
+        <button class="admin-tab-btn" data-tab="settings">
+          <span>⚙️</span> Akun & Cadangan
+        </button>
+      </div>
+
+      <!-- Tab Content Area -->
+      <div class="admin-tab-content">
+        <!-- TAB 1: KELOLA MENU -->
+        <div class="admin-tab-pane active" id="adminPaneMenu">
+          <!-- Stats Summary -->
+          <div class="admin-stats-row">
+            <div class="admin-stat-card">
+              <div class="admin-stat-icon">🍗</div>
+              <div class="admin-stat-info">
+                <h4>Total Menu</h4>
+                <div class="stat-value" id="statTotalMenu">0</div>
+              </div>
+            </div>
+            <div class="admin-stat-card">
+              <div class="admin-stat-icon">✅</div>
+              <div class="admin-stat-info">
+                <h4>Menu Tersedia</h4>
+                <div class="stat-value" id="statAvailableMenu">0</div>
+              </div>
+            </div>
+            <div class="admin-stat-card">
+              <div class="admin-stat-icon">🚫</div>
+              <div class="admin-stat-info">
+                <h4>Menu Habis</h4>
+                <div class="stat-value" id="statSoldOutMenu">0</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action & Search Bar -->
+          <div class="admin-toolbar">
+            <div class="admin-search-wrap">
+              <input type="text" id="adminMenuSearch" class="admin-search-input" placeholder="🔍 Cari nama menu, harga, tag..." />
+            </div>
+
+            <div class="admin-toolbar-right">
+              <select id="adminCategoryFilter" class="admin-select-input">
+                <option value="all">Semua Kategori</option>
+                <option value="utama">Nasi Kulit Utama</option>
+                <option value="paket">Paket Nasi Lengkap</option>
+                <option value="lauk">Lauk & Oseng</option>
+                <option value="minuman">Minuman Segar</option>
+                <option value="ekstra">Ekstra & Sambal</option>
+              </select>
+
+              <button type="button" id="btnOpenAddMenuModal" class="admin-action-btn admin-btn-add">
+                ➕ Tambah Menu Baru
+              </button>
+            </div>
+          </div>
+
+          <!-- Menu Table -->
+          <div class="admin-table-container">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th style="width: 60px;">Foto</th>
+                  <th>Nama Menu</th>
+                  <th>Kategori</th>
+                  <th>Harga</th>
+                  <th>Tag / Promo</th>
+                  <th>Ketersediaan</th>
+                  <th style="width: 140px; text-align: center;">Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="adminMenuTableBody">
+                <!-- Dynamically filled by admin.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- TAB 2: EDIT COVER -->
+        <div class="admin-tab-pane" id="adminPaneCover">
+          <form id="coverSettingsForm">
+            <!-- Branding Logo -->
+            <div class="admin-card-section">
+              <h4><span>🎨</span> Logo & Identitas Brand</h4>
+              <p class="section-sub">Ubah foto logo utama Mak Igun yang tampil di Navbar dan Cover Depan.</p>
+              
+              <div style="display: flex; gap: 20px; align-items: center; margin-top: 15px; flex-wrap: wrap;">
+                <img id="coverLogoPreview" src="images/branding/logo.jpg" alt="Preview Logo" style="width: 90px; height: 90px; border-radius: 50%; border: 3px solid var(--color-yellow); object-fit: cover; background: #FFF;" />
+                <div style="flex: 1; min-width: 250px;">
+                  <label class="admin-input-label">Path File Logo atau URL Web:</label>
+                  <input type="text" id="settingCoverLogo" class="admin-text-input" placeholder="images/branding/logo.jpg" style="margin-bottom: 10px;" />
+                  <label class="admin-file-upload-btn">
+                    📁 Unggah Logo dari Laptop
+                    <input type="file" id="coverLogoFileInput" accept="image/*" style="display: none;" />
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Badges & Headline -->
+            <div class="admin-card-section">
+              <h4><span>📢</span> Teks Headline & Tagline Utama</h4>
+              <p class="section-sub">Atur teks pembuka berdaya tarik tinggi di bagian hero cover paling atas.</p>
+
+              <div class="admin-form-grid">
+                <div>
+                  <label for="settingCoverBadge1" class="admin-input-label">Sticker Badge 1 (Kuning):</label>
+                  <input type="text" id="settingCoverBadge1" class="admin-text-input" placeholder="👑 Kolaborasi Ivan Gunawan & King Abdi" />
+                </div>
+                <div>
+                  <label for="settingCoverBadge2" class="admin-input-label">Sticker Badge 2 (Merah):</label>
+                  <input type="text" id="settingCoverBadge2" class="admin-text-input" placeholder="📍 Cabang Surabaya Pusat" />
+                </div>
+                <div>
+                  <label for="settingCoverTitle1" class="admin-input-label">Judul Besar Baris 1:</label>
+                  <input type="text" id="settingCoverTitle1" class="admin-text-input" placeholder="KULIT KRISPI GURIH" />
+                </div>
+                <div>
+                  <label for="settingCoverTitle2" class="admin-input-label">Judul Besar Baris 2 (Warna Oranye):</label>
+                  <input type="text" id="settingCoverTitle2" class="admin-text-input" placeholder="PEDASNYA BIKIN NAGIH!" />
+                </div>
+                <div class="full-span">
+                  <label for="settingCoverTagline" class="admin-input-label">Paragraf Tagline Lengkap:</label>
+                  <textarea id="settingCoverTagline" class="admin-textarea" rows="2" placeholder="Nikmati sensasi gurih renyah Kulit Ayam Krispi melimpah..."></textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3 Highlights Cards -->
+            <div class="admin-card-section">
+              <h4><span>⭐</span> 3 Kartu Keunggulan (Highlights)</h4>
+              <p class="section-sub">Atur 3 kotak sorotan rasa & servis yang memikat selera pengunjung.</p>
+
+              <div class="admin-form-grid">
+                <!-- Highlight 1 -->
+                <div style="background: #FFF9F2; padding: 14px; border-radius: var(--radius-sm); border: 1.5px solid var(--color-purple-soft);">
+                  <strong style="color: var(--color-purple); display: block; margin-bottom: 8px;">Kartu 1</strong>
+                  <label class="admin-input-label">Ikon Emoji:</label>
+                  <input type="text" id="settingCoverH1Icon" class="admin-text-input" placeholder="💰" style="margin-bottom: 6px;" />
+                  <label class="admin-input-label">Judul:</label>
+                  <input type="text" id="settingCoverH1Title" class="admin-text-input" placeholder="Mulai Rp 15.400" style="margin-bottom: 6px;" />
+                  <label class="admin-input-label">Keterangan:</label>
+                  <input type="text" id="settingCoverH1Desc" class="admin-text-input" placeholder="Harga ramah di kantong, porsi kenyang" />
+                </div>
+
+                <!-- Highlight 2 -->
+                <div style="background: #FFF9F2; padding: 14px; border-radius: var(--radius-sm); border: 1.5px solid var(--color-purple-soft);">
+                  <strong style="color: var(--color-purple); display: block; margin-bottom: 8px;">Kartu 2</strong>
+                  <label class="admin-input-label">Ikon Emoji:</label>
+                  <input type="text" id="settingCoverH2Icon" class="admin-text-input" placeholder="🌙" style="margin-bottom: 6px;" />
+                  <label class="admin-input-label">Judul:</label>
+                  <input type="text" id="settingCoverH2Title" class="admin-text-input" placeholder="Buka Sampai Malam" style="margin-bottom: 6px;" />
+                  <label class="admin-input-label">Keterangan:</label>
+                  <input type="text" id="settingCoverH2Desc" class="admin-text-input" placeholder="10.00 – 00.00 WIB setiap hari" />
+                </div>
+
+                <!-- Highlight 3 -->
+                <div style="background: #FFF9F2; padding: 14px; border-radius: var(--radius-sm); border: 1.5px solid var(--color-purple-soft);">
+                  <strong style="color: var(--color-purple); display: block; margin-bottom: 8px;">Kartu 3</strong>
+                  <label class="admin-input-label">Ikon Emoji:</label>
+                  <input type="text" id="settingCoverH3Icon" class="admin-text-input" placeholder="🍚" style="margin-bottom: 6px;" />
+                  <label class="admin-input-label">Judul:</label>
+                  <input type="text" id="settingCoverH3Title" class="admin-text-input" placeholder="Nasi Putih / Nasi Jagung" style="margin-bottom: 6px;" />
+                  <label class="admin-input-label">Keterangan:</label>
+                  <input type="text" id="settingCoverH3Desc" class="admin-text-input" placeholder="Pilihan nasi jagung khas Jatim yang gurih" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Tombol CTA Cover -->
+            <div class="admin-card-section">
+              <h4><span>🎯</span> Tombol Aksi Cepat (Call-to-Action)</h4>
+              <p class="section-sub">Atur teks pada 3 tombol aksi langsung di bawah judul cover.</p>
+
+              <div class="admin-form-grid">
+                <div>
+                  <label for="settingCoverCta1Text" class="admin-input-label">Tombol 1 (Kuning / Lihat Menu):</label>
+                  <input type="text" id="settingCoverCta1Text" class="admin-text-input" placeholder="Buka Daftar Menu Lengkap" />
+                </div>
+                <div>
+                  <label for="settingCoverCta2Text" class="admin-input-label">Tombol 2 (Hijau / Order WA):</label>
+                  <input type="text" id="settingCoverCta2Text" class="admin-text-input" placeholder="Simulasi Pesanan (Order WA)" />
+                </div>
+                <div>
+                  <label for="settingCoverCta3Text" class="admin-input-label">Tombol 3 (Oranye / Lokasi Cabang):</label>
+                  <input type="text" id="settingCoverCta3Text" class="admin-text-input" placeholder="📍 Lokasi Jl. Pregolan 11" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Pop-Art Stickers -->
+            <div class="admin-card-section">
+              <h4><span>✨</span> 4 Stiker Pop-Art Melayang (Cover)</h4>
+              <p class="section-sub">Ubah teks 4 stiker bergaya pop-art kuliner di latar cover.</p>
+
+              <div class="admin-form-grid">
+                <div>
+                  <label for="settingCoverSticker1" class="admin-input-label">Stiker 1 (Kuning Kiri Atas):</label>
+                  <input type="text" id="settingCoverSticker1" class="admin-text-input" placeholder="🔥 PALING VIRAL DI SURABAYA!" />
+                </div>
+                <div>
+                  <label for="settingCoverSticker2" class="admin-input-label">Stiker 2 (Ungu Kanan Atas):</label>
+                  <input type="text" id="settingCoverSticker2" class="admin-text-input" placeholder="👑 RACIKAN KING ABDI & IVAN GUNAWAN" />
+                </div>
+                <div>
+                  <label for="settingCoverSticker3" class="admin-input-label">Stiker 3 (Oranye Kiri Bawah):</label>
+                  <input type="text" id="settingCoverSticker3" class="admin-text-input" placeholder="✨ 100% KULIT CRISPY JUARA" />
+                </div>
+                <div>
+                  <label for="settingCoverSticker4" class="admin-input-label">Stiker 4 (Merah Kanan Bawah):</label>
+                  <input type="text" id="settingCoverSticker4" class="admin-text-input" placeholder="🌶️ SAMBAL BAWANG GURIH NAMPOL" />
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
+              <button type="submit" class="admin-action-btn admin-btn-save" style="padding: 12px 28px; font-size: 1rem;">
+                💾 Simpan Perubahan Cover
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- TAB 3: KELOLA GALERI -->
+        <div class="admin-tab-pane" id="adminPaneGaleri">
+          <div class="admin-toolbar">
+            <div>
+              <h4 style="margin: 0; font-family: var(--font-heading); color: var(--color-purple);">Daftar Foto Galeri Instagram</h4>
+              <p style="margin: 2px 0 0; font-size: 0.85rem; color: var(--color-text-muted);">Foto ini ditampilkan di section Galeri dan mendukung tampilan Lightbox popup resolusi penuh.</p>
+            </div>
+            <button type="button" id="btnOpenAddGalleryModal" class="admin-action-btn admin-btn-add">
+              ➕ Tambah Foto Galeri
+            </button>
+          </div>
+
+          <div class="admin-table-container">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th style="width: 70px;">Foto</th>
+                  <th>Judul Foto</th>
+                  <th>Badge Label</th>
+                  <th>Keterangan / Cerita</th>
+                  <th style="width: 140px; text-align: center;">Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="adminGalleryTableBody">
+                <!-- Dynamically filled by admin.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- TAB 4: ALAMAT & LOKASI -->
+        <div class="admin-tab-pane" id="adminPaneAlamat">
+          <form id="locationSettingsForm">
+            <div class="admin-card-section">
+              <h4><span>📍</span> Identitas Cabang & Alamat Fisik</h4>
+              <p class="section-sub">Atur nama cabang, alamat lengkap, dan status live buka/tutup warung.</p>
+
+              <div class="admin-form-grid">
+                <div>
+                  <label for="settingLocBranchName" class="admin-input-label">Nama Cabang:</label>
+                  <input type="text" id="settingLocBranchName" class="admin-text-input" placeholder="Cabang Surabaya Pusat" />
+                </div>
+                <div>
+                  <label for="settingLocOpenHoursText" class="admin-input-label">Teks Jam Operasional:</label>
+                  <input type="text" id="settingLocOpenHoursText" class="admin-text-input" placeholder="Buka Setiap Hari: 10.00 – 00.00 WIB" />
+                </div>
+                <div class="full-span">
+                  <label for="settingLocAddress" class="admin-input-label">Alamat Lengkap Outlet:</label>
+                  <textarea id="settingLocAddress" class="admin-textarea" rows="2" placeholder="Jl. Pregolan No. 11, Tegalsari, Kec. Tegalsari, Kota Surabaya, Jawa Timur 60262"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="admin-card-section">
+              <h4><span>⏰</span> Pengaturan Jam Buka Live (WIB)</h4>
+              <p class="section-sub">Website otomatis mendeteksi apakah warung sedang Buka atau Tutup berdasarkan jam sekarang.</p>
+
+              <div class="admin-form-grid">
+                <div>
+                  <label for="settingLocOpenHour" class="admin-input-label">Jam Buka (Format 24 Jam):</label>
+                  <input type="number" id="settingLocOpenHour" class="admin-text-input" placeholder="10" min="0" max="23" />
+                  <span style="font-size: 0.75rem; color: var(--color-text-muted);">Cth: 10 untuk pukul 10:00 pagi</span>
+                </div>
+                <div>
+                  <label for="settingLocCloseHour" class="admin-input-label">Jam Tutup (Format 24 Jam):</label>
+                  <input type="number" id="settingLocCloseHour" class="admin-text-input" placeholder="24" min="0" max="24" />
+                  <span style="font-size: 0.75rem; color: var(--color-text-muted);">Cth: 24 atau 0 untuk tengah malam (00:00)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="admin-card-section">
+              <h4><span>🛎️</span> Fasilitas & Metode Pembayaran</h4>
+              <p class="section-sub">Informasikan kenyamanan dan fleksibilitas berbelanja di outlet.</p>
+
+              <div class="admin-form-grid">
+                <div>
+                  <label for="settingLocFacilities" class="admin-input-label">Fasilitas Outlet (Pisahkan koma):</label>
+                  <input type="text" id="settingLocFacilities" class="admin-text-input" placeholder="Dine-in Nyaman, Area Ber-AC, Parkir Motor & Mobil, Musholla Dekat" />
+                </div>
+                <div>
+                  <label for="settingLocPayment" class="admin-input-label">Pilihan Pembayaran (Pisahkan koma):</label>
+                  <input type="text" id="settingLocPayment" class="admin-text-input" placeholder="Cash, QRIS (BCA, Mandiri, ShopeePay, GoPay, OVO, Dana), Debit" />
+                </div>
+                <div class="full-span">
+                  <label for="settingLocOtherBranch" class="admin-input-label">Keterangan Cabang Lain di Surabaya:</label>
+                  <input type="text" id="settingLocOtherBranch" class="admin-text-input" placeholder="Segera hadir outlet tambahan di Surabaya Barat & Surabaya Timur!" />
+                </div>
+              </div>
+            </div>
+
+            <div class="admin-card-section">
+              <h4><span>🗺️</span> Integrasi Peta Google Maps</h4>
+              <p class="section-sub">Atur link navigasi rute dan iframe embed Google Maps interaktif.</p>
+
+              <div class="admin-form-grid">
+                <div class="full-span">
+                  <label for="settingLocMapsUrl" class="admin-input-label">URL Rute Navigasi Google Maps:</label>
+                  <input type="text" id="settingLocMapsUrl" class="admin-text-input" placeholder="https://maps.app.goo.gl/..." />
+                </div>
+                <div class="full-span">
+                  <label for="settingLocMapEmbed" class="admin-input-label">URL Source Embed Google Maps (iframe src):</label>
+                  <textarea id="settingLocMapEmbed" class="admin-textarea" rows="2" placeholder="https://www.google.com/maps/embed?..."></textarea>
+                </div>
+                <div>
+                  <label for="settingLocMapTitle" class="admin-input-label">Judul Label Peta:</label>
+                  <input type="text" id="settingLocMapTitle" class="admin-text-input" placeholder="Jl. Pregolan No. 11, Tegalsari" />
+                </div>
+                <div>
+                  <label for="settingLocMapBadge" class="admin-input-label">Badge Label Peta:</label>
+                  <input type="text" id="settingLocMapBadge" class="admin-text-input" placeholder="Surabaya Pusat" />
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
+              <button type="submit" class="admin-action-btn admin-btn-save" style="padding: 12px 28px; font-size: 1rem;">
+                💾 Simpan Alamat & Lokasi
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- TAB 5: KONTAK & MEDSOS -->
+        <div class="admin-tab-pane" id="adminPaneKontak">
+          <form id="contactSettingsForm">
+            <div class="admin-card-section">
+              <h4><span>📢</span> Teks Bilah Pengumuman Teratas</h4>
+              <p class="section-sub">Pengumuman berjalan yang selalu terlihat oleh pengunjung di bar paling atas.</p>
+
+              <div class="admin-form-grid">
+                <div class="full-span">
+                  <label for="settingContactAnnouncement" class="admin-input-label">Teks Pengumuman Atas:</label>
+                  <input type="text" id="settingContactAnnouncement" class="admin-text-input" placeholder="🔥 Cabang Surabaya Pusat: Jl. Pregolan No. 11, Tegalsari • Buka Setiap Hari 10:00 - 00:00 WIB" />
+                </div>
+              </div>
+            </div>
+
+            <div class="admin-card-section">
+              <h4><span>💬</span> WhatsApp Hotline Pemesanan</h4>
+              <p class="section-sub">Nomor resmi yang menerima format pesanan dari tombol kirim pesanan website.</p>
+
+              <div class="admin-form-grid">
+                <div>
+                  <label for="settingContactWaNumber" class="admin-input-label">Nomor WhatsApp (Angka saja):</label>
+                  <input type="text" id="settingContactWaNumber" class="admin-text-input" placeholder="087777728228" />
+                  <span style="font-size: 0.75rem; color: var(--color-text-muted);">Format lokal (08...) atau internasional (628...)</span>
+                </div>
+                <div>
+                  <label for="settingContactWaDisplay" class="admin-input-label">Teks Tampilan Nomor:</label>
+                  <input type="text" id="settingContactWaDisplay" class="admin-text-input" placeholder="0877-7772-8228" />
+                </div>
+              </div>
+            </div>
+
+            <div class="admin-card-section">
+              <h4><span>📸</span> Akun Resmi Instagram</h4>
+              <p class="section-sub">Tautan profil Instagram cabang Surabaya dan akun official pusat.</p>
+
+              <div class="admin-form-grid">
+                <div>
+                  <label for="settingContactIgBranchHandle" class="admin-input-label">Username IG Cabang:</label>
+                  <input type="text" id="settingContactIgBranchHandle" class="admin-text-input" placeholder="@nasikulitmakigun.surabayapusat" />
+                </div>
+                <div>
+                  <label for="settingContactIgBranchUrl" class="admin-input-label">URL Profil IG Cabang:</label>
+                  <input type="text" id="settingContactIgBranchUrl" class="admin-text-input" placeholder="https://www.instagram.com/nasikulitmakigun.surabayapusat/?hl=en" />
+                </div>
+                <div>
+                  <label for="settingContactIgOfficialHandle" class="admin-input-label">Username IG Official Mak Igun:</label>
+                  <input type="text" id="settingContactIgOfficialHandle" class="admin-text-input" placeholder="@nasikulitmakigun" />
+                </div>
+                <div>
+                  <label for="settingContactIgOfficialUrl" class="admin-input-label">URL Profil IG Official:</label>
+                  <input type="text" id="settingContactIgOfficialUrl" class="admin-text-input" placeholder="https://www.instagram.com/nasikulitmakigun/?hl=en" />
+                </div>
+              </div>
+            </div>
+
+            <div class="admin-card-section">
+              <h4><span>🛵</span> Mitra Pesan Online (Delivery Partner)</h4>
+              <p class="section-sub">Tautan aplikasi delivery makanan agar pengunjung bisa langsung order dari kurir favorit.</p>
+
+              <div class="admin-form-grid">
+                <div>
+                  <label for="settingContactGofoodUrl" class="admin-input-label">Tautan GoFood:</label>
+                  <input type="text" id="settingContactGofoodUrl" class="admin-text-input" placeholder="https://gofood.link/..." />
+                </div>
+                <div>
+                  <label for="settingContactGrabfoodUrl" class="admin-input-label">Tautan GrabFood:</label>
+                  <input type="text" id="settingContactGrabfoodUrl" class="admin-text-input" placeholder="https://food.grab.com/..." />
+                </div>
+                <div>
+                  <label for="settingContactShopeefoodUrl" class="admin-input-label">Tautan ShopeeFood:</label>
+                  <input type="text" id="settingContactShopeefoodUrl" class="admin-text-input" placeholder="https://shopee.co.id/shopeefood/..." />
+                </div>
+                <div>
+                  <label for="settingContactPhoneHotline" class="admin-input-label">Nomor Hotline Kemitraan / Franchise:</label>
+                  <input type="text" id="settingContactPhoneHotline" class="admin-text-input" placeholder="087777728228" />
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
+              <button type="submit" class="admin-action-btn admin-btn-save" style="padding: 12px 28px; font-size: 1rem;">
+                💾 Simpan Kontak & Medsos
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- TAB 6: PROMO SPESIAL -->
+        <div class="admin-tab-pane" id="adminPanePromo">
+          <div class="admin-card-section">
+            <h4><span>🎁</span> Pengaturan Promo, Pop-up & Voucher Spesial</h4>
+            <p class="section-sub">Atur promo diskon bundling, banner pop-up otomatis, kode voucher, dan bonus hadiah untuk menarik pelanggan.</p>
+
+            <form id="adminPromoForm">
+              <!-- Switch Aktifkan Promo -->
+              <div class="form-group admin-promo-toggle-box promo-active-box" style="display: flex; align-items: center; justify-content: space-between; background: #FFF3E0; padding: 14px 18px; border-radius: var(--radius-md); border: 1.5px solid var(--color-orange-light); margin-bottom: 20px;">
+                <div>
+                  <strong style="color: var(--color-orange-dark); font-size: 1rem; display: block;">Aktifkan Promo di Website</strong>
+                  <span style="font-size: 0.85rem; color: var(--color-text-muted);">Tampilkan pita banner promo di atas website dan tombol floating promo di layar pengunjung.</span>
+                </div>
+                <label class="switch-toggle">
+                  <input type="checkbox" id="adminPromoActive" checked>
+                  <span class="slider-round"></span>
+                </label>
+              </div>
+
+              <!-- Switch Auto Popup -->
+              <div class="form-group admin-promo-toggle-box promo-popup-box" style="display: flex; align-items: center; justify-content: space-between; background: #F3E5F5; padding: 14px 18px; border-radius: var(--radius-md); border: 1.5px solid var(--color-purple-light); margin-bottom: 20px;">
+                <div>
+                  <strong style="color: var(--color-purple-dark); font-size: 1rem; display: block;">Munculkan Pop-up Otomatis</strong>
+                  <span style="font-size: 0.85rem; color: var(--color-text-muted);">Pop-up promo otomatis muncul saat pengunjung pertama kali membuka website.</span>
+                </div>
+                <label class="switch-toggle">
+                  <input type="checkbox" id="adminPromoAutoPopup" checked>
+                  <span class="slider-round"></span>
+                </label>
+              </div>
+
+              <div class="form-row" style="display: grid; grid-template-columns: 1fr 2fr; gap: 16px; margin-bottom: 16px;">
+                <div class="form-group">
+                  <label for="adminPromoBadge">Badge Label Promo:</label>
+                  <input type="text" id="adminPromoBadge" class="form-input" placeholder="🔥 PROMO SPESIAL GAJIAN">
+                </div>
+                <div class="form-group">
+                  <label for="adminPromoTitle">Judul Utama Promo:</label>
+                  <input type="text" id="adminPromoTitle" class="form-input" placeholder="PAKET BUNDLING PUAS GAJIAN!">
+                </div>
+              </div>
+
+              <div class="form-group" style="margin-bottom: 16px;">
+                <label for="adminPromoSubtitle">Sub-judul / Tagline Promo:</label>
+                <input type="text" id="adminPromoSubtitle" class="form-input" placeholder="Makan Enak Berdua Makin Hemat & Kenyang">
+              </div>
+
+              <div class="form-group" style="margin-bottom: 16px;">
+                <label for="adminPromoDesc">Deskripsi Rincian Promo:</label>
+                <textarea id="adminPromoDesc" class="form-input" rows="3" placeholder="Beli 2 Paket Nasi Lengkap (Cumi / Paru / Udang), dapatkan potongan diskon langsung Rp 5.000 + GRATIS 1 Es Teh Manis Segar racikan Mak Igun!"></textarea>
+              </div>
+
+              <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+                <div class="form-group">
+                  <label for="adminPromoCode">Kode Voucher:</label>
+                  <input type="text" id="adminPromoCode" class="form-input" placeholder="MAKIGUNHEMAT" style="text-transform: uppercase; font-weight: 700; color: var(--color-purple);">
+                </div>
+                <div class="form-group">
+                  <label for="adminPromoDiscount">Nominal Diskon (Rp):</label>
+                  <input type="number" id="adminPromoDiscount" class="form-input" placeholder="5000" min="0" step="500">
+                </div>
+                <div class="form-group">
+                  <label for="adminPromoMinPurchase">Min. Belanja (Rp):</label>
+                  <input type="number" id="adminPromoMinPurchase" class="form-input" placeholder="45000" min="0" step="1000">
+                </div>
+              </div>
+
+              <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+                <div class="form-group">
+                  <label for="adminPromoBonusText">Bonus Ekstra (Opsional):</label>
+                  <input type="text" id="adminPromoBonusText" class="form-input" placeholder="GRATIS 1 Es Teh Manis Segar">
+                </div>
+                <div class="form-group">
+                  <label for="adminPromoValidity">Masa Berlaku Promo:</label>
+                  <input type="text" id="adminPromoValidity" class="form-input" placeholder="Berlaku s/d 31 Oktober 2026">
+                </div>
+              </div>
+
+              <!-- Gambar Promo Banner -->
+              <div class="form-group" style="margin-bottom: 16px;">
+                <label>Foto Banner / Menu Promo:</label>
+                <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 10px;">
+                  <img id="adminPromoImagePreview" src="images/menu/paket-cumi.jpg" alt="Preview Banner Promo" style="width: 120px; height: 80px; object-fit: cover; border-radius: 8px; border: 2px solid var(--color-orange); background: #000;">
+                  <div style="flex: 1;">
+                    <input type="text" id="adminPromoImage" class="form-input" placeholder="Path file lokal (images/menu/paket-cumi.jpg) atau URL..." style="margin-bottom: 8px;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                      <label class="admin-upload-btn" style="cursor: pointer; display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; font-size: 0.85rem; background: var(--color-purple); color: #fff; border-radius: 6px; font-weight: 600;">
+                        📁 Pilih File dari Laptop
+                        <input type="file" id="adminPromoImageFile" accept="image/*" style="display: none;">
+                      </label>
+                      <span id="adminPromoImageFileName" style="font-size: 0.8rem; color: var(--color-text-muted);">Tidak ada file baru dipilih</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group" style="margin-bottom: 20px;">
+                <label for="adminPromoTerms">Syarat & Ketentuan Singkat:</label>
+                <input type="text" id="adminPromoTerms" class="form-input" placeholder="Berlaku khusus pemesanan WhatsApp, Takeaway, dan Dine-in di Cabang Surabaya Pusat.">
+              </div>
+
+              <div style="margin-top: 24px; display: flex; gap: 12px; justify-content: flex-end;">
+                <button type="button" id="btnPreviewPromoModal" class="admin-action-btn" style="background: var(--color-purple); color: #fff; border: 1.5px solid var(--color-purple-dark); padding: 10px 20px;">
+                  👁️ Pratinjau Pop-up
+                </button>
+                <button type="submit" class="admin-action-btn admin-btn-save" style="padding: 10px 24px;">
+                  💾 Simpan Pengaturan Promo
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- TAB 7: AKUN & CADANGAN DATA -->
+        <div class="admin-tab-pane" id="adminPaneSettings">
+          <!-- Ganti Password -->
+          <div class="admin-card-section">
+            <h4><span>🔑</span> Ganti Akun & Password Admin</h4>
+            <p class="section-sub">Perbarui username atau kata sandi login pengelola admin untuk keamanan.</p>
+
+            <form id="adminPasswordForm">
+              <div class="admin-form-grid">
+                <div>
+                  <label for="newAdminUsername" class="admin-input-label">Username Admin Baru:</label>
+                  <input type="text" id="newAdminUsername" class="admin-text-input" placeholder="admin" required />
+                </div>
+                <div>
+                  <label for="newAdminPassword" class="admin-input-label">Password Baru:</label>
+                  <input type="password" id="newAdminPassword" class="admin-text-input" placeholder="Masukkan password baru..." required />
+                </div>
+                <div class="full-span">
+                  <label for="confirmAdminPassword" class="admin-input-label">Konfirmasi Password Baru:</label>
+                  <input type="password" id="confirmAdminPassword" class="admin-text-input" placeholder="Ulangi password baru..." required />
+                </div>
+              </div>
+              <div style="margin-top: 15px;">
+                <button type="submit" class="admin-action-btn admin-btn-save" style="padding: 10px 22px;">
+                  🔐 Simpan Kredensial Baru
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Cadangan & Pemulihan JSON -->
+          <div class="admin-card-section">
+            <h4><span>📦</span> Cadangkan & Pulihkan Seluruh Data (JSON)</h4>
+            <p class="section-sub">Ekspor seluruh menu, cover, galeri foto, alamat, kontak, dan promo ke file JSON cadangan untuk disimpan di laptop.</p>
+
+            <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 12px;">
+              <button type="button" id="btnExportData" class="admin-action-btn" style="background-color: #2E7D32; color: #FFF; border-color: #1B5E20; padding: 10px 20px;">
+                📥 Unduh Cadangan JSON (Backup)
+              </button>
+
+              <label class="admin-file-upload-btn" style="background-color: var(--color-purple); padding: 10px 20px;">
+                📤 Pulihkan dari File JSON (Restore)
+                <input type="file" id="importFileInput" accept=".json" style="display: none;" />
+              </label>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--color-text-muted);">
+              File backup dapat disimpan di laptop atau dipindahkan ke komputer lain dengan mudah.
+            </p>
+          </div>
+
+          <!-- Reset Default -->
+          <div class="admin-card-section" style="border-color: #FFCDD2; background-color: #FFF9F9;">
+            <h4 style="color: #C62828;"><span>⚠️</span> Reset ke Menu Default Asli</h4>
+            <p class="section-sub">Kembalikan seluruh daftar menu dan pengaturan ke kondisi awal bawaan Nasi Kulit Mak Igun.</p>
+            <button type="button" id="btnResetDefault" class="admin-action-btn admin-btn-delete" style="padding: 10px 18px; font-size: 0.9rem;">
+              🔄 Reset ke Data Awal Pabrik
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================= MODAL: FORM TAMBAH / EDIT MENU ================= -->
+  <div class="modal-overlay" id="menuFormModal">
+    <div class="modal-card" style="max-width: 600px;">
+      <div class="modal-header" style="background: linear-gradient(90deg, var(--color-purple), var(--color-orange));">
+        <h3 id="menuFormModalTitle">Tambah Menu Baru</h3>
+        <button class="modal-close-btn" aria-label="Tutup Modal">&times;</button>
+      </div>
+      <div class="modal-body" style="padding: 24px;">
+        <form id="menuItemForm">
+          <input type="hidden" id="menuFormId" value="" />
+
+          <div class="admin-form-grid">
+            <!-- Nama Menu -->
+            <div class="full-span">
+              <label for="menuFormName" class="admin-input-label">Nama Menu: *</label>
+              <input type="text" id="menuFormName" class="admin-text-input" placeholder="Cth: Nasi Kulit Sambal Matah Spesial" required />
+            </div>
+
+            <!-- Kategori -->
+            <div>
+              <label for="menuFormCategory" class="admin-input-label">Kategori Menu: *</label>
+              <select id="menuFormCategory" class="admin-select-input" required>
+                <option value="utama">Nasi Kulit Utama</option>
+                <option value="paket">Paket Nasi Lengkap</option>
+                <option value="lauk">Lauk & Oseng</option>
+                <option value="minuman">Minuman Segar</option>
+                <option value="ekstra">Ekstra & Sambal</option>
+              </select>
+            </div>
+
+            <!-- Harga -->
+            <div>
+              <label for="menuFormPrice" class="admin-input-label">Harga (Rupiah): *</label>
+              <input type="number" id="menuFormPrice" class="admin-text-input" placeholder="Cth: 15400" min="0" step="500" required />
+            </div>
+
+            <!-- Tag Promo -->
+            <div>
+              <label for="menuFormTag" class="admin-input-label">Tag / Badge Promosi:</label>
+              <input type="text" id="menuFormTag" class="admin-text-input" placeholder="Cth: Viral Banget 🔥, Bintang Utama ⭐" />
+            </div>
+
+            <!-- Tag Style -->
+            <div>
+              <label for="menuFormTagClass" class="admin-input-label">Warna Tag Badge:</label>
+              <select id="menuFormTagClass" class="admin-select-input">
+                <option value="tag-star">Kuning Emas (Bintang ⭐)</option>
+                <option value="tag-packet">Ungu (Paket 📦)</option>
+                <option value="tag-viral">Merah Menyala (Viral 🔥)</option>
+                <option value="tag-drink">Biru Segar (Minuman 🥤)</option>
+              </select>
+            </div>
+
+            <!-- Foto Menu -->
+            <div class="full-span">
+              <label class="admin-input-label">Foto Menu:</label>
+              <div class="admin-img-upload-box">
+                <img id="menuFormImgPreview" src="images/branding/logo.jpg" alt="Preview" class="admin-img-preview" />
+                <div style="flex: 1;">
+                  <input type="text" id="menuFormImage" class="admin-text-input" placeholder="Path foto (cth: images/menu/nama.jpg) atau URL" style="margin-bottom: 8px;" />
+                  <div>
+                    <label class="admin-file-upload-btn">
+                      📁 Pilih Foto dari Laptop / Komputer
+                      <input type="file" id="menuFormFileInput" accept="image/*" style="display: none;" />
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Deskripsi -->
+            <div class="full-span">
+              <label for="menuFormDesc" class="admin-input-label">Deskripsi Menu:</label>
+              <textarea id="menuFormDesc" class="admin-textarea" placeholder="Tuliskan komposisi lezat hidangan, racikan bumbu, lauk pendamping..."></textarea>
+            </div>
+
+            <!-- Opsi Tambahan -->
+            <div class="full-span" style="display: flex; gap: 20px; flex-wrap: wrap; background: #FFF9F2; padding: 12px; border-radius: var(--radius-sm); border: 1.5px solid var(--color-purple-soft);">
+              <label style="display: flex; align-items: center; gap: 8px; font-weight: 600; cursor: pointer; font-size: 0.9rem;">
+                <input type="checkbox" id="menuFormStar" />
+                <span>⭐ Jadikan Menu Bintang / Unggulan</span>
+              </label>
+              <label style="display: flex; align-items: center; gap: 8px; font-weight: 600; cursor: pointer; font-size: 0.9rem;">
+                <input type="checkbox" id="menuFormAvailable" checked />
+                <span>✅ Menu Tersedia (Bisa Dipesan)</span>
+              </label>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 24px;">
+            <button type="button" class="btn-outline modal-close-btn-action" style="padding: 10px 20px;" onclick="document.getElementById('menuFormModal').classList.remove('active')">
+              Batal
+            </button>
+            <button type="submit" class="btn-primary" style="padding: 10px 24px;">
+              💾 Simpan Menu
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL: FORM TAMBAH / EDIT FOTO GALERI ================= -->
+  <div class="modal-overlay" id="galleryFormModal">
+    <div class="modal-card" style="max-width: 600px;">
+      <div class="modal-header" style="background: linear-gradient(90deg, var(--color-purple), var(--color-orange));">
+        <h3 id="galleryFormModalTitle">Tambah Foto Galeri</h3>
+        <button class="modal-close-btn" aria-label="Tutup Modal">&times;</button>
+      </div>
+      <div class="modal-body" style="padding: 24px;">
+        <form id="galleryItemForm">
+          <input type="hidden" id="galleryFormId" value="" />
+
+          <div class="admin-form-grid">
+            <!-- Judul Foto -->
+            <div class="full-span">
+              <label for="galleryFormTitle" class="admin-input-label">Judul Foto: *</label>
+              <input type="text" id="galleryFormTitle" class="admin-text-input" placeholder="Cth: Nasi Kulit Lengkap Bintang Utama" required />
+            </div>
+
+            <!-- Badge / Label -->
+            <div class="full-span">
+              <label for="galleryFormBadge" class="admin-input-label">Badge / Label Galeri:</label>
+              <input type="text" id="galleryFormBadge" class="admin-text-input" placeholder="Cth: Menu Favorit, Viral Banget, Suasana Outlet, Sambal Juara" />
+            </div>
+
+            <!-- Foto Galeri -->
+            <div class="full-span">
+              <label class="admin-input-label">Foto Galeri:</label>
+              <div class="admin-img-upload-box">
+                <img id="galleryFormImgPreview" src="images/branding/logo.jpg" alt="Preview Foto Galeri" class="admin-img-preview" />
+                <div style="flex: 1;">
+                  <input type="text" id="galleryFormImage" class="admin-text-input" placeholder="Path foto (cth: images/galeri/galeri-1.jpg) atau URL" style="margin-bottom: 8px;" />
+                  <div>
+                    <label class="admin-file-upload-btn">
+                      📁 Pilih Foto dari Laptop / Komputer
+                      <input type="file" id="galleryFormFileInput" accept="image/*" style="display: none;" />
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Deskripsi -->
+            <div class="full-span">
+              <label for="galleryFormDesc" class="admin-input-label">Deskripsi / Keterangan Foto:</label>
+              <textarea id="galleryFormDesc" class="admin-textarea" placeholder="Tuliskan cerita menarik tentang hidangan atau suasana pada foto ini..."></textarea>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 24px;">
+            <button type="button" class="btn-outline modal-close-btn-action" style="padding: 10px 20px;" onclick="document.getElementById('galleryFormModal').classList.remove('active')">
+              Batal
+            </button>
+            <button type="submit" class="btn-primary" style="padding: 10px 24px;">
+              💾 Simpan Foto Galeri
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL: PRATINJAU PROMO POPUP ================= -->
+  <div class="modal-overlay" id="promoModal">
+    <div class="modal-card promo-modal-card">
+      <div class="modal-header promo-modal-header">
+        <div class="promo-header-badge-wrap">
+          <span class="promo-modal-pill-badge" id="promoModalBadge">🔥 PROMO SPESIAL GAJIAN</span>
+        </div>
+        <button class="modal-close-btn" aria-label="Tutup Modal">&times;</button>
+      </div>
+      <div class="modal-body promo-modal-body">
+        <div class="promo-media-container">
+          <img id="promoModalImage" src="images/menu/paket-cumi.jpg" alt="Banner Promo Mak Igun" class="promo-modal-img" />
+          <div class="promo-floating-tag" id="promoDiscountBadge">HEMAT Rp 5.000</div>
+        </div>
+        <div class="promo-content-wrap">
+          <h3 id="promoModalTitle" class="promo-display-title">PAKET BUNDLING PUAS GAJIAN!</h3>
+          <p id="promoModalSubtitle" class="promo-display-sub">Makan Enak Berdua Makin Hemat & Kenyang</p>
+          <div class="promo-description-box" id="promoModalDesc">
+            Beli 2 Paket Nasi Lengkap (Cumi / Paru / Udang), dapatkan potongan diskon langsung Rp 5.000 + GRATIS 1 Es Teh Manis Segar racikan Mak Igun!
+          </div>
+
+          <!-- Coupon Box with Copy button -->
+          <div class="promo-coupon-container">
+            <div class="promo-coupon-left">
+              <span class="promo-coupon-title">KODE VOUCHER DISKON:</span>
+              <span class="promo-coupon-code" id="promoVoucherCode">MAKIGUNHEMAT</span>
+            </div>
+            <button type="button" class="btn-copy-coupon" id="btnCopyPromoCode" title="Salin Kode Voucher">
+              📋 Salin Kode
+            </button>
+          </div>
+
+          <div class="promo-terms-row">
+            <span id="promoModalValidity">⏳ Berlaku s/d 31 Oktober 2026</span>
+            <span id="promoModalMinSpend">💰 Min. Belanja Rp 45.000</span>
+          </div>
+          <div id="promoModalBonus" class="promo-bonus-notice">
+            🎉 Bonus Ekstra: <strong id="promoModalBonusText">GRATIS 1 Es Teh Manis Segar</strong>
+          </div>
+
+          <div class="promo-action-buttons">
+            <button type="button" class="promo-dismiss-btn modal-close-btn-action" style="flex: 1; padding: 12px;">
+              Tutup Pratinjau
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dedicated Admin Script -->
+  <script src="admin.js"></script>
+</body>
+</html>
