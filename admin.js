@@ -417,25 +417,96 @@ const DEFAULT_LOCATION_DATA = {
   closeHour: 24,
   facilities: "Dine-in Nyaman, Area Ber-AC, Parkir Motor & Mobil, Musholla Dekat",
   paymentMethods: "Cash, QRIS (BCA, Mandiri, ShopeePay, GoPay, OVO, Dana), Debit",
-  mapsUrl: "https://maps.app.goo.gl/wK4bJtJ1jNqZ3X87A",
-  mapEmbedSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.727581729052!2d112.7381273!3d-7.2661389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fb900d895555%3A0x6b47c0f1885f6e80!2sJl.%20Pregolan%20No.11%2C%20Tegalsari%2C%20Kec.%20Tegalsari%2C%20Surabaya%2C%20Jawa%20Timur%2060262!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid",
-  mapTitle: "Jl. Pregolan No. 11, Tegalsari",
-  mapBadge: "Surabaya Pusat",
-  otherBranch: "Segera hadir outlet tambahan di Surabaya Barat & Surabaya Timur!"
+  subtitle: "Lokasi & Jam Buka",
+  title: "Kunjungi <span>Warung Mak Igun</span>",
+  desc: "Berada di pusat kota Surabaya yang strategis, mudah diakses, dekat dengan pusat belanja dan perkantoran.",
+  branchName: "Cabang Surabaya Pusat",
+  address: "Jl. Pregolan No. 11, Tegalsari, Kec. Tegalsari, Kota Surabaya, Jawa Timur 60262",
+  openHoursText: "Buka Setiap Hari: Pukul 10.00 – 00.00 WIB (Tengah Malam)",
+  openHour: 10,
+  closeHour: 24,
+  facilities: "Makan di Tempat (Dine-in), Bungkus Bawa Pulang (Takeaway), Pesan Antar Online (GoFood, GrabFood, ShopeeFood), Tempat Bersih & Nyaman, Parkir Tersedia.",
+  paymentMethods: "QRIS (BCA, Mandiri, GoPay, OVO, Dana, ShopeePay), Transfer Bank, dan Tunai (Cash).",
+  mapsUrl: "https://maps.google.com/?q=Nasi+Kulit+Mak+Igun+Jl.+Pregolan+No.+11+Surabaya",
+  mapEmbedSrc: "https://maps.google.com/maps?q=Jl.+Pregolan+No.+11,+Tegalsari,+Surabaya&t=&z=16&ie=UTF8&iwloc=&output=embed",
+  mapTitle: "Peta Lokasi Jl. Pregolan 11 Surabaya",
+  mapBadge: "Tegalsari, Surabaya",
+  otherBranchTitle: "ℹ️ Cabang Surabaya Lainnya:",
+  otherBranch: "Cabang Tenggilis: Jl. Raya Tenggilis No. 60, Surabaya Timur (Instagram: @nasikulitmakigun.tenggilis)"
 };
 
 const DEFAULT_CONTACT_DATA = {
+  subtitle: "Hubungi & Ikuti Kami",
+  title: "Kontak & Media Sosial <span>Mak Igun</span>",
+  desc: "Mau pesan untuk acara kantor, kumpul keluarga, info kemitraan waralaba, atau kirim kritik dan saran? Hubungi kami langsung melalui saluran resmi berikut!",
   announcement: "🔥 Cabang Surabaya Pusat: Jl. Pregolan No. 11, Tegalsari • Buka Setiap Hari 10:00 - 00:00 WIB",
-  waNumber: "087777728228",
-  waDisplay: "0877-7772-8228",
+  igBranchTitle: "Instagram Cabang",
+  igBranchDesc: "Info menu terbaru, promo harian, dan keseruan cabang Surabaya Pusat.",
   igBranchHandle: "@nasikulitmakigun.surabayapusat",
   igBranchUrl: "https://www.instagram.com/nasikulitmakigun.surabayapusat/?hl=en",
+  waTitle: "WhatsApp Pemesanan",
+  waDesc: "Fast response untuk pesanan porsi banyak, reservasi, & kemitraan.",
+  waNumber: "087777728228",
+  waDisplay: "0877-7772-8228",
+  floatingWaText: "Chat WA Cabang",
+  igOfficialTitle: "Instagram Official",
+  igOfficialDesc: "Akun resmi pusat Nasi Kulit Mak Igun seluruh cabang Indonesia.",
   igOfficialHandle: "@nasikulitmakigun",
   igOfficialUrl: "https://www.instagram.com/nasikulitmakigun/?hl=en",
+  partnershipTitle: "Info Kemitraan",
+  partnershipDesc: "Tertarik membuka franchise / cabang di kotamu? Hubungi manajemen.",
+  phoneHotline: "087777728228",
+  deliveryTitle: "Mager Keluar Rumah? Pesan via Aplikasi Delivery Favoritmu!",
+  deliverySubtitle: 'Cari "Nasi Kulit Mak Igun - Surabaya Pusat / Pregolan" di aplikasi favoritmu:',
   gofoodUrl: "https://gofood.link",
   grabfoodUrl: "https://food.grab.com",
   shopeefoodUrl: "https://shopee.co.id/shopeefood",
-  phoneHotline: "087777728228"
+  feedbackTitle: "Kritik & Saran untuk Mak Igun",
+  feedbackDesc: "Kepuasan Anda adalah prioritas utama kami. Sampaikan pesan, kesan, atau saran Anda!"
+};
+
+const DEFAULT_THEME_DATA = {
+  primaryColor: '#FF6700',
+  secondaryColor: '#5A1679',
+  accentColor: '#FFC400',
+  bgColor: '#FFF9F2'
+};
+
+const DEFAULT_NAVBAR_DATA = {
+  logo: 'images/branding/logo.jpg',
+  brandTitle: 'NASI KULIT MAK IGUN',
+  brandSub: 'Surabaya Pusat',
+  announcementText: '🔥 Cabang Surabaya Pusat: Jl. Pregolan No. 11, Tegalsari • Buka Setiap Hari 10:00 - 00:00 WIB',
+  announcementBadge: 'LIVE',
+  orderBtnText: 'Pesan Menu'
+};
+
+const DEFAULT_MENU_SECTION_DATA = {
+  subtitle: 'Daftar Menu Resmi',
+  title: 'Pilihan Menu <span>Nasi Kulit Mak Igun</span>',
+  desc: 'Dari menu paket komplit, lauk oseng viral kecombrang, jeroan gongso mantap, hingga es pelepas dahaga. Semua harga tertera transparan sesuai buku menu resmi!',
+  brochureTitle: '📖 Ingin Melihat Lembar Menu Aslinya?',
+  brochureDesc: 'Tersedia foto papan menu fisik Mak Igun original beresolusi tinggi langsung dari outlet cabang Surabaya Pusat.',
+  brochureBtnText: 'Lihat Foto Menu Fisik (Zoom)',
+  brochureImage: 'images/branding/menu-asli.jpeg',
+  searchPlaceholder: 'Cari menu favoritmu (cth: Cumi, Paru, Kulit, Es Jeruk)...',
+  footerNote: '* Catatan: Harga tertera pada menu belum termasuk PB 1. Tersedia pilihan Nasi Putih atau Nasi Jagung (+Rp 1.500).'
+};
+
+const DEFAULT_GALLERY_SECTION_DATA = {
+  subtitle: 'Galeri Visual Instagram',
+  title: 'Kenikmatan & Suasana <span>Mak Igun</span>',
+  desc: 'Intip hidangan menggoda selera, kriuknya kulit ayam renyah keemasan, dan kehangatan suasana warung Nasi Kulit Mak Igun cabang Surabaya Pusat.',
+  igBtnText: 'Follow Instagram @nasikulitmakigun.surabayapusat',
+  igBtnUrl: 'https://www.instagram.com/nasikulitmakigun.surabayapusat/?hl=en'
+};
+
+const DEFAULT_FOOTER_DATA = {
+  brandTitle: 'NASI KULIT MAK IGUN',
+  brandDesc: 'Kuliner nasi kulit ayam krispi legendaris hasil kolaborasi desainer ternama <strong>Ivan Gunawan</strong> dan MasterChef <strong>King Abdi</strong>. Gurih renyah melimpah dengan racikan sambal khas Jawa Timur.',
+  halalBadge: '⭐ 100% Halal & Higienis',
+  copyright: '© 2026 <strong>Nasi Kulit Mak Igun</strong>. Hak Cipta Dilindungi.',
+  disclaimer: 'Desain Website terinspirasi dari identitas resmi Instagram @nasikulitmakigun.surabayapusat'
 };
 
 const DEFAULT_PROMO_DATA = {
@@ -460,11 +531,16 @@ const DEFAULT_ADMIN_CRED = {
 };
 
 const STORAGE_KEYS = {
+  THEME: 'makigun_theme_v1',
+  NAVBAR: 'makigun_navbar_v1',
+  MENU_SECTION: 'makigun_menu_sec_v1',
   MENUS: 'makigun_menus_v1',
   COVER: 'makigun_cover_v1',
+  GALLERY_SECTION: 'makigun_gal_sec_v1',
   GALLERY: 'makigun_gallery_v1',
   LOCATION: 'makigun_location_v1',
   CONTACT: 'makigun_contact_v1',
+  FOOTER: 'makigun_footer_v1',
   SETTINGS: 'makigun_settings_v1',
   PROMO: 'makigun_promo_v1',
   AUTH: 'makigun_admin_auth_v1',
@@ -472,11 +548,16 @@ const STORAGE_KEYS = {
 };
 
 // State Variables
+let currentThemeData = { ...DEFAULT_THEME_DATA };
+let currentNavbarData = { ...DEFAULT_NAVBAR_DATA };
+let currentMenuSectionData = { ...DEFAULT_MENU_SECTION_DATA };
 let currentMenuItems = [];
 let currentCoverData = { ...DEFAULT_COVER_DATA };
+let currentGallerySectionData = { ...DEFAULT_GALLERY_SECTION_DATA };
 let currentGalleryItems = [];
 let currentLocationData = { ...DEFAULT_LOCATION_DATA };
 let currentContactData = { ...DEFAULT_CONTACT_DATA };
+let currentFooterData = { ...DEFAULT_FOOTER_DATA };
 let currentPromoData = { ...DEFAULT_PROMO_DATA };
 let currentSettings = {};
 
@@ -531,6 +612,7 @@ function updateAdminView() {
     if (dashboardSection) dashboardSection.style.display = 'flex';
     renderAdminMenuTable(currentMenuItems);
     updateAdminStats();
+    loadMenuSectionForm();
   } else {
     if (loginSection) loginSection.style.display = 'flex';
     if (dashboardSection) dashboardSection.style.display = 'none';
@@ -578,6 +660,30 @@ function initAdminAuth() {
 // DATA LOADING & PERSISTENCE
 // ==========================================
 function loadAllAdminData() {
+  // 0. Theme
+  try {
+    const storedTheme = localStorage.getItem(STORAGE_KEYS.THEME);
+    currentThemeData = storedTheme ? { ...DEFAULT_THEME_DATA, ...JSON.parse(storedTheme) } : { ...DEFAULT_THEME_DATA };
+  } catch (e) {
+    currentThemeData = { ...DEFAULT_THEME_DATA };
+  }
+
+  // 0. Navbar
+  try {
+    const storedNav = localStorage.getItem(STORAGE_KEYS.NAVBAR);
+    currentNavbarData = storedNav ? { ...DEFAULT_NAVBAR_DATA, ...JSON.parse(storedNav) } : { ...DEFAULT_NAVBAR_DATA };
+  } catch (e) {
+    currentNavbarData = { ...DEFAULT_NAVBAR_DATA };
+  }
+
+  // 0. Menu Section
+  try {
+    const storedMenuSec = localStorage.getItem(STORAGE_KEYS.MENU_SECTION);
+    currentMenuSectionData = storedMenuSec ? { ...DEFAULT_MENU_SECTION_DATA, ...JSON.parse(storedMenuSec) } : { ...DEFAULT_MENU_SECTION_DATA };
+  } catch (e) {
+    currentMenuSectionData = { ...DEFAULT_MENU_SECTION_DATA };
+  }
+
   // 1. Menus
   try {
     const storedMenus = localStorage.getItem(STORAGE_KEYS.MENUS);
@@ -592,6 +698,14 @@ function loadAllAdminData() {
     currentCoverData = storedCover ? { ...DEFAULT_COVER_DATA, ...JSON.parse(storedCover) } : { ...DEFAULT_COVER_DATA };
   } catch (e) {
     currentCoverData = { ...DEFAULT_COVER_DATA };
+  }
+
+  // 2.5 Gallery Section
+  try {
+    const storedGalSec = localStorage.getItem(STORAGE_KEYS.GALLERY_SECTION);
+    currentGallerySectionData = storedGalSec ? { ...DEFAULT_GALLERY_SECTION_DATA, ...JSON.parse(storedGalSec) } : { ...DEFAULT_GALLERY_SECTION_DATA };
+  } catch (e) {
+    currentGallerySectionData = { ...DEFAULT_GALLERY_SECTION_DATA };
   }
 
   // 3. Gallery
@@ -618,6 +732,14 @@ function loadAllAdminData() {
     currentContactData = { ...DEFAULT_CONTACT_DATA };
   }
 
+  // 5.5 Footer
+  try {
+    const storedFooter = localStorage.getItem(STORAGE_KEYS.FOOTER);
+    currentFooterData = storedFooter ? { ...DEFAULT_FOOTER_DATA, ...JSON.parse(storedFooter) } : { ...DEFAULT_FOOTER_DATA };
+  } catch (e) {
+    currentFooterData = { ...DEFAULT_FOOTER_DATA };
+  }
+
   // 6. Promo
   try {
     const storedPromo = localStorage.getItem(STORAGE_KEYS.PROMO);
@@ -632,6 +754,18 @@ function loadAllAdminData() {
       .then(res => res.json())
       .then(data => {
         if (!data) return;
+        if (data.theme) {
+          currentThemeData = { ...DEFAULT_THEME_DATA, ...data.theme };
+          localStorage.setItem(STORAGE_KEYS.THEME, JSON.stringify(currentThemeData));
+        }
+        if (data.navbar) {
+          currentNavbarData = { ...DEFAULT_NAVBAR_DATA, ...data.navbar };
+          localStorage.setItem(STORAGE_KEYS.NAVBAR, JSON.stringify(currentNavbarData));
+        }
+        if (data.menuSection) {
+          currentMenuSectionData = { ...DEFAULT_MENU_SECTION_DATA, ...data.menuSection };
+          localStorage.setItem(STORAGE_KEYS.MENU_SECTION, JSON.stringify(currentMenuSectionData));
+        }
         if (data.menus && Array.isArray(data.menus) && data.menus.length > 0) {
           currentMenuItems = data.menus;
           localStorage.setItem(STORAGE_KEYS.MENUS, JSON.stringify(currentMenuItems));
@@ -644,6 +778,10 @@ function loadAllAdminData() {
           currentCoverData = { ...DEFAULT_COVER_DATA, ...data.cover };
           localStorage.setItem(STORAGE_KEYS.COVER, JSON.stringify(currentCoverData));
         }
+        if (data.gallerySection) {
+          currentGallerySectionData = { ...DEFAULT_GALLERY_SECTION_DATA, ...data.gallerySection };
+          localStorage.setItem(STORAGE_KEYS.GALLERY_SECTION, JSON.stringify(currentGallerySectionData));
+        }
         if (data.gallery && Array.isArray(data.gallery)) {
           currentGalleryItems = data.gallery;
           localStorage.setItem(STORAGE_KEYS.GALLERY, JSON.stringify(currentGalleryItems));
@@ -655,6 +793,10 @@ function loadAllAdminData() {
         if (data.contact) {
           currentContactData = { ...DEFAULT_CONTACT_DATA, ...data.contact };
           localStorage.setItem(STORAGE_KEYS.CONTACT, JSON.stringify(currentContactData));
+        }
+        if (data.footer) {
+          currentFooterData = { ...DEFAULT_FOOTER_DATA, ...data.footer };
+          localStorage.setItem(STORAGE_KEYS.FOOTER, JSON.stringify(currentFooterData));
         }
         if (data.promo) {
           currentPromoData = { ...DEFAULT_PROMO_DATA, ...data.promo };
@@ -671,16 +813,71 @@ function syncToServer() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
+        theme: currentThemeData,
+        navbar: currentNavbarData,
+        menuSection: currentMenuSectionData,
         menus: currentMenuItems,
         cover: currentCoverData,
+        gallerySection: currentGallerySectionData,
         gallery: currentGalleryItems,
         location: currentLocationData,
         contact: currentContactData,
+        footer: currentFooterData,
         promo: currentPromoData,
         settings: currentSettings
       })
     }).catch(err => console.log('Sync status:', err.message));
   }
+}
+
+function saveThemeToStorage(theme) {
+  currentThemeData = { ...currentThemeData, ...theme };
+  try {
+    localStorage.setItem(STORAGE_KEYS.THEME, JSON.stringify(currentThemeData));
+  } catch (e) {
+    console.error('Gagal simpan tema:', e);
+  }
+  syncToServer();
+}
+
+function saveNavbarToStorage(nav) {
+  currentNavbarData = { ...currentNavbarData, ...nav };
+  try {
+    localStorage.setItem(STORAGE_KEYS.NAVBAR, JSON.stringify(currentNavbarData));
+  } catch (e) {
+    console.error('Gagal simpan navbar:', e);
+  }
+  syncToServer();
+}
+
+function saveMenuSectionToStorage(sec) {
+  currentMenuSectionData = { ...currentMenuSectionData, ...sec };
+  try {
+    localStorage.setItem(STORAGE_KEYS.MENU_SECTION, JSON.stringify(currentMenuSectionData));
+  } catch (e) {
+    console.error('Gagal simpan menu section:', e);
+  }
+  syncToServer();
+}
+
+function saveGallerySectionToStorage(sec) {
+  currentGallerySectionData = { ...currentGallerySectionData, ...sec };
+  try {
+    localStorage.setItem(STORAGE_KEYS.GALLERY_SECTION, JSON.stringify(currentGallerySectionData));
+  } catch (e) {
+    console.error('Gagal simpan gallery section:', e);
+  }
+  syncToServer();
+}
+
+function saveFooterToStorage(footer) {
+  currentFooterData = { ...currentFooterData, ...footer };
+  try {
+    localStorage.setItem(STORAGE_KEYS.FOOTER, JSON.stringify(currentFooterData));
+  } catch (e) {
+    console.error('Gagal simpan footer:', e);
+  }
+  syncToServer();
 }
 
 function saveMenusToStorage(items) {
@@ -764,6 +961,7 @@ function initAdminDashboard() {
         document.getElementById('adminPaneMenu')?.classList.add('active');
         renderAdminMenuTable(currentMenuItems);
         updateAdminStats();
+        loadMenuSectionForm();
       }
       if (tabName === 'cover') {
         document.getElementById('adminPaneCover')?.classList.add('active');
@@ -772,6 +970,7 @@ function initAdminDashboard() {
       if (tabName === 'galeri') {
         document.getElementById('adminPaneGaleri')?.classList.add('active');
         renderAdminGalleryTable(currentGalleryItems);
+        loadGallerySectionForm();
       }
       if (tabName === 'alamat') {
         document.getElementById('adminPaneAlamat')?.classList.add('active');
@@ -780,6 +979,14 @@ function initAdminDashboard() {
       if (tabName === 'kontak') {
         document.getElementById('adminPaneKontak')?.classList.add('active');
         loadContactForm();
+      }
+      if (tabName === 'navfooter') {
+        document.getElementById('adminPaneNavFooter')?.classList.add('active');
+        loadNavFooterForm();
+      }
+      if (tabName === 'theme') {
+        document.getElementById('adminPaneTheme')?.classList.add('active');
+        loadThemeForm();
       }
       if (tabName === 'promo') {
         document.getElementById('adminPanePromo')?.classList.add('active');
@@ -849,6 +1056,35 @@ function initAdminDashboard() {
     menuItemForm.addEventListener('submit', handleSaveMenuItem);
   }
 
+  // 2b. Menu Section (Teks & Brosur Menu)
+  const menuSectionSettingsForm = document.getElementById('menuSectionSettingsForm');
+  const settingBrochureFileInput = document.getElementById('settingBrochureFileInput');
+  const settingBrochureImage = document.getElementById('settingBrochureImage');
+  const settingBrochurePreview = document.getElementById('settingBrochurePreview');
+
+  if (settingBrochureFileInput) {
+    settingBrochureFileInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (evt) => {
+        if (settingBrochureImage) settingBrochureImage.value = evt.target.result;
+        if (settingBrochurePreview) settingBrochurePreview.src = evt.target.result;
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+
+  if (settingBrochureImage) {
+    settingBrochureImage.addEventListener('input', () => {
+      if (settingBrochurePreview) settingBrochurePreview.src = settingBrochureImage.value || 'images/branding/menu-asli.jpeg';
+    });
+  }
+
+  if (menuSectionSettingsForm) {
+    menuSectionSettingsForm.addEventListener('submit', handleSaveMenuSection);
+  }
+
   // 3. Cover Settings
   const coverSettingsForm = document.getElementById('coverSettingsForm');
   const coverLogoFileInput = document.getElementById('coverLogoFileInput');
@@ -914,6 +1150,12 @@ function initAdminDashboard() {
     galleryItemForm.addEventListener('submit', handleSaveGalleryItem);
   }
 
+  // 4b. Gallery Section (Teks Galeri)
+  const gallerySectionSettingsForm = document.getElementById('gallerySectionSettingsForm');
+  if (gallerySectionSettingsForm) {
+    gallerySectionSettingsForm.addEventListener('submit', handleSaveGallerySection);
+  }
+
   // 5. Location Form
   const locationSettingsForm = document.getElementById('locationSettingsForm');
   if (locationSettingsForm) {
@@ -924,6 +1166,72 @@ function initAdminDashboard() {
   const contactSettingsForm = document.getElementById('contactSettingsForm');
   if (contactSettingsForm) {
     contactSettingsForm.addEventListener('submit', handleSaveContact);
+  }
+
+  // 6b. Nav & Footer Form
+  const navFooterSettingsForm = document.getElementById('navFooterSettingsForm');
+  const settingNavLogoFileInput = document.getElementById('settingNavLogoFileInput');
+  const settingNavLogo = document.getElementById('settingNavLogo');
+  const settingNavLogoPreview = document.getElementById('settingNavLogoPreview');
+
+  if (settingNavLogoFileInput) {
+    settingNavLogoFileInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (evt) => {
+        if (settingNavLogo) settingNavLogo.value = evt.target.result;
+        if (settingNavLogoPreview) settingNavLogoPreview.src = evt.target.result;
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+
+  if (settingNavLogo) {
+    settingNavLogo.addEventListener('input', () => {
+      if (settingNavLogoPreview) settingNavLogoPreview.src = settingNavLogo.value || 'images/branding/logo.jpg';
+    });
+  }
+
+  if (navFooterSettingsForm) {
+    navFooterSettingsForm.addEventListener('submit', handleSaveNavFooter);
+  }
+
+  // 6c. Theme & Colors Form
+  const themeSettingsForm = document.getElementById('themeSettingsForm');
+  const pInput = document.getElementById('settingThemePrimary');
+  const pPick = document.getElementById('settingThemePrimaryPicker');
+  const sInput = document.getElementById('settingThemeSecondary');
+  const sPick = document.getElementById('settingThemeSecondaryPicker');
+  const aInput = document.getElementById('settingThemeAccent');
+  const aPick = document.getElementById('settingThemeAccentPicker');
+  const bgInput = document.getElementById('settingThemeBg');
+  const bgPick = document.getElementById('settingThemeBgPicker');
+  const btnResetTheme = document.getElementById('btnResetThemeColors');
+
+  if (pPick && pInput) {
+    pPick.addEventListener('input', () => { pInput.value = pPick.value; updateThemeLivePreview(); });
+    pInput.addEventListener('input', () => { pPick.value = pInput.value; updateThemeLivePreview(); });
+  }
+  if (sPick && sInput) {
+    sPick.addEventListener('input', () => { sInput.value = sPick.value; updateThemeLivePreview(); });
+    sInput.addEventListener('input', () => { sPick.value = sInput.value; updateThemeLivePreview(); });
+  }
+  if (aPick && aInput) {
+    aPick.addEventListener('input', () => { aInput.value = aPick.value; updateThemeLivePreview(); });
+    aInput.addEventListener('input', () => { aPick.value = aInput.value; updateThemeLivePreview(); });
+  }
+  if (bgPick && bgInput) {
+    bgPick.addEventListener('input', () => { bgInput.value = bgPick.value; updateThemeLivePreview(); });
+    bgInput.addEventListener('input', () => { bgPick.value = bgInput.value; updateThemeLivePreview(); });
+  }
+
+  if (btnResetTheme) {
+    btnResetTheme.addEventListener('click', resetThemeColorsToDefault);
+  }
+
+  if (themeSettingsForm) {
+    themeSettingsForm.addEventListener('submit', handleSaveTheme);
   }
 
   // 7. Promo Settings Form
@@ -1245,6 +1553,52 @@ window.handleDeleteMenuItem = function(id) {
 };
 
 // ==========================================
+// 1b. KELOLA TEKS & BROSUR MENU
+// ==========================================
+function loadMenuSectionForm() {
+  const sub = document.getElementById('settingMenuSubtitle');
+  const title = document.getElementById('settingMenuTitle');
+  const desc = document.getElementById('settingMenuDesc');
+  const bTitle = document.getElementById('settingBrochureTitle');
+  const bBtn = document.getElementById('settingBrochureBtnText');
+  const bDesc = document.getElementById('settingBrochureDesc');
+  const bImg = document.getElementById('settingBrochureImage');
+  const bPrev = document.getElementById('settingBrochurePreview');
+  const ph = document.getElementById('settingMenuSearchPlaceholder');
+  const fn = document.getElementById('settingMenuFooterNote');
+
+  if (sub) sub.value = currentMenuSectionData.subtitle || '';
+  if (title) title.value = currentMenuSectionData.title || '';
+  if (desc) desc.value = currentMenuSectionData.desc || '';
+  if (bTitle) bTitle.value = currentMenuSectionData.brochureTitle || '';
+  if (bBtn) bBtn.value = currentMenuSectionData.brochureBtnText || '';
+  if (bDesc) bDesc.value = currentMenuSectionData.brochureDesc || '';
+  if (bImg) bImg.value = currentMenuSectionData.brochureImage || '';
+  if (bPrev) bPrev.src = currentMenuSectionData.brochureImage || 'images/branding/menu-asli.jpeg';
+  if (ph) ph.value = currentMenuSectionData.searchPlaceholder || '';
+  if (fn) fn.value = currentMenuSectionData.footerNote || '';
+}
+
+function handleSaveMenuSection(e) {
+  e.preventDefault();
+  const updated = {
+    ...currentMenuSectionData,
+    subtitle: document.getElementById('settingMenuSubtitle')?.value.trim() || currentMenuSectionData.subtitle,
+    title: document.getElementById('settingMenuTitle')?.value.trim() || currentMenuSectionData.title,
+    desc: document.getElementById('settingMenuDesc')?.value.trim() || currentMenuSectionData.desc,
+    brochureTitle: document.getElementById('settingBrochureTitle')?.value.trim() || currentMenuSectionData.brochureTitle,
+    brochureBtnText: document.getElementById('settingBrochureBtnText')?.value.trim() || currentMenuSectionData.brochureBtnText,
+    brochureDesc: document.getElementById('settingBrochureDesc')?.value.trim() || currentMenuSectionData.brochureDesc,
+    brochureImage: document.getElementById('settingBrochureImage')?.value.trim() || currentMenuSectionData.brochureImage,
+    searchPlaceholder: document.getElementById('settingMenuSearchPlaceholder')?.value.trim() || currentMenuSectionData.searchPlaceholder,
+    footerNote: document.getElementById('settingMenuFooterNote')?.value.trim() || currentMenuSectionData.footerNote
+  };
+
+  saveMenuSectionToStorage(updated);
+  showToast('Pengaturan teks & brosur halaman menu berhasil disimpan! 📖');
+}
+
+// ==========================================
 // 2. KELOLA COVER LOGIC
 // ==========================================
 function loadCoverForm() {
@@ -1471,9 +1825,44 @@ window.handleDeleteGalleryItem = function(id) {
 };
 
 // ==========================================
+// 3b. KELOLA TEKS GALERI LOGIC
+// ==========================================
+function loadGallerySectionForm() {
+  const sub = document.getElementById('settingGallerySubtitle');
+  const title = document.getElementById('settingGalleryTitle');
+  const desc = document.getElementById('settingGalleryDesc');
+  const igBtnText = document.getElementById('settingGalleryIgBtnText');
+  const igBtnUrl = document.getElementById('settingGalleryIgBtnUrl');
+
+  if (sub) sub.value = currentGallerySectionData.subtitle || '';
+  if (title) title.value = currentGallerySectionData.title || '';
+  if (desc) desc.value = currentGallerySectionData.desc || '';
+  if (igBtnText) igBtnText.value = currentGallerySectionData.igBtnText || '';
+  if (igBtnUrl) igBtnUrl.value = currentGallerySectionData.igBtnUrl || '';
+}
+
+function handleSaveGallerySection(e) {
+  e.preventDefault();
+  const updated = {
+    ...currentGallerySectionData,
+    subtitle: document.getElementById('settingGallerySubtitle')?.value.trim() || currentGallerySectionData.subtitle,
+    title: document.getElementById('settingGalleryTitle')?.value.trim() || currentGallerySectionData.title,
+    desc: document.getElementById('settingGalleryDesc')?.value.trim() || currentGallerySectionData.desc,
+    igBtnText: document.getElementById('settingGalleryIgBtnText')?.value.trim() || currentGallerySectionData.igBtnText,
+    igBtnUrl: document.getElementById('settingGalleryIgBtnUrl')?.value.trim() || currentGallerySectionData.igBtnUrl
+  };
+
+  saveGallerySectionToStorage(updated);
+  showToast('Pengaturan teks galeri visual berhasil disimpan! 📸');
+}
+
+// ==========================================
 // 4. KELOLA LOKASI LOGIC
 // ==========================================
 function loadLocationForm() {
+  const sub = document.getElementById('settingLocSubtitle');
+  const title = document.getElementById('settingLocTitle');
+  const desc = document.getElementById('settingLocDesc');
   const bName = document.getElementById('settingLocBranchName');
   const addr = document.getElementById('settingLocAddress');
   const openText = document.getElementById('settingLocOpenHoursText');
@@ -1481,12 +1870,16 @@ function loadLocationForm() {
   const closeH = document.getElementById('settingLocCloseHour');
   const fac = document.getElementById('settingLocFacilities');
   const pay = document.getElementById('settingLocPayment');
+  const otherTitle = document.getElementById('settingLocOtherBranchTitle');
+  const other = document.getElementById('settingLocOtherBranch');
   const maps = document.getElementById('settingLocMapsUrl');
   const embed = document.getElementById('settingLocMapEmbed');
-  const title = document.getElementById('settingLocMapTitle');
+  const mapTitle = document.getElementById('settingLocMapTitle');
   const badge = document.getElementById('settingLocMapBadge');
-  const other = document.getElementById('settingLocOtherBranch');
 
+  if (sub) sub.value = currentLocationData.subtitle || '';
+  if (title) title.value = currentLocationData.title || '';
+  if (desc) desc.value = currentLocationData.desc || '';
   if (bName) bName.value = currentLocationData.branchName || '';
   if (addr) addr.value = currentLocationData.address || '';
   if (openText) openText.value = currentLocationData.openHoursText || '';
@@ -1494,11 +1887,12 @@ function loadLocationForm() {
   if (closeH) closeH.value = currentLocationData.closeHour ?? 24;
   if (fac) fac.value = currentLocationData.facilities || '';
   if (pay) pay.value = currentLocationData.paymentMethods || '';
+  if (otherTitle) otherTitle.value = currentLocationData.otherBranchTitle || '';
+  if (other) other.value = currentLocationData.otherBranch || '';
   if (maps) maps.value = currentLocationData.mapsUrl || '';
   if (embed) embed.value = currentLocationData.mapEmbedSrc || '';
-  if (title) title.value = currentLocationData.mapTitle || '';
+  if (mapTitle) mapTitle.value = currentLocationData.mapTitle || '';
   if (badge) badge.value = currentLocationData.mapBadge || '';
-  if (other) other.value = currentLocationData.otherBranch || '';
 }
 
 function handleSaveLocation(e) {
@@ -1508,6 +1902,9 @@ function handleSaveLocation(e) {
 
   const updatedLoc = {
     ...currentLocationData,
+    subtitle: document.getElementById('settingLocSubtitle')?.value.trim() || currentLocationData.subtitle,
+    title: document.getElementById('settingLocTitle')?.value.trim() || currentLocationData.title,
+    desc: document.getElementById('settingLocDesc')?.value.trim() || currentLocationData.desc,
     branchName: document.getElementById('settingLocBranchName')?.value.trim() || currentLocationData.branchName,
     address: document.getElementById('settingLocAddress')?.value.trim() || currentLocationData.address,
     openHoursText: document.getElementById('settingLocOpenHoursText')?.value.trim() || currentLocationData.openHoursText,
@@ -1515,11 +1912,12 @@ function handleSaveLocation(e) {
     closeHour: isNaN(closeH) ? 24 : closeH,
     facilities: document.getElementById('settingLocFacilities')?.value.trim() || currentLocationData.facilities,
     paymentMethods: document.getElementById('settingLocPayment')?.value.trim() || currentLocationData.paymentMethods,
+    otherBranchTitle: document.getElementById('settingLocOtherBranchTitle')?.value.trim() || currentLocationData.otherBranchTitle,
+    otherBranch: document.getElementById('settingLocOtherBranch')?.value.trim() || currentLocationData.otherBranch,
     mapsUrl: document.getElementById('settingLocMapsUrl')?.value.trim() || currentLocationData.mapsUrl,
     mapEmbedSrc: document.getElementById('settingLocMapEmbed')?.value.trim() || currentLocationData.mapEmbedSrc,
     mapTitle: document.getElementById('settingLocMapTitle')?.value.trim() || currentLocationData.mapTitle,
-    mapBadge: document.getElementById('settingLocMapBadge')?.value.trim() || currentLocationData.mapBadge,
-    otherBranch: document.getElementById('settingLocOtherBranch')?.value.trim() || currentLocationData.otherBranch
+    mapBadge: document.getElementById('settingLocMapBadge')?.value.trim() || currentLocationData.mapBadge
   };
 
   saveLocationToStorage(updatedLoc);
@@ -1530,50 +1928,251 @@ function handleSaveLocation(e) {
 // 5. KELOLA KONTAK LOGIC
 // ==========================================
 function loadContactForm() {
+  const sub = document.getElementById('settingContactSubtitle');
+  const title = document.getElementById('settingContactTitle');
+  const desc = document.getElementById('settingContactDesc');
   const ann = document.getElementById('settingContactAnnouncement');
+
+  const waTitle = document.getElementById('settingContactWaTitle');
+  const waDesc = document.getElementById('settingContactWaDesc');
   const waNum = document.getElementById('settingContactWaNumber');
   const waDisp = document.getElementById('settingContactWaDisplay');
+  const floatingWa = document.getElementById('settingContactFloatingWaText');
+
+  const igBTitle = document.getElementById('settingContactIgBranchTitle');
+  const igBDesc = document.getElementById('settingContactIgBranchDesc');
   const igBHandle = document.getElementById('settingContactIgBranchHandle');
   const igBUrl = document.getElementById('settingContactIgBranchUrl');
+
+  const igOTitle = document.getElementById('settingContactIgOfficialTitle');
+  const igODesc = document.getElementById('settingContactIgOfficialDesc');
   const igOHandle = document.getElementById('settingContactIgOfficialHandle');
   const igOUrl = document.getElementById('settingContactIgOfficialUrl');
+
+  const pTitle = document.getElementById('settingContactPartnershipTitle');
+  const pDesc = document.getElementById('settingContactPartnershipDesc');
+  const phone = document.getElementById('settingContactPhoneHotline');
+
+  const delTitle = document.getElementById('settingContactDeliveryTitle');
+  const delSub = document.getElementById('settingContactDeliverySubtitle');
   const gofood = document.getElementById('settingContactGofoodUrl');
   const grabfood = document.getElementById('settingContactGrabfoodUrl');
   const shopeefood = document.getElementById('settingContactShopeefoodUrl');
-  const phone = document.getElementById('settingContactPhoneHotline');
 
+  const fbTitle = document.getElementById('settingContactFeedbackTitle');
+  const fbDesc = document.getElementById('settingContactFeedbackDesc');
+
+  if (sub) sub.value = currentContactData.subtitle || '';
+  if (title) title.value = currentContactData.title || '';
+  if (desc) desc.value = currentContactData.desc || '';
   if (ann) ann.value = currentContactData.announcement || '';
+
+  if (waTitle) waTitle.value = currentContactData.waTitle || '';
+  if (waDesc) waDesc.value = currentContactData.waDesc || '';
   if (waNum) waNum.value = currentContactData.waNumber || '';
   if (waDisp) waDisp.value = currentContactData.waDisplay || '';
+  if (floatingWa) floatingWa.value = currentContactData.floatingWaText || '';
+
+  if (igBTitle) igBTitle.value = currentContactData.igBranchTitle || '';
+  if (igBDesc) igBDesc.value = currentContactData.igBranchDesc || '';
   if (igBHandle) igBHandle.value = currentContactData.igBranchHandle || '';
   if (igBUrl) igBUrl.value = currentContactData.igBranchUrl || '';
+
+  if (igOTitle) igOTitle.value = currentContactData.igOfficialTitle || '';
+  if (igODesc) igODesc.value = currentContactData.igOfficialDesc || '';
   if (igOHandle) igOHandle.value = currentContactData.igOfficialHandle || '';
   if (igOUrl) igOUrl.value = currentContactData.igOfficialUrl || '';
+
+  if (pTitle) pTitle.value = currentContactData.partnershipTitle || '';
+  if (pDesc) pDesc.value = currentContactData.partnershipDesc || '';
+  if (phone) phone.value = currentContactData.phoneHotline || '';
+
+  if (delTitle) delTitle.value = currentContactData.deliveryTitle || '';
+  if (delSub) delSub.value = currentContactData.deliverySubtitle || '';
   if (gofood) gofood.value = currentContactData.gofoodUrl || '';
   if (grabfood) grabfood.value = currentContactData.grabfoodUrl || '';
   if (shopeefood) shopeefood.value = currentContactData.shopeefoodUrl || '';
-  if (phone) phone.value = currentContactData.phoneHotline || '';
+
+  if (fbTitle) fbTitle.value = currentContactData.feedbackTitle || '';
+  if (fbDesc) fbDesc.value = currentContactData.feedbackDesc || '';
 }
 
 function handleSaveContact(e) {
   e.preventDefault();
   const updatedContact = {
     ...currentContactData,
+    subtitle: document.getElementById('settingContactSubtitle')?.value.trim() || currentContactData.subtitle,
+    title: document.getElementById('settingContactTitle')?.value.trim() || currentContactData.title,
+    desc: document.getElementById('settingContactDesc')?.value.trim() || currentContactData.desc,
     announcement: document.getElementById('settingContactAnnouncement')?.value.trim() || currentContactData.announcement,
+
+    waTitle: document.getElementById('settingContactWaTitle')?.value.trim() || currentContactData.waTitle,
+    waDesc: document.getElementById('settingContactWaDesc')?.value.trim() || currentContactData.waDesc,
     waNumber: document.getElementById('settingContactWaNumber')?.value.trim() || currentContactData.waNumber,
     waDisplay: document.getElementById('settingContactWaDisplay')?.value.trim() || currentContactData.waDisplay,
+    floatingWaText: document.getElementById('settingContactFloatingWaText')?.value.trim() || currentContactData.floatingWaText,
+
+    igBranchTitle: document.getElementById('settingContactIgBranchTitle')?.value.trim() || currentContactData.igBranchTitle,
+    igBranchDesc: document.getElementById('settingContactIgBranchDesc')?.value.trim() || currentContactData.igBranchDesc,
     igBranchHandle: document.getElementById('settingContactIgBranchHandle')?.value.trim() || currentContactData.igBranchHandle,
     igBranchUrl: document.getElementById('settingContactIgBranchUrl')?.value.trim() || currentContactData.igBranchUrl,
+
+    igOfficialTitle: document.getElementById('settingContactIgOfficialTitle')?.value.trim() || currentContactData.igOfficialTitle,
+    igOfficialDesc: document.getElementById('settingContactIgOfficialDesc')?.value.trim() || currentContactData.igOfficialDesc,
     igOfficialHandle: document.getElementById('settingContactIgOfficialHandle')?.value.trim() || currentContactData.igOfficialHandle,
     igOfficialUrl: document.getElementById('settingContactIgOfficialUrl')?.value.trim() || currentContactData.igOfficialUrl,
+
+    partnershipTitle: document.getElementById('settingContactPartnershipTitle')?.value.trim() || currentContactData.partnershipTitle,
+    partnershipDesc: document.getElementById('settingContactPartnershipDesc')?.value.trim() || currentContactData.partnershipDesc,
+    phoneHotline: document.getElementById('settingContactPhoneHotline')?.value.trim() || currentContactData.phoneHotline,
+
+    deliveryTitle: document.getElementById('settingContactDeliveryTitle')?.value.trim() || currentContactData.deliveryTitle,
+    deliverySubtitle: document.getElementById('settingContactDeliverySubtitle')?.value.trim() || currentContactData.deliverySubtitle,
     gofoodUrl: document.getElementById('settingContactGofoodUrl')?.value.trim() || currentContactData.gofoodUrl,
     grabfoodUrl: document.getElementById('settingContactGrabfoodUrl')?.value.trim() || currentContactData.grabfoodUrl,
     shopeefoodUrl: document.getElementById('settingContactShopeefoodUrl')?.value.trim() || currentContactData.shopeefoodUrl,
-    phoneHotline: document.getElementById('settingContactPhoneHotline')?.value.trim() || currentContactData.phoneHotline
+
+    feedbackTitle: document.getElementById('settingContactFeedbackTitle')?.value.trim() || currentContactData.feedbackTitle,
+    feedbackDesc: document.getElementById('settingContactFeedbackDesc')?.value.trim() || currentContactData.feedbackDesc
   };
 
   saveContactToStorage(updatedContact);
-  showToast('Kontak & media sosial berhasil disimpan! 📱');
+  showToast('Kontak, media sosial, delivery, & info kemitraan berhasil disimpan! 📱');
+}
+
+// ==========================================
+// 5b. KELOLA HEADER & FOOTER LOGIC
+// ==========================================
+function loadNavFooterForm() {
+  const badge = document.getElementById('settingNavAnnouncementBadge');
+  const ann = document.getElementById('settingNavAnnouncementText');
+  const brandTitle = document.getElementById('settingNavBrandTitle');
+  const brandSub = document.getElementById('settingNavBrandSub');
+  const logo = document.getElementById('settingNavLogo');
+  const preview = document.getElementById('settingNavLogoPreview');
+  const orderBtn = document.getElementById('settingNavOrderBtnText');
+
+  const fTitle = document.getElementById('settingFooterBrandTitle');
+  const fHalal = document.getElementById('settingFooterHalalBadge');
+  const fDesc = document.getElementById('settingFooterBrandDesc');
+  const fCopy = document.getElementById('settingFooterCopyright');
+  const fDisc = document.getElementById('settingFooterDisclaimer');
+
+  if (badge) badge.value = currentNavbarData.announcementBadge || '';
+  if (ann) ann.value = currentNavbarData.announcementText || '';
+  if (brandTitle) brandTitle.value = currentNavbarData.brandTitle || '';
+  if (brandSub) brandSub.value = currentNavbarData.brandSub || '';
+  if (logo) logo.value = currentNavbarData.logo || '';
+  if (preview) preview.src = currentNavbarData.logo || 'images/branding/logo.jpg';
+  if (orderBtn) orderBtn.value = currentNavbarData.orderBtnText || '';
+
+  if (fTitle) fTitle.value = currentFooterData.brandTitle || '';
+  if (fHalal) fHalal.value = currentFooterData.halalBadge || '';
+  if (fDesc) fDesc.value = currentFooterData.brandDesc || '';
+  if (fCopy) fCopy.value = currentFooterData.copyright || '';
+  if (fDisc) fDisc.value = currentFooterData.disclaimer || '';
+}
+
+function handleSaveNavFooter(e) {
+  e.preventDefault();
+  const updatedNav = {
+    ...currentNavbarData,
+    announcementBadge: document.getElementById('settingNavAnnouncementBadge')?.value.trim() || currentNavbarData.announcementBadge,
+    announcementText: document.getElementById('settingNavAnnouncementText')?.value.trim() || currentNavbarData.announcementText,
+    brandTitle: document.getElementById('settingNavBrandTitle')?.value.trim() || currentNavbarData.brandTitle,
+    brandSub: document.getElementById('settingNavBrandSub')?.value.trim() || currentNavbarData.brandSub,
+    logo: document.getElementById('settingNavLogo')?.value.trim() || currentNavbarData.logo,
+    orderBtnText: document.getElementById('settingNavOrderBtnText')?.value.trim() || currentNavbarData.orderBtnText
+  };
+
+  const updatedFooter = {
+    ...currentFooterData,
+    brandTitle: document.getElementById('settingFooterBrandTitle')?.value.trim() || currentFooterData.brandTitle,
+    halalBadge: document.getElementById('settingFooterHalalBadge')?.value.trim() || currentFooterData.halalBadge,
+    brandDesc: document.getElementById('settingFooterBrandDesc')?.value.trim() || currentFooterData.brandDesc,
+    copyright: document.getElementById('settingFooterCopyright')?.value.trim() || currentFooterData.copyright,
+    disclaimer: document.getElementById('settingFooterDisclaimer')?.value.trim() || currentFooterData.disclaimer
+  };
+
+  saveNavbarToStorage(updatedNav);
+  saveFooterToStorage(updatedFooter);
+  showToast('Pengaturan Header (Navbar) dan Footer berhasil disimpan! 📢');
+}
+
+// ==========================================
+// 5c. KELOLA TEMA & WARNA LOGIC
+// ==========================================
+function updateThemeLivePreview() {
+  const pCol = document.getElementById('settingThemePrimary')?.value || '#FF6700';
+  const sCol = document.getElementById('settingThemeSecondary')?.value || '#5A1679';
+  const aCol = document.getElementById('settingThemeAccent')?.value || '#FFC400';
+  const bgCol = document.getElementById('settingThemeBg')?.value || '#FFF9F2';
+
+  const box = document.getElementById('themePreviewBox');
+  const title = document.getElementById('themePreviewTitle');
+  const btn = document.getElementById('themePreviewBtnPrimary');
+  const badge = document.getElementById('themePreviewBadge');
+
+  if (box) {
+    box.style.backgroundColor = bgCol;
+    box.style.borderColor = sCol;
+    box.style.boxShadow = `4px 4px 0 ${sCol}`;
+  }
+  if (title) title.style.color = pCol;
+  if (btn) {
+    btn.style.backgroundColor = pCol;
+    btn.style.borderColor = sCol;
+  }
+  if (badge) {
+    badge.style.backgroundColor = aCol;
+    badge.style.borderColor = sCol;
+  }
+}
+
+function loadThemeForm() {
+  const pInput = document.getElementById('settingThemePrimary');
+  const pPick = document.getElementById('settingThemePrimaryPicker');
+  const sInput = document.getElementById('settingThemeSecondary');
+  const sPick = document.getElementById('settingThemeSecondaryPicker');
+  const aInput = document.getElementById('settingThemeAccent');
+  const aPick = document.getElementById('settingThemeAccentPicker');
+  const bgInput = document.getElementById('settingThemeBg');
+  const bgPick = document.getElementById('settingThemeBgPicker');
+
+  const p = currentThemeData.primaryColor || '#FF6700';
+  const s = currentThemeData.secondaryColor || '#5A1679';
+  const a = currentThemeData.accentColor || '#FFC400';
+  const bg = currentThemeData.bgColor || '#FFF9F2';
+
+  if (pInput) pInput.value = p;
+  if (pPick) pPick.value = p;
+  if (sInput) sInput.value = s;
+  if (sPick) sPick.value = s;
+  if (aInput) aInput.value = a;
+  if (aPick) aPick.value = a;
+  if (bgInput) bgInput.value = bg;
+  if (bgPick) bgPick.value = bg;
+
+  updateThemeLivePreview();
+}
+
+function resetThemeColorsToDefault() {
+  currentThemeData = { ...DEFAULT_THEME_DATA };
+  loadThemeForm();
+  showToast('Warna tema dikembalikan ke warna default Mak Igun! 🔄');
+}
+
+function handleSaveTheme(e) {
+  e.preventDefault();
+  const updatedTheme = {
+    primaryColor: document.getElementById('settingThemePrimary')?.value.trim() || currentThemeData.primaryColor,
+    secondaryColor: document.getElementById('settingThemeSecondary')?.value.trim() || currentThemeData.secondaryColor,
+    accentColor: document.getElementById('settingThemeAccent')?.value.trim() || currentThemeData.accentColor,
+    bgColor: document.getElementById('settingThemeBg')?.value.trim() || currentThemeData.bgColor
+  };
+
+  saveThemeToStorage(updatedTheme);
+  showToast('Skema warna tema website berhasil disimpan & diterapkan! 🎨');
 }
 
 // ==========================================
@@ -1712,11 +2311,16 @@ function handleExportDataJSON() {
     app: 'Nasi Kulit Mak Igun',
     version: '2.0',
     exportDate: new Date().toISOString(),
+    theme: currentThemeData,
+    navbar: currentNavbarData,
+    menuSection: currentMenuSectionData,
     menus: currentMenuItems,
     cover: currentCoverData,
+    gallerySection: currentGallerySectionData,
     gallery: currentGalleryItems,
     location: currentLocationData,
     contact: currentContactData,
+    footer: currentFooterData,
     promo: currentPromoData,
     settings: currentSettings
   };
@@ -1730,7 +2334,7 @@ function handleExportDataJSON() {
   downloadAnchor.click();
   downloadAnchor.remove();
 
-  showToast('File backup lengkap JSON berhasil diunduh! 📥');
+  showToast('File backup lengkap JSON (12 modul) berhasil diunduh! 📥');
 }
 
 function handleImportDataJSON(e) {
@@ -1741,12 +2345,24 @@ function handleImportDataJSON(e) {
   reader.onload = function(evt) {
     try {
       const parsed = JSON.parse(evt.target.result);
-      if (confirm('Pulihkan seluruh konfigurasi (Menu, Cover, Galeri, Alamat, Kontak, dan Promo) dari file cadangan ini?')) {
+      if (confirm('Pulihkan seluruh konfigurasi (Menu, Cover, Galeri, Alamat, Kontak, Promo, Header, Footer, Tema) dari file cadangan ini?')) {
+        if (parsed.theme) {
+          saveThemeToStorage(parsed.theme);
+        }
+        if (parsed.navbar) {
+          saveNavbarToStorage(parsed.navbar);
+        }
+        if (parsed.menuSection) {
+          saveMenuSectionToStorage(parsed.menuSection);
+        }
         if (parsed.menus && Array.isArray(parsed.menus)) {
           saveMenusToStorage(parsed.menus);
         }
         if (parsed.cover) {
           saveCoverToStorage(parsed.cover);
+        }
+        if (parsed.gallerySection) {
+          saveGallerySectionToStorage(parsed.gallerySection);
         }
         if (parsed.gallery && Array.isArray(parsed.gallery)) {
           saveGalleryToStorage(parsed.gallery);
@@ -1757,9 +2373,30 @@ function handleImportDataJSON(e) {
         if (parsed.contact) {
           saveContactToStorage(parsed.contact);
         }
+        if (parsed.footer) {
+          saveFooterToStorage(parsed.footer);
+        }
         if (parsed.promo) {
           savePromoToStorage(parsed.promo);
         }
+        if (parsed.settings) {
+          currentSettings = parsed.settings;
+          localStorage.setItem(STORAGE_KEYS.SETTINGS, JSON.stringify(currentSettings));
+        }
+
+        // Refresh all forms in dashboard
+        loadMenuSectionForm();
+        loadCoverForm();
+        loadGallerySectionForm();
+        loadLocationForm();
+        loadContactForm();
+        loadNavFooterForm();
+        loadThemeForm();
+        loadPromoForm();
+        renderAdminMenuTable(currentMenuItems);
+        renderAdminGalleryTable(currentGalleryItems);
+        updateAdminStats();
+
         showToast('Seluruh data berhasil dipulihkan dari cadangan! 📤');
       }
     } catch (err) {
@@ -1771,14 +2408,33 @@ function handleImportDataJSON(e) {
 }
 
 function handleResetDefaultData() {
-  if (confirm('PERINGATAN: Seluruh menu, cover, galeri foto, alamat, kontak, dan promo kustom Anda akan direset kembali ke kondisi awal pabrik Mak Igun. Lanjutkan?')) {
+  if (confirm('PERINGATAN: Seluruh menu, cover, galeri foto, alamat, kontak, promo, header, footer, dan warna kustom Anda akan direset kembali ke kondisi awal pabrik Mak Igun. Lanjutkan?')) {
+    saveThemeToStorage(DEFAULT_THEME_DATA);
+    saveNavbarToStorage(DEFAULT_NAVBAR_DATA);
+    saveMenuSectionToStorage(DEFAULT_MENU_SECTION_DATA);
     saveMenusToStorage(DEFAULT_MENU_ITEMS);
     saveCoverToStorage(DEFAULT_COVER_DATA);
+    saveGallerySectionToStorage(DEFAULT_GALLERY_SECTION_DATA);
     saveGalleryToStorage(DEFAULT_GALLERY_ITEMS);
     saveLocationToStorage(DEFAULT_LOCATION_DATA);
     saveContactToStorage(DEFAULT_CONTACT_DATA);
+    saveFooterToStorage(DEFAULT_FOOTER_DATA);
     savePromoToStorage(DEFAULT_PROMO_DATA);
-    showToast('Seluruh data berhasil direset ke pengaturan default! 🔄');
+
+    // Refresh all forms in dashboard
+    loadMenuSectionForm();
+    loadCoverForm();
+    loadGallerySectionForm();
+    loadLocationForm();
+    loadContactForm();
+    loadNavFooterForm();
+    loadThemeForm();
+    loadPromoForm();
+    renderAdminMenuTable(currentMenuItems);
+    renderAdminGalleryTable(currentGalleryItems);
+    updateAdminStats();
+
+    showToast('Seluruh data berhasil direset ke pengaturan default Mak Igun! 🔄');
   }
 }
 

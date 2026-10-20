@@ -401,6 +401,9 @@
     }
   ],
   "location": {
+    "subtitle": "Lokasi & Jam Buka",
+    "title": "Kunjungi <span>Warung Mak Igun</span>",
+    "desc": "Berada di pusat kota Surabaya yang strategis, mudah diakses, dekat dengan pusat belanja dan perkantoran.",
     "branchName": "Cabang Surabaya Pusat",
     "address": "Jl. Pregolan No. 11, Tegalsari, Kec. Tegalsari, Kota Surabaya, Jawa Timur 60262",
     "openHoursText": "Buka Setiap Hari: Pukul 10.00 – 00.00 WIB (Tengah Malam)",
@@ -412,20 +415,37 @@
     "mapEmbedSrc": "https://maps.google.com/maps?q=Jl.+Pregolan+No.+11,+Tegalsari,+Surabaya&t=&z=16&ie=UTF8&iwloc=&output=embed",
     "mapTitle": "Peta Lokasi Jl. Pregolan 11 Surabaya",
     "mapBadge": "Tegalsari, Surabaya",
+    "otherBranchTitle": "ℹ️ Cabang Surabaya Lainnya:",
     "otherBranch": "Cabang Tenggilis: Jl. Raya Tenggilis No. 60, Surabaya Timur (Instagram: @nasikulitmakigun.tenggilis)"
   },
   "contact": {
+    "subtitle": "Hubungi & Ikuti Kami",
+    "title": "Kontak & Media Sosial <span>Mak Igun</span>",
+    "desc": "Mau pesan untuk acara kantor, kumpul keluarga, info kemitraan waralaba, atau kirim kritik dan saran? Hubungi kami langsung melalui saluran resmi berikut!",
     "announcement": "🔥 Cabang Surabaya Pusat: Jl. Pregolan No. 11, Tegalsari • Buka Setiap Hari 10:00 - 00:00 WIB",
-    "waNumber": "087777728228",
-    "waDisplay": "0877-7772-8228",
+    "igBranchTitle": "Instagram Cabang",
+    "igBranchDesc": "Info menu terbaru, promo harian, dan keseruan cabang Surabaya Pusat.",
     "igBranchHandle": "@nasikulitmakigun.surabayapusat",
     "igBranchUrl": "https://www.instagram.com/nasikulitmakigun.surabayapusat/?hl=en",
+    "waTitle": "WhatsApp Pemesanan",
+    "waDesc": "Fast response untuk pesanan porsi banyak, reservasi, & kemitraan.",
+    "waNumber": "087777728228",
+    "waDisplay": "0877-7772-8228",
+    "floatingWaText": "Chat WA Cabang",
+    "igOfficialTitle": "Instagram Official",
+    "igOfficialDesc": "Akun resmi pusat Nasi Kulit Mak Igun seluruh cabang Indonesia.",
     "igOfficialHandle": "@nasikulitmakigun",
     "igOfficialUrl": "https://www.instagram.com/nasikulitmakigun/?hl=en",
+    "partnershipTitle": "Info Kemitraan",
+    "partnershipDesc": "Tertarik membuka franchise / cabang di kotamu? Hubungi manajemen.",
+    "phoneHotline": "087777728228",
+    "deliveryTitle": "Mager Keluar Rumah? Pesan via Aplikasi Delivery Favoritmu!",
+    "deliverySubtitle": "Cari \"Nasi Kulit Mak Igun - Surabaya Pusat / Pregolan\" di aplikasi favoritmu:",
     "gofoodUrl": "https://gofood.link",
     "grabfoodUrl": "https://food.grab.com",
     "shopeefoodUrl": "https://shopee.co.id/shopeefood",
-    "phoneHotline": "087777728228"
+    "feedbackTitle": "Kritik & Saran untuk Mak Igun",
+    "feedbackDesc": "Kepuasan Anda adalah prioritas utama kami. Sampaikan pesan, kesan, atau saran Anda!"
   },
   "settings": {
     "announcement": "🔥 Cabang Surabaya Pusat: Jl. Pregolan No. 11, Tegalsari • Buka Setiap Hari 10:00 - 00:00 WIB",
@@ -450,5 +470,44 @@
     "validUntil": "Berlaku s/d 31 Oktober 2026",
     "bannerImage": "images/menu/paket-cumi.jpg",
     "terms": "Berlaku khusus pemesanan WhatsApp, Takeaway, dan Dine-in di Cabang Surabaya Pusat."
+  },
+  "theme": {
+    "primaryColor": "#FF6700",
+    "secondaryColor": "#5A1679",
+    "accentColor": "#FFC400",
+    "bgColor": "#FFF9F2"
+  },
+  "navbar": {
+    "logo": "images/branding/logo.jpg",
+    "brandTitle": "NASI KULIT MAK IGUN",
+    "brandSub": "Surabaya Pusat",
+    "announcementText": "🔥 Cabang Surabaya Pusat: Jl. Pregolan No. 11, Tegalsari • Buka Setiap Hari 10:00 - 00:00 WIB",
+    "announcementBadge": "LIVE",
+    "orderBtnText": "Pesan Menu"
+  },
+  "menuSection": {
+    "subtitle": "Daftar Menu Resmi",
+    "title": "Pilihan Menu <span>Nasi Kulit Mak Igun</span>",
+    "desc": "Dari menu paket komplit, lauk oseng viral kecombrang, jeroan gongso mantap, hingga es pelepas dahaga. Semua harga tertera transparan sesuai buku menu resmi!",
+    "brochureTitle": "📖 Ingin Melihat Lembar Menu Aslinya?",
+    "brochureDesc": "Tersedia foto papan menu fisik Mak Igun original beresolusi tinggi langsung dari outlet cabang Surabaya Pusat.",
+    "brochureBtnText": "Lihat Foto Menu Fisik (Zoom)",
+    "brochureImage": "images/branding/menu-asli.jpeg",
+    "searchPlaceholder": "Cari menu favoritmu (cth: Cumi, Paru, Kulit, Es Jeruk)...",
+    "footerNote": "* Catatan: Harga tertera pada menu belum termasuk PB 1. Tersedia pilihan Nasi Putih atau Nasi Jagung (+Rp 1.500)."
+  },
+  "gallerySection": {
+    "subtitle": "Galeri Visual Instagram",
+    "title": "Kenikmatan & Suasana <span>Mak Igun</span>",
+    "desc": "Intip hidangan menggoda selera, kriuknya kulit ayam renyah keemasan, dan kehangatan suasana warung Nasi Kulit Mak Igun cabang Surabaya Pusat.",
+    "igBtnText": "Follow Instagram @nasikulitmakigun.surabayapusat",
+    "igBtnUrl": "https://www.instagram.com/nasikulitmakigun.surabayapusat/?hl=en"
+  },
+  "footer": {
+    "brandTitle": "NASI KULIT MAK IGUN",
+    "brandDesc": "Kuliner nasi kulit ayam krispi legendaris hasil kolaborasi desainer ternama <strong>Ivan Gunawan</strong> dan MasterChef <strong>King Abdi</strong>. Gurih renyah melimpah dengan racikan sambal khas Jawa Timur.",
+    "halalBadge": "⭐ 100% Halal & Higienis",
+    "copyright": "© 2026 <strong>Nasi Kulit Mak Igun</strong>. Hak Cipta Dilindungi.",
+    "disclaimer": "Desain Website terinspirasi dari identitas resmi Instagram @nasikulitmakigun.surabayapusat"
   }
 }

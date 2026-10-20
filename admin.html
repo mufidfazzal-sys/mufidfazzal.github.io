@@ -223,7 +223,7 @@
         </div>
       </div>
 
-      <!-- Navigation Tabs (7 Tab) -->
+      <!-- Navigation Tabs (9 Tab Lengkap) -->
       <div class="admin-tabs">
         <button class="admin-tab-btn active" data-tab="menu">
           <span>📋</span> Kelola Menu
@@ -239,6 +239,12 @@
         </button>
         <button class="admin-tab-btn" data-tab="kontak">
           <span>📱</span> Kontak & Medsos
+        </button>
+        <button class="admin-tab-btn" data-tab="navfooter">
+          <span>🏷️</span> Header & Footer
+        </button>
+        <button class="admin-tab-btn" data-tab="theme">
+          <span>🎨</span> Tema & Warna
         </button>
         <button class="admin-tab-btn" data-tab="promo">
           <span>🎁</span> Promo Spesial
@@ -317,6 +323,68 @@
                 <!-- Dynamically filled by admin.js -->
               </tbody>
             </table>
+          </div>
+
+          <!-- Pengaturan Teks Halaman Menu & Brosur Asli -->
+          <div class="admin-card-section" style="margin-top: 24px;">
+            <h4><span>📖</span> Pengaturan Teks & Brosur Halaman Menu</h4>
+            <p class="section-sub">Atur judul seksi menu, deskripsi, banner brosur menu fisik asli, placeholder pencarian, dan catatan kaki harga.</p>
+            <form id="menuSectionSettingsForm">
+              <div class="admin-form-grid">
+                <div>
+                  <label for="settingMenuSubtitle" class="admin-input-label">Sub-Judul Menu:</label>
+                  <input type="text" id="settingMenuSubtitle" class="admin-text-input" placeholder="Daftar Menu Resmi" />
+                </div>
+                <div>
+                  <label for="settingMenuTitle" class="admin-input-label">Judul Utama Menu:</label>
+                  <input type="text" id="settingMenuTitle" class="admin-text-input" placeholder="Pilihan Menu <span>Nasi Kulit Mak Igun</span>" />
+                </div>
+                <div class="full-span">
+                  <label for="settingMenuDesc" class="admin-input-label">Deskripsi Halaman Menu:</label>
+                  <textarea id="settingMenuDesc" class="admin-textarea" rows="2" placeholder="Dari menu paket komplit, lauk oseng viral..."></textarea>
+                </div>
+                <div>
+                  <label for="settingBrochureTitle" class="admin-input-label">Judul Banner Brosur Fisik:</label>
+                  <input type="text" id="settingBrochureTitle" class="admin-text-input" placeholder="📖 Ingin Melihat Lembar Menu Aslinya?" />
+                </div>
+                <div>
+                  <label for="settingBrochureBtnText" class="admin-input-label">Teks Tombol Brosur Fisik:</label>
+                  <input type="text" id="settingBrochureBtnText" class="admin-text-input" placeholder="Lihat Foto Menu Fisik (Zoom)" />
+                </div>
+                <div class="full-span">
+                  <label for="settingBrochureDesc" class="admin-input-label">Deskripsi Banner Brosur Fisik:</label>
+                  <input type="text" id="settingBrochureDesc" class="admin-text-input" placeholder="Tersedia foto papan menu fisik Mak Igun original..." />
+                </div>
+                <div class="full-span">
+                  <label class="admin-input-label">Foto Brosur Menu Fisik:</label>
+                  <div class="admin-img-upload-box">
+                    <img id="settingBrochurePreview" src="images/branding/menu-asli.jpeg" alt="Preview Brosur" class="admin-img-preview" />
+                    <div style="flex: 1;">
+                      <input type="text" id="settingBrochureImage" class="admin-text-input" placeholder="images/branding/menu-asli.jpeg atau URL gambar..." />
+                      <div style="margin-top: 8px;">
+                        <label class="admin-file-upload-btn">
+                          📁 Upload Foto Brosur Baru dari Komputer
+                          <input type="file" id="settingBrochureFileInput" accept="image/*" style="display: none;" />
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <label for="settingMenuSearchPlaceholder" class="admin-input-label">Placeholder Kolom Pencarian:</label>
+                  <input type="text" id="settingMenuSearchPlaceholder" class="admin-text-input" placeholder="Cari menu favoritmu..." />
+                </div>
+                <div>
+                  <label for="settingMenuFooterNote" class="admin-input-label">Catatan Kaki Menu (Bawah):</label>
+                  <input type="text" id="settingMenuFooterNote" class="admin-text-input" placeholder="* Catatan: Harga belum termasuk PB 1..." />
+                </div>
+              </div>
+              <div style="margin-top: 18px;">
+                <button type="submit" class="admin-action-btn admin-btn-save" style="padding: 10px 24px;">
+                  💾 Simpan Teks & Brosur Menu
+                </button>
+              </div>
+            </form>
           </div>
         </div>
 
@@ -493,13 +561,69 @@
               </tbody>
             </table>
           </div>
+
+          <!-- Pengaturan Teks & Tombol Halaman Galeri -->
+          <div class="admin-card-section" style="margin-top: 24px;">
+            <h4><span>📸</span> Pengaturan Teks & Tautan Galeri</h4>
+            <p class="section-sub">Atur judul seksi galeri, deskripsi, dan tombol ajakan follow Instagram resmi.</p>
+            <form id="gallerySectionSettingsForm">
+              <div class="admin-form-grid">
+                <div>
+                  <label for="settingGallerySubtitle" class="admin-input-label">Sub-Judul Galeri:</label>
+                  <input type="text" id="settingGallerySubtitle" class="admin-text-input" placeholder="Galeri Visual Instagram" />
+                </div>
+                <div>
+                  <label for="settingGalleryTitle" class="admin-input-label">Judul Utama Galeri:</label>
+                  <input type="text" id="settingGalleryTitle" class="admin-text-input" placeholder="Kenikmatan & Suasana <span>Mak Igun</span>" />
+                </div>
+                <div class="full-span">
+                  <label for="settingGalleryDesc" class="admin-input-label">Deskripsi Halaman Galeri:</label>
+                  <textarea id="settingGalleryDesc" class="admin-textarea" rows="2" placeholder="Intip hidangan menggoda selera..."></textarea>
+                </div>
+                <div>
+                  <label for="settingGalleryIgBtnText" class="admin-input-label">Teks Tombol Instagram:</label>
+                  <input type="text" id="settingGalleryIgBtnText" class="admin-text-input" placeholder="Follow Instagram @nasikulitmakigun.surabayapusat" />
+                </div>
+                <div>
+                  <label for="settingGalleryIgBtnUrl" class="admin-input-label">URL Profil Instagram:</label>
+                  <input type="url" id="settingGalleryIgBtnUrl" class="admin-text-input" placeholder="https://www.instagram.com/nasikulitmakigun.surabayapusat/?hl=en" />
+                </div>
+              </div>
+              <div style="margin-top: 18px;">
+                <button type="submit" class="admin-action-btn admin-btn-save" style="padding: 10px 24px;">
+                  💾 Simpan Teks Galeri
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
 
         <!-- TAB 4: ALAMAT & LOKASI -->
         <div class="admin-tab-pane" id="adminPaneAlamat">
           <form id="locationSettingsForm">
+            <!-- Judul & Keterangan Seksi -->
             <div class="admin-card-section">
-              <h4><span>📍</span> Identitas Cabang & Alamat Fisik</h4>
+              <h4><span>📍</span> Teks Judul & Deskripsi Seksi Lokasi</h4>
+              <p class="section-sub">Atur sub-judul, judul utama, dan kalimat pengantar seksi lokasi.</p>
+
+              <div class="admin-form-grid">
+                <div>
+                  <label for="settingLocSubtitle" class="admin-input-label">Sub-Judul Lokasi:</label>
+                  <input type="text" id="settingLocSubtitle" class="admin-text-input" placeholder="Lokasi & Jam Buka" />
+                </div>
+                <div>
+                  <label for="settingLocTitle" class="admin-input-label">Judul Utama Lokasi:</label>
+                  <input type="text" id="settingLocTitle" class="admin-text-input" placeholder="Kunjungi <span>Warung Mak Igun</span>" />
+                </div>
+                <div class="full-span">
+                  <label for="settingLocDesc" class="admin-input-label">Deskripsi Seksi Lokasi:</label>
+                  <textarea id="settingLocDesc" class="admin-textarea" rows="2" placeholder="Berada di pusat kota Surabaya yang strategis..."></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="admin-card-section">
+              <h4><span>🏠</span> Identitas Cabang & Alamat Fisik</h4>
               <p class="section-sub">Atur nama cabang, alamat lengkap, dan status live buka/tutup warung.</p>
 
               <div class="admin-form-grid">
@@ -549,9 +673,13 @@
                   <label for="settingLocPayment" class="admin-input-label">Pilihan Pembayaran (Pisahkan koma):</label>
                   <input type="text" id="settingLocPayment" class="admin-text-input" placeholder="Cash, QRIS (BCA, Mandiri, ShopeePay, GoPay, OVO, Dana), Debit" />
                 </div>
-                <div class="full-span">
+                <div>
+                  <label for="settingLocOtherBranchTitle" class="admin-input-label">Judul Box Cabang Lain:</label>
+                  <input type="text" id="settingLocOtherBranchTitle" class="admin-text-input" placeholder="ℹ️ Cabang Surabaya Lainnya:" />
+                </div>
+                <div>
                   <label for="settingLocOtherBranch" class="admin-input-label">Keterangan Cabang Lain di Surabaya:</label>
-                  <input type="text" id="settingLocOtherBranch" class="admin-text-input" placeholder="Segera hadir outlet tambahan di Surabaya Barat & Surabaya Timur!" />
+                  <input type="text" id="settingLocOtherBranch" class="admin-text-input" placeholder="Cabang Tenggilis: Jl. Raya Tenggilis No. 60..." />
                 </div>
               </div>
             </div>
@@ -591,23 +719,41 @@
         <!-- TAB 5: KONTAK & MEDSOS -->
         <div class="admin-tab-pane" id="adminPaneKontak">
           <form id="contactSettingsForm">
+            <!-- Judul & Deskripsi Seksi Kontak -->
             <div class="admin-card-section">
-              <h4><span>📢</span> Teks Bilah Pengumuman Teratas</h4>
-              <p class="section-sub">Pengumuman berjalan yang selalu terlihat oleh pengunjung di bar paling atas.</p>
+              <h4><span>📱</span> Teks Judul & Deskripsi Seksi Kontak</h4>
+              <p class="section-sub">Atur sub-judul, judul utama, dan kalimat pengantar seksi kontak & pesan online.</p>
 
               <div class="admin-form-grid">
+                <div>
+                  <label for="settingContactSubtitle" class="admin-input-label">Sub-Judul Kontak:</label>
+                  <input type="text" id="settingContactSubtitle" class="admin-text-input" placeholder="Hubungi & Ikuti Kami" />
+                </div>
+                <div>
+                  <label for="settingContactTitle" class="admin-input-label">Judul Utama Kontak:</label>
+                  <input type="text" id="settingContactTitle" class="admin-text-input" placeholder="Kontak & Media Sosial <span>Mak Igun</span>" />
+                </div>
                 <div class="full-span">
-                  <label for="settingContactAnnouncement" class="admin-input-label">Teks Pengumuman Atas:</label>
-                  <input type="text" id="settingContactAnnouncement" class="admin-text-input" placeholder="🔥 Cabang Surabaya Pusat: Jl. Pregolan No. 11, Tegalsari • Buka Setiap Hari 10:00 - 00:00 WIB" />
+                  <label for="settingContactDesc" class="admin-input-label">Deskripsi Seksi Kontak:</label>
+                  <textarea id="settingContactDesc" class="admin-textarea" rows="2" placeholder="Mau pesan untuk acara kantor, kumpul keluarga..."></textarea>
                 </div>
               </div>
             </div>
 
+            <!-- WhatsApp Hotline -->
             <div class="admin-card-section">
-              <h4><span>💬</span> WhatsApp Hotline Pemesanan</h4>
+              <h4><span>💬</span> WhatsApp Hotline & Tombol Chat Mengambang</h4>
               <p class="section-sub">Nomor resmi yang menerima format pesanan dari tombol kirim pesanan website.</p>
 
               <div class="admin-form-grid">
+                <div>
+                  <label for="settingContactWaTitle" class="admin-input-label">Judul Kartu WhatsApp:</label>
+                  <input type="text" id="settingContactWaTitle" class="admin-text-input" placeholder="WhatsApp Pemesanan" />
+                </div>
+                <div>
+                  <label for="settingContactWaDesc" class="admin-input-label">Deskripsi Kartu WhatsApp:</label>
+                  <input type="text" id="settingContactWaDesc" class="admin-text-input" placeholder="Fast response untuk pesanan porsi banyak..." />
+                </div>
                 <div>
                   <label for="settingContactWaNumber" class="admin-input-label">Nomor WhatsApp (Angka saja):</label>
                   <input type="text" id="settingContactWaNumber" class="admin-text-input" placeholder="087777728228" />
@@ -617,14 +763,27 @@
                   <label for="settingContactWaDisplay" class="admin-input-label">Teks Tampilan Nomor:</label>
                   <input type="text" id="settingContactWaDisplay" class="admin-text-input" placeholder="0877-7772-8228" />
                 </div>
+                <div class="full-span">
+                  <label for="settingContactFloatingWaText" class="admin-input-label">Teks Tombol Floating WhatsApp (Pojok Kanan Bawah):</label>
+                  <input type="text" id="settingContactFloatingWaText" class="admin-text-input" placeholder="Chat WA Cabang" />
+                </div>
               </div>
             </div>
 
+            <!-- Akun Instagram -->
             <div class="admin-card-section">
               <h4><span>📸</span> Akun Resmi Instagram</h4>
               <p class="section-sub">Tautan profil Instagram cabang Surabaya dan akun official pusat.</p>
 
               <div class="admin-form-grid">
+                <div>
+                  <label for="settingContactIgBranchTitle" class="admin-input-label">Judul Kartu IG Cabang:</label>
+                  <input type="text" id="settingContactIgBranchTitle" class="admin-text-input" placeholder="Instagram Cabang" />
+                </div>
+                <div>
+                  <label for="settingContactIgBranchDesc" class="admin-input-label">Deskripsi Kartu IG Cabang:</label>
+                  <input type="text" id="settingContactIgBranchDesc" class="admin-text-input" placeholder="Info menu terbaru, promo harian..." />
+                </div>
                 <div>
                   <label for="settingContactIgBranchHandle" class="admin-input-label">Username IG Cabang:</label>
                   <input type="text" id="settingContactIgBranchHandle" class="admin-text-input" placeholder="@nasikulitmakigun.surabayapusat" />
@@ -632,6 +791,14 @@
                 <div>
                   <label for="settingContactIgBranchUrl" class="admin-input-label">URL Profil IG Cabang:</label>
                   <input type="text" id="settingContactIgBranchUrl" class="admin-text-input" placeholder="https://www.instagram.com/nasikulitmakigun.surabayapusat/?hl=en" />
+                </div>
+                <div>
+                  <label for="settingContactIgOfficialTitle" class="admin-input-label">Judul Kartu IG Official:</label>
+                  <input type="text" id="settingContactIgOfficialTitle" class="admin-text-input" placeholder="Instagram Official" />
+                </div>
+                <div>
+                  <label for="settingContactIgOfficialDesc" class="admin-input-label">Deskripsi Kartu IG Official:</label>
+                  <input type="text" id="settingContactIgOfficialDesc" class="admin-text-input" placeholder="Akun resmi pusat Nasi Kulit Mak Igun..." />
                 </div>
                 <div>
                   <label for="settingContactIgOfficialHandle" class="admin-input-label">Username IG Official Mak Igun:</label>
@@ -644,11 +811,32 @@
               </div>
             </div>
 
+            <!-- Kemitraan & Delivery -->
             <div class="admin-card-section">
-              <h4><span>🛵</span> Mitra Pesan Online (Delivery Partner)</h4>
-              <p class="section-sub">Tautan aplikasi delivery makanan agar pengunjung bisa langsung order dari kurir favorit.</p>
+              <h4><span>🛵</span> Mitra Pesan Online (Delivery Partner) & Kemitraan</h4>
+              <p class="section-sub">Tautan aplikasi delivery makanan dan kontak info kemitraan.</p>
 
               <div class="admin-form-grid">
+                <div>
+                  <label for="settingContactPartnershipTitle" class="admin-input-label">Judul Kartu Kemitraan:</label>
+                  <input type="text" id="settingContactPartnershipTitle" class="admin-text-input" placeholder="Info Kemitraan" />
+                </div>
+                <div>
+                  <label for="settingContactPartnershipDesc" class="admin-input-label">Deskripsi Kartu Kemitraan:</label>
+                  <input type="text" id="settingContactPartnershipDesc" class="admin-text-input" placeholder="Tertarik membuka franchise / cabang di kotamu?..." />
+                </div>
+                <div>
+                  <label for="settingContactPhoneHotline" class="admin-input-label">Nomor Hotline Kemitraan:</label>
+                  <input type="text" id="settingContactPhoneHotline" class="admin-text-input" placeholder="087777728228" />
+                </div>
+                <div>
+                  <label for="settingContactDeliveryTitle" class="admin-input-label">Judul Banner Delivery:</label>
+                  <input type="text" id="settingContactDeliveryTitle" class="admin-text-input" placeholder="Mager Keluar Rumah? Pesan via Aplikasi Delivery Favoritmu!" />
+                </div>
+                <div class="full-span">
+                  <label for="settingContactDeliverySubtitle" class="admin-input-label">Sub-Judul Banner Delivery:</label>
+                  <input type="text" id="settingContactDeliverySubtitle" class="admin-text-input" placeholder="Cari &quot;Nasi Kulit Mak Igun - Surabaya Pusat / Pregolan&quot; di aplikasi favoritmu:" />
+                </div>
                 <div>
                   <label for="settingContactGofoodUrl" class="admin-input-label">Tautan GoFood:</label>
                   <input type="text" id="settingContactGofoodUrl" class="admin-text-input" placeholder="https://gofood.link/..." />
@@ -657,13 +845,26 @@
                   <label for="settingContactGrabfoodUrl" class="admin-input-label">Tautan GrabFood:</label>
                   <input type="text" id="settingContactGrabfoodUrl" class="admin-text-input" placeholder="https://food.grab.com/..." />
                 </div>
-                <div>
+                <div class="full-span">
                   <label for="settingContactShopeefoodUrl" class="admin-input-label">Tautan ShopeeFood:</label>
                   <input type="text" id="settingContactShopeefoodUrl" class="admin-text-input" placeholder="https://shopee.co.id/shopeefood/..." />
                 </div>
+              </div>
+            </div>
+
+            <!-- Kritik & Saran Box -->
+            <div class="admin-card-section">
+              <h4><span>💌</span> Kotak Kritik & Saran Pelanggan</h4>
+              <p class="section-sub">Atur judul dan pengantar formulir kritik, saran, serta kepuasan rasa.</p>
+
+              <div class="admin-form-grid">
                 <div>
-                  <label for="settingContactPhoneHotline" class="admin-input-label">Nomor Hotline Kemitraan / Franchise:</label>
-                  <input type="text" id="settingContactPhoneHotline" class="admin-text-input" placeholder="087777728228" />
+                  <label for="settingContactFeedbackTitle" class="admin-input-label">Judul Formulir:</label>
+                  <input type="text" id="settingContactFeedbackTitle" class="admin-text-input" placeholder="Kritik & Saran untuk Mak Igun" />
+                </div>
+                <div>
+                  <label for="settingContactFeedbackDesc" class="admin-input-label">Keterangan / Pengantar:</label>
+                  <input type="text" id="settingContactFeedbackDesc" class="admin-text-input" placeholder="Kepuasan Anda adalah prioritas utama kami..." />
                 </div>
               </div>
             </div>
@@ -671,6 +872,160 @@
             <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
               <button type="submit" class="admin-action-btn admin-btn-save" style="padding: 12px 28px; font-size: 1rem;">
                 💾 Simpan Kontak & Medsos
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- TAB 6: HEADER & FOOTER -->
+        <div class="admin-tab-pane" id="adminPaneNavFooter">
+          <form id="navFooterSettingsForm">
+            <div class="admin-card-section">
+              <h4><span>📢</span> Bilah Pengumuman & Navbar</h4>
+              <p class="section-sub">Atur teks banner berjalan, badge live, logo navbar, nama brand, dan tombol pemesanan atas.</p>
+
+              <div class="admin-form-grid">
+                <div>
+                  <label for="settingNavAnnouncementBadge" class="admin-input-label">Teks Badge Pengumuman:</label>
+                  <input type="text" id="settingNavAnnouncementBadge" class="admin-text-input" placeholder="LIVE" />
+                </div>
+                <div>
+                  <label for="settingNavOrderBtnText" class="admin-input-label">Teks Tombol Aksi Navbar:</label>
+                  <input type="text" id="settingNavOrderBtnText" class="admin-text-input" placeholder="Pesan Menu" />
+                </div>
+                <div class="full-span">
+                  <label for="settingNavAnnouncementText" class="admin-input-label">Teks Pengumuman Berjalan:</label>
+                  <input type="text" id="settingNavAnnouncementText" class="admin-text-input" placeholder="🔥 Cabang Surabaya Pusat: Jl. Pregolan No. 11, Tegalsari • Buka Setiap Hari 10:00 - 00:00 WIB" />
+                </div>
+                <div>
+                  <label for="settingNavBrandTitle" class="admin-input-label">Nama Brand Navbar:</label>
+                  <input type="text" id="settingNavBrandTitle" class="admin-text-input" placeholder="NASI KULIT MAK IGUN" />
+                </div>
+                <div>
+                  <label for="settingNavBrandSub" class="admin-input-label">Sub-Nama Brand Navbar:</label>
+                  <input type="text" id="settingNavBrandSub" class="admin-text-input" placeholder="Surabaya Pusat" />
+                </div>
+                <div class="full-span">
+                  <label class="admin-input-label">Logo Navbar:</label>
+                  <div class="admin-img-upload-box">
+                    <img id="settingNavLogoPreview" src="images/branding/logo.jpg" alt="Preview Logo" class="admin-img-preview" />
+                    <div style="flex: 1;">
+                      <input type="text" id="settingNavLogo" class="admin-text-input" placeholder="images/branding/logo.jpg atau URL logo..." />
+                      <div style="margin-top: 8px;">
+                        <label class="admin-file-upload-btn">
+                          📁 Upload Logo Navbar Baru dari Komputer
+                          <input type="file" id="settingNavLogoFileInput" accept="image/*" style="display: none;" />
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="admin-card-section">
+              <h4><span>🦶</span> Pengaturan Footer & Hak Cipta</h4>
+              <p class="section-sub">Atur keterangan profil di bagian paling bawah website, badge sertifikasi, dan teks disclaimer.</p>
+
+              <div class="admin-form-grid">
+                <div>
+                  <label for="settingFooterBrandTitle" class="admin-input-label">Nama Brand Footer:</label>
+                  <input type="text" id="settingFooterBrandTitle" class="admin-text-input" placeholder="NASI KULIT MAK IGUN" />
+                </div>
+                <div>
+                  <label for="settingFooterHalalBadge" class="admin-input-label">Teks Badge Keamanan/Halal:</label>
+                  <input type="text" id="settingFooterHalalBadge" class="admin-text-input" placeholder="⭐ 100% Halal & Higienis" />
+                </div>
+                <div class="full-span">
+                  <label for="settingFooterBrandDesc" class="admin-input-label">Deskripsi Brand Footer:</label>
+                  <textarea id="settingFooterBrandDesc" class="admin-textarea" rows="3" placeholder="Kuliner nasi kulit ayam krispi legendaris..."></textarea>
+                </div>
+                <div>
+                  <label for="settingFooterCopyright" class="admin-input-label">Teks Hak Cipta (Copyright):</label>
+                  <input type="text" id="settingFooterCopyright" class="admin-text-input" placeholder="© 2026 Nasi Kulit Mak Igun. Hak Cipta Dilindungi." />
+                </div>
+                <div>
+                  <label for="settingFooterDisclaimer" class="admin-input-label">Teks Catatan / Disclaimer Kaki:</label>
+                  <input type="text" id="settingFooterDisclaimer" class="admin-text-input" placeholder="Desain Website terinspirasi dari identitas resmi..." />
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
+              <button type="submit" class="admin-action-btn admin-btn-save" style="padding: 12px 28px; font-size: 1rem;">
+                💾 Simpan Header & Footer
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- TAB 7: TEMA & WARNA -->
+        <div class="admin-tab-pane" id="adminPaneTheme">
+          <form id="themeSettingsForm">
+            <div class="admin-card-section">
+              <h4><span>🎨</span> Kustomisasi Warna Tema Website</h4>
+              <p class="section-sub">Ubah skema warna utama seluruh tampilan website secara dinamis dan real-time.</p>
+
+              <div class="admin-form-grid">
+                <div>
+                  <label for="settingThemePrimary" class="admin-input-label">Warna Utama (Signature Orange):</label>
+                  <div style="display: flex; gap: 10px; align-items: center;">
+                    <input type="color" id="settingThemePrimaryPicker" value="#FF6700" style="width: 50px; height: 42px; border: 2px solid var(--color-purple); border-radius: var(--radius-sm); cursor: pointer;" />
+                    <input type="text" id="settingThemePrimary" class="admin-text-input" placeholder="#FF6700" value="#FF6700" />
+                  </div>
+                </div>
+
+                <div>
+                  <label for="settingThemeSecondary" class="admin-input-label">Warna Sekunder (Royal Purple):</label>
+                  <div style="display: flex; gap: 10px; align-items: center;">
+                    <input type="color" id="settingThemeSecondaryPicker" value="#5A1679" style="width: 50px; height: 42px; border: 2px solid var(--color-purple); border-radius: var(--radius-sm); cursor: pointer;" />
+                    <input type="text" id="settingThemeSecondary" class="admin-text-input" placeholder="#5A1679" value="#5A1679" />
+                  </div>
+                </div>
+
+                <div>
+                  <label for="settingThemeAccent" class="admin-input-label">Warna Aksen (Sunshine Yellow):</label>
+                  <div style="display: flex; gap: 10px; align-items: center;">
+                    <input type="color" id="settingThemeAccentPicker" value="#FFC400" style="width: 50px; height: 42px; border: 2px solid var(--color-purple); border-radius: var(--radius-sm); cursor: pointer;" />
+                    <input type="text" id="settingThemeAccent" class="admin-text-input" placeholder="#FFC400" value="#FFC400" />
+                  </div>
+                </div>
+
+                <div>
+                  <label for="settingThemeBg" class="admin-input-label">Warna Latar Halaman (Cream Page BG):</label>
+                  <div style="display: flex; gap: 10px; align-items: center;">
+                    <input type="color" id="settingThemeBgPicker" value="#FFF9F2" style="width: 50px; height: 42px; border: 2px solid var(--color-purple); border-radius: var(--radius-sm); cursor: pointer;" />
+                    <input type="text" id="settingThemeBg" class="admin-text-input" placeholder="#FFF9F2" value="#FFF9F2" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Preview Card -->
+            <div class="admin-card-section" style="background: var(--color-bg-page); border: 2px solid var(--color-purple);">
+              <h4><span>👁️</span> Pratinjau Skema Warna</h4>
+              <p class="section-sub">Lihat contoh kombinasi warna yang dipilih sebelum disimpan.</p>
+
+              <div id="themePreviewBox" style="padding: 20px; border-radius: var(--radius-md); background-color: #FFF9F2; border: 3px solid #5A1679; box-shadow: 4px 4px 0 #5A1679;">
+                <h3 id="themePreviewTitle" style="color: #FF6700; margin-top: 0; font-family: var(--font-display);">Contoh Judul Utama Mak Igun</h3>
+                <p id="themePreviewText" style="color: #290B38; margin-bottom: 14px;">Sensasi kelezatan kulit ayam krispi gurih dengan racikan sambal mantap dan aroma kecombrang.</p>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                  <button type="button" id="themePreviewBtnPrimary" style="background-color: #FF6700; color: #FFF; border: 2px solid #290B38; padding: 8px 16px; border-radius: 9999px; font-weight: 700; cursor: pointer;">
+                    Tombol Utama
+                  </button>
+                  <span id="themePreviewBadge" style="background-color: #FFC400; color: #290B38; border: 2px solid #290B38; padding: 8px 16px; border-radius: 9999px; font-weight: 700;">
+                    ⭐ Badge Aksen
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; flex-wrap: wrap; gap: 12px;">
+              <button type="button" id="btnResetThemeColors" class="admin-action-btn" style="background-color: #E0E0E0; color: #333; border-color: #BDBDBD; padding: 10px 20px;">
+                🔄 Kembalikan ke Warna Asli Mak Igun
+              </button>
+              <button type="submit" class="admin-action-btn admin-btn-save" style="padding: 12px 28px; font-size: 1rem;">
+                💾 Terapkan & Simpan Warna Tema
               </button>
             </div>
           </form>

@@ -22,7 +22,7 @@
 
   <!-- ================= TOP ANNOUNCEMENT BAR ================= -->
   <div class="announcement-bar">
-    <span class="badge-live">LIVE</span>
+    <span class="badge-live" id="topAnnouncementBadge">LIVE</span>
     <span id="topAnnouncementText">🔥 Cabang Surabaya Pusat: Jl. Pregolan No. 11, Tegalsari • Buka Setiap Hari 10:00 - 00:00 WIB</span>
   </div>
 
@@ -49,10 +49,10 @@
   <header class="main-header" id="mainHeader">
     <div class="container nav-container">
       <a href="#cover" class="brand-link" title="Nasi Kulit Mak Igun">
-        <img src="images/branding/logo.jpg" alt="Logo Nasi Kulit Mak Igun" class="brand-logo-img">
+        <img id="navBrandLogo" src="images/branding/logo.jpg" alt="Logo Nasi Kulit Mak Igun" class="brand-logo-img">
         <div class="brand-text-wrap">
-          <span class="brand-title">NASI KULIT MAK IGUN</span>
-          <span class="brand-sub">Surabaya Pusat</span>
+          <span class="brand-title" id="navBrandTitle">NASI KULIT MAK IGUN</span>
+          <span class="brand-sub" id="navBrandSub">Surabaya Pusat</span>
         </div>
       </a>
 
@@ -78,8 +78,8 @@
           <span class="cart-badge-count">0</span>
         </button>
 
-        <a href="#menu" class="btn-primary" style="padding: 9px 18px; font-size: 0.88rem; display: inline-flex;">
-          Pesan Menu
+        <a href="#menu" class="btn-primary" id="navOrderBtn" style="padding: 9px 18px; font-size: 0.88rem; display: inline-flex;">
+          <span id="navOrderBtnText">Pesan Menu</span>
         </a>
 
         <button class="hamburger-btn" id="hamburgerBtn" aria-label="Buka Menu Navigasi">
@@ -190,24 +190,24 @@
       <div class="container">
         <!-- Section Header -->
         <div class="section-head">
-          <span class="section-subtitle">Daftar Menu Resmi</span>
-          <h2 class="section-title">Pilihan Menu <span>Nasi Kulit Mak Igun</span></h2>
-          <p class="section-desc">
+          <span class="section-subtitle" id="menuSubtitle">Daftar Menu Resmi</span>
+          <h2 class="section-title" id="menuTitle">Pilihan Menu <span>Nasi Kulit Mak Igun</span></h2>
+          <p class="section-desc" id="menuDesc">
             Dari menu paket komplit, lauk oseng viral kecombrang, jeroan gongso mantap, hingga es pelepas dahaga. Semua harga tertera transparan sesuai buku menu resmi!
           </p>
         </div>
 
         <!-- Banner for Original Physical Menu Brochure -->
-        <div class="physical-menu-banner">
+        <div class="physical-menu-banner" id="physicalMenuBanner">
           <div class="menu-banner-content">
-            <h3>📖 Ingin Melihat Lembar Menu Aslinya?</h3>
-            <p>
+            <h3 id="brochureBannerTitle">📖 Ingin Melihat Lembar Menu Aslinya?</h3>
+            <p id="brochureBannerDesc">
               Tersedia foto papan menu fisik Mak Igun original beresolusi tinggi langsung dari outlet cabang Surabaya Pusat.
             </p>
           </div>
           <button class="menu-banner-btn" id="viewMenuBrochureBtn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-            Lihat Foto Menu Fisik (Zoom)
+            <span id="brochureBtnText">Lihat Foto Menu Fisik (Zoom)</span>
           </button>
         </div>
 
@@ -249,7 +249,7 @@
 
         <!-- Footer note from menu -->
         <div style="margin-top: 36px; text-align: center; font-size: 0.88rem; color: var(--color-text-muted);">
-          <p>* Catatan: Harga tertera pada menu belum termasuk PB 1. Tersedia pilihan Nasi Putih atau Nasi Jagung (+Rp 1.500).</p>
+          <p id="menuFooterNote">* Catatan: Harga tertera pada menu belum termasuk PB 1. Tersedia pilihan Nasi Putih atau Nasi Jagung (+Rp 1.500).</p>
         </div>
       </div>
     </section>
@@ -286,9 +286,9 @@
       <div class="container">
         <!-- Section Header -->
         <div class="section-head">
-          <span class="section-subtitle">Lokasi & Jam Buka</span>
-          <h2 class="section-title">Kunjungi <span>Warung Mak Igun</span></h2>
-          <p class="section-desc">
+          <span class="section-subtitle" id="locSubtitle">Lokasi & Jam Buka</span>
+          <h2 class="section-title" id="locTitle">Kunjungi <span>Warung Mak Igun</span></h2>
+          <p class="section-desc" id="locDesc">
             Berada di pusat kota Surabaya yang strategis, mudah diakses, dekat dengan pusat belanja dan perkantoran.
           </p>
         </div>
@@ -347,7 +347,7 @@
 
             <!-- Other Branch in Surabaya -->
             <div class="other-branch-card" id="locOtherBranchCard">
-              <h5>ℹ️ Cabang Surabaya Lainnya:</h5>
+              <h5 id="locOtherBranchTitle">ℹ️ Cabang Surabaya Lainnya:</h5>
               <p id="locOtherBranchText" style="font-size: 0.88rem; color: var(--color-text-main);">
                 <strong>Cabang Tenggilis:</strong> Jl. Raya Tenggilis No. 60, Surabaya Timur (Instagram: <em>@nasikulitmakigun.tenggilis</em>)
               </p>
@@ -379,9 +379,9 @@
       <div class="container">
         <!-- Section Header -->
         <div class="section-head">
-          <span class="section-subtitle">Hubungi & Ikuti Kami</span>
-          <h2 class="section-title">Kontak & Media Sosial <span>Mak Igun</span></h2>
-          <p class="section-desc">
+          <span class="section-subtitle" id="contactSubtitle">Hubungi & Ikuti Kami</span>
+          <h2 class="section-title" id="contactTitle">Kontak & Media Sosial <span>Mak Igun</span></h2>
+          <p class="section-desc" id="contactDesc">
             Mau pesan untuk acara kantor, kumpul keluarga, info kemitraan waralaba, atau kirim kritik dan saran? Hubungi kami langsung melalui saluran resmi berikut!
           </p>
         </div>
@@ -391,7 +391,7 @@
           <!-- Instagram Surabaya Pusat -->
           <div class="contact-channel-card channel-ig">
             <div class="channel-icon">📸</div>
-            <h4>Instagram Cabang</h4>
+            <h4 id="contactIgBranchTitle">Instagram Cabang</h4>
             <p id="contactIgBranchDesc">Info menu terbaru, promo harian, dan keseruan cabang Surabaya Pusat.</p>
             <a id="contactIgBranchLink" href="https://www.instagram.com/nasikulitmakigun.surabayapusat/?hl=en" target="_blank" rel="noopener noreferrer" class="btn-outline" style="width: 100%;">
               @nasikulitmakigun.surabayapusat
@@ -401,8 +401,8 @@
           <!-- WhatsApp Hotline -->
           <div class="contact-channel-card channel-wa">
             <div class="channel-icon">💬</div>
-            <h4>WhatsApp Pemesanan</h4>
-            <p>Fast response untuk pesanan porsi banyak, reservasi, & kemitraan.</p>
+            <h4 id="contactWaTitle">WhatsApp Pemesanan</h4>
+            <p id="contactWaDesc">Fast response untuk pesanan porsi banyak, reservasi, & kemitraan.</p>
             <a id="contactWaLink" href="https://wa.me/6287777728228?text=Halo%20Nasi%20Kulit%20Mak%20Igun%20Surabaya%20Pusat,%20saya%20ingin%20memesan" target="_blank" rel="noopener noreferrer" class="btn-primary" style="background-color: #25D366; border-color: #128C7E; width: 100%;">
               0877-7772-8228 (Chat WA)
             </a>
@@ -411,8 +411,8 @@
           <!-- Instagram Pusat -->
           <div class="contact-channel-card channel-ig">
             <div class="channel-icon">👑</div>
-            <h4>Instagram Official</h4>
-            <p>Akun resmi pusat Nasi Kulit Mak Igun seluruh cabang Indonesia.</p>
+            <h4 id="contactIgOfficialTitle">Instagram Official</h4>
+            <p id="contactIgOfficialDesc">Akun resmi pusat Nasi Kulit Mak Igun seluruh cabang Indonesia.</p>
             <a id="contactIgOfficialLink" href="https://www.instagram.com/nasikulitmakigun/?hl=en" target="_blank" rel="noopener noreferrer" class="btn-outline" style="width: 100%;">
               @nasikulitmakigun
             </a>
@@ -421,8 +421,8 @@
           <!-- Kemitraan & Kritik Saran -->
           <div class="contact-channel-card channel-delivery">
             <div class="channel-icon">🤝</div>
-            <h4>Info Kemitraan</h4>
-            <p>Tertarik membuka franchise / cabang di kotamu? Hubungi manajemen.</p>
+            <h4 id="contactPartnershipTitle">Info Kemitraan</h4>
+            <p id="contactPartnershipDesc">Tertarik membuka franchise / cabang di kotamu? Hubungi manajemen.</p>
             <a id="contactPartnershipLink" href="tel:087777728228" class="btn-outline" style="width: 100%;">
               Hubungi Hotline 0877-7772-8228
             </a>
@@ -432,7 +432,7 @@
         <!-- Online Delivery Partner Section -->
         <div class="delivery-partners-wrap">
           <h3 id="deliveryTitle">Mager Keluar Rumah? Pesan via Aplikasi Delivery Favoritmu!</h3>
-          <p style="color: var(--color-text-muted); font-size: 0.95rem;">
+          <p id="deliverySubtitle" style="color: var(--color-text-muted); font-size: 0.95rem;">
             Cari <strong>"Nasi Kulit Mak Igun - Surabaya Pusat / Pregolan"</strong> di aplikasi favoritmu:
           </p>
 
@@ -451,8 +451,8 @@
 
         <!-- Feedback & Review Form Box -->
         <div class="feedback-box">
-          <h3>Kritik & Saran untuk Mak Igun</h3>
-          <p>Kepuasan Anda adalah prioritas utama kami. Sampaikan pesan, kesan, atau saran Anda!</p>
+          <h3 id="feedbackBoxTitle">Kritik & Saran untuk Mak Igun</h3>
+          <p id="feedbackBoxDesc">Kepuasan Anda adalah prioritas utama kami. Sampaikan pesan, kesan, atau saran Anda!</p>
 
           <form id="feedbackForm">
             <div class="form-grid">
@@ -479,7 +479,7 @@
               </div>
             </div>
 
-            <button type="submit" class="btn-primary" style="width: 100%;">
+            <button type="submit" class="btn-primary" id="feedbackSubmitBtn" style="width: 100%;">
               Kirim Masukan Sekarang ❤️
             </button>
           </form>
@@ -493,12 +493,12 @@
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <h3>NASI KULIT MAK IGUN</h3>
-          <p>
+          <h3 id="footerBrandTitle">NASI KULIT MAK IGUN</h3>
+          <p id="footerBrandDesc">
             Kuliner nasi kulit ayam krispi legendaris hasil kolaborasi desainer ternama <strong>Ivan Gunawan</strong> dan MasterChef <strong>King Abdi</strong>. Gurih renyah melimpah dengan racikan sambal khas Jawa Timur.
           </p>
           <div style="margin-top: 14px;">
-            <span class="badge-pill badge-yellow" style="font-size: 0.78rem;">⭐ 100% Halal & Higienis</span>
+            <span class="badge-pill badge-yellow" id="footerHalalBadge" style="font-size: 0.78rem;">⭐ 100% Halal & Higienis</span>
           </div>
         </div>
 
@@ -532,11 +532,11 @@
       </div>
 
       <div class="footer-bottom">
-        <div>
+        <div id="footerCopyright">
           © 2026 <strong>Nasi Kulit Mak Igun</strong>. Hak Cipta Dilindungi.
         </div>
         <div>
-          <span>Desain Website terinspirasi dari identitas resmi Instagram @nasikulitmakigun.surabayapusat</span>
+          <span id="footerDisclaimer">Desain Website terinspirasi dari identitas resmi Instagram @nasikulitmakigun.surabayapusat</span>
         </div>
       </div>
     </div>
@@ -545,9 +545,9 @@
   <!-- ================= FLOATING ACTION BUTTONS ================= -->
   <div class="floating-actions-container">
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/6287777728228?text=Halo%20Nasi%20Kulit%20Mak%20Igun%20Surabaya%20Pusat,%20saya%20mau%20order" target="_blank" rel="noopener noreferrer" class="floating-btn floating-wa-btn" title="Chat WhatsApp Fast Response">
+    <a id="floatingWaBtn" href="https://wa.me/6287777728228?text=Halo%20Nasi%20Kulit%20Mak%20Igun%20Surabaya%20Pusat,%20saya%20mau%20order" target="_blank" rel="noopener noreferrer" class="floating-btn floating-wa-btn" title="Chat WhatsApp Fast Response">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.8 14.28c-.24.69-1.2 1.35-1.78 1.44-.54.09-1.22.13-3.66-.88-2.67-1.11-4.38-3.83-4.51-4.01-.13-.18-1.07-1.42-1.07-2.72 0-1.29.68-1.93.92-2.19.24-.26.53-.33.7-.33.18 0 .35.01.5.02.16.01.38-.06.59.45.22.53.75 1.83.82 1.96.07.13.11.29.02.47-.09.18-.13.29-.26.45-.13.16-.28.35-.4.47-.13.13-.27.28-.12.54.16.26.69 1.14 1.48 1.84 1.02.91 1.87 1.19 2.14 1.32.26.13.42.11.57-.07.16-.18.66-.77.84-1.03.18-.26.35-.22.59-.13.24.09 1.54.73 1.81.86.26.13.44.2.5.31.07.11.07.66-.17 1.35z"/></svg>
-      <span>Chat WA Cabang</span>
+      <span id="floatingWaText">Chat WA Cabang</span>
     </a>
 
     <!-- Floating Cart Toggle Button -->

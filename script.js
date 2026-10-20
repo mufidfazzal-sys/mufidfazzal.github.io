@@ -471,6 +471,55 @@ const DEFAULT_PROMO_DATA = {
   terms: "Berlaku khusus pemesanan WhatsApp, Takeaway, dan Dine-in di Cabang Surabaya Pusat."
 };
 
+// Konfigurasi Tema & Warna Bawaan
+const DEFAULT_THEME_DATA = {
+  primaryColor: '#FF6700',
+  secondaryColor: '#5A1679',
+  accentColor: '#FFC400',
+  bgColor: '#FFF9F2'
+};
+
+// Konfigurasi Navbar & Header Bawaan
+const DEFAULT_NAVBAR_DATA = {
+  logo: 'images/branding/logo.jpg',
+  brandTitle: 'NASI KULIT MAK IGUN',
+  brandSub: 'Surabaya Pusat',
+  announcementText: '🔥 Cabang Surabaya Pusat: Jl. Pregolan No. 11, Tegalsari • Buka Setiap Hari 10:00 - 00:00 WIB',
+  announcementBadge: 'LIVE',
+  orderBtnText: 'Pesan Menu'
+};
+
+// Konfigurasi Seksi Menu Bawaan
+const DEFAULT_MENU_SECTION_DATA = {
+  subtitle: 'Daftar Menu Resmi',
+  title: 'Pilihan Menu <span>Nasi Kulit Mak Igun</span>',
+  desc: 'Dari menu paket komplit, lauk oseng viral kecombrang, jeroan gongso mantap, hingga es pelepas dahaga. Semua harga tertera transparan sesuai buku menu resmi!',
+  brochureTitle: '📖 Ingin Melihat Lembar Menu Aslinya?',
+  brochureDesc: 'Tersedia foto papan menu fisik Mak Igun original beresolusi tinggi langsung dari outlet cabang Surabaya Pusat.',
+  brochureBtnText: 'Lihat Foto Menu Fisik (Zoom)',
+  brochureImage: 'images/branding/menu-asli.jpeg',
+  searchPlaceholder: 'Cari menu favoritmu (cth: Cumi, Paru, Kulit, Es Jeruk)...',
+  footerNote: '* Catatan: Harga tertera pada menu belum termasuk PB 1. Tersedia pilihan Nasi Putih atau Nasi Jagung (+Rp 1.500).'
+};
+
+// Konfigurasi Seksi Galeri Bawaan
+const DEFAULT_GALLERY_SECTION_DATA = {
+  subtitle: 'Galeri Visual Instagram',
+  title: 'Kenikmatan & Suasana <span>Mak Igun</span>',
+  desc: 'Intip hidangan menggoda selera, kriuknya kulit ayam renyah keemasan, dan kehangatan suasana warung Nasi Kulit Mak Igun cabang Surabaya Pusat.',
+  igBtnText: 'Follow Instagram @nasikulitmakigun.surabayapusat',
+  igBtnUrl: 'https://www.instagram.com/nasikulitmakigun.surabayapusat/?hl=en'
+};
+
+// Konfigurasi Footer Bawaan
+const DEFAULT_FOOTER_DATA = {
+  brandTitle: 'NASI KULIT MAK IGUN',
+  brandDesc: 'Kuliner nasi kulit ayam krispi legendaris hasil kolaborasi desainer ternama <strong>Ivan Gunawan</strong> dan MasterChef <strong>King Abdi</strong>. Gurih renyah melimpah dengan racikan sambal khas Jawa Timur.',
+  halalBadge: '⭐ 100% Halal & Higienis',
+  copyright: '© 2026 <strong>Nasi Kulit Mak Igun</strong>. Hak Cipta Dilindungi.',
+  disclaimer: 'Desain Website terinspirasi dari identitas resmi Instagram @nasikulitmakigun.surabayapusat'
+};
+
 // Akun Admin Bawaan
 const DEFAULT_ADMIN_CRED = {
   username: "admin",
@@ -479,11 +528,16 @@ const DEFAULT_ADMIN_CRED = {
 
 // Kunci Penyimpanan Lokal (LocalStorage Keys)
 const STORAGE_KEYS = {
+  THEME: 'makigun_theme_v1',
+  NAVBAR: 'makigun_navbar_v1',
+  MENU_SECTION: 'makigun_menu_sec_v1',
   MENUS: 'makigun_menus_v1',
   COVER: 'makigun_cover_v1',
+  GALLERY_SECTION: 'makigun_gal_sec_v1',
   GALLERY: 'makigun_gallery_v1',
   LOCATION: 'makigun_location_v1',
   CONTACT: 'makigun_contact_v1',
+  FOOTER: 'makigun_footer_v1',
   SETTINGS: 'makigun_settings_v1',
   PROMO: 'makigun_promo_v1',
   PROMO_SHOWN_SESSION: 'makigun_promo_shown_session_v1',
@@ -492,11 +546,16 @@ const STORAGE_KEYS = {
 };
 
 // State Aktif Aplikasi
+let currentThemeData = { ...DEFAULT_THEME_DATA };
+let currentNavbarData = { ...DEFAULT_NAVBAR_DATA };
+let currentMenuSectionData = { ...DEFAULT_MENU_SECTION_DATA };
 let currentMenuItems = [];
 let currentCoverData = { ...DEFAULT_COVER_DATA };
+let currentGallerySectionData = { ...DEFAULT_GALLERY_SECTION_DATA };
 let currentGalleryItems = [];
 let currentLocationData = { ...DEFAULT_LOCATION_DATA };
 let currentContactData = { ...DEFAULT_CONTACT_DATA };
+let currentFooterData = { ...DEFAULT_FOOTER_DATA };
 let currentSettings = { ...DEFAULT_SITE_SETTINGS };
 let currentPromoData = { ...DEFAULT_PROMO_DATA };
 let appliedVoucher = null;
@@ -513,6 +572,13 @@ document.addEventListener('DOMContentLoaded', () => {
   initCart();
   checkOpenStatus();
   initFeedbackForm();
+
+  // Real-time synchronization across browser tabs (when modified in Admin Dashboard)
+  window.addEventListener('storage', (e) => {
+    if (Object.values(STORAGE_KEYS).includes(e.key)) {
+      loadAllData();
+    }
+  });
 });
 
 // Format Rupiah
@@ -1142,9 +1208,115 @@ function applyCoverData(cover) {
   if (s4 && cover.sticker4) s4.textContent = cover.sticker4;
 }
 
+// Terapkan Skema Warna Tema
+function applyThemeData(theme) {
+  if (!theme) return;
+  const root = document.documentElement;
+  if (theme.primaryColor) {
+    root.style.setProperty('--color-orange', theme.primaryColor);
+    root.style.setProperty('--color-orange-dark', theme.primaryColor);
+  }
+  if (theme.secondaryColor) {
+    root.style.setProperty('--color-purple', theme.secondaryColor);
+    root.style.setProperty('--color-purple-dark', theme.secondaryColor);
+  }
+  if (theme.accentColor) {
+    root.style.setProperty('--color-yellow', theme.accentColor);
+  }
+  if (theme.bgColor) {
+    root.style.setProperty('--color-bg-page', theme.bgColor);
+  }
+}
+
+// Terapkan Data Navbar & Header
+function applyNavbarData(nav) {
+  if (!nav) return;
+  const logo = document.getElementById('navBrandLogo');
+  const title = document.getElementById('navBrandTitle');
+  const sub = document.getElementById('navBrandSub');
+  const annText = document.getElementById('topAnnouncementText');
+  const annBadge = document.getElementById('topAnnouncementBadge');
+  const orderBtn = document.getElementById('navOrderBtnText');
+
+  if (logo && nav.logo) logo.src = nav.logo;
+  if (title && nav.brandTitle) title.textContent = nav.brandTitle;
+  if (sub && nav.brandSub) sub.textContent = nav.brandSub;
+  if (annText && nav.announcementText) annText.textContent = nav.announcementText;
+  if (annBadge && nav.announcementBadge) annBadge.textContent = nav.announcementBadge;
+  if (orderBtn && nav.orderBtnText) orderBtn.textContent = nav.orderBtnText;
+}
+
+// Terapkan Data Seksi Menu (Header, Brosur, & Catatan Kaki)
+function applyMenuSectionData(sec) {
+  if (!sec) return;
+  const sub = document.getElementById('menuSubtitle');
+  const title = document.getElementById('menuTitle');
+  const desc = document.getElementById('menuDesc');
+  const bTitle = document.getElementById('brochureBannerTitle');
+  const bDesc = document.getElementById('brochureBannerDesc');
+  const bBtn = document.getElementById('brochureBtnText');
+  const bModalImg = document.getElementById('menuBrochureModalImg');
+  const bModalImgStatic = document.querySelector('#menuBrochureModal img');
+  const searchInput = document.getElementById('menuSearchInput');
+  const footerNote = document.getElementById('menuFooterNote');
+
+  if (sub && sec.subtitle) sub.textContent = sec.subtitle;
+  if (title && sec.title) title.innerHTML = sec.title;
+  if (desc && sec.desc) desc.textContent = sec.desc;
+  if (bTitle && sec.brochureTitle) bTitle.textContent = sec.brochureTitle;
+  if (bDesc && sec.brochureDesc) bDesc.textContent = sec.brochureDesc;
+  if (bBtn && sec.brochureBtnText) bBtn.textContent = sec.brochureBtnText;
+  if (bModalImg && sec.brochureImage) bModalImg.src = sec.brochureImage;
+  else if (bModalImgStatic && sec.brochureImage) bModalImgStatic.src = sec.brochureImage;
+  if (searchInput && sec.searchPlaceholder) searchInput.placeholder = sec.searchPlaceholder;
+  if (footerNote && sec.footerNote) footerNote.textContent = sec.footerNote;
+}
+
+// Terapkan Data Seksi Galeri (Header & Tautan IG)
+function applyGallerySectionData(sec) {
+  if (!sec) return;
+  const sub = document.getElementById('gallerySubtitle');
+  const title = document.getElementById('galleryTitle');
+  const desc = document.getElementById('galleryDesc');
+  const igBtn = document.getElementById('galleryIgBtn');
+  const igBtnText = document.getElementById('galleryIgBtnText');
+
+  if (sub && sec.subtitle) sub.textContent = sec.subtitle;
+  if (title && sec.title) title.innerHTML = sec.title;
+  if (desc && sec.desc) desc.textContent = sec.desc;
+  if (igBtn && sec.igBtnUrl) igBtn.href = sec.igBtnUrl;
+  if (igBtnText && sec.igBtnText) igBtnText.textContent = sec.igBtnText;
+}
+
+// Terapkan Data Footer & Hak Cipta
+function applyFooterData(footer) {
+  if (!footer) return;
+  const title = document.getElementById('footerBrandTitle');
+  const desc = document.getElementById('footerBrandDesc');
+  const halal = document.getElementById('footerHalalBadge');
+  const copy = document.getElementById('footerCopyright');
+  const disc = document.getElementById('footerDisclaimer');
+
+  if (title && footer.brandTitle) title.textContent = footer.brandTitle;
+  if (desc && footer.brandDesc) desc.innerHTML = footer.brandDesc;
+  if (halal && footer.halalBadge) halal.textContent = footer.halalBadge;
+  if (copy && footer.copyright) copy.innerHTML = footer.copyright;
+  if (disc && footer.disclaimer) disc.textContent = footer.disclaimer;
+}
+
 // Terapkan Data Lokasi & Alamat
 function applyLocationData(loc) {
   if (!loc) return;
+
+  const sub = document.getElementById('locSubtitle');
+  const title = document.getElementById('locTitle');
+  const desc = document.getElementById('locDesc');
+  const otherTitle = document.getElementById('locOtherBranchTitle');
+
+  if (sub && loc.subtitle) sub.textContent = loc.subtitle;
+  if (title && loc.title) title.innerHTML = loc.title;
+  if (desc && loc.desc) desc.textContent = loc.desc;
+  if (otherTitle && loc.otherBranchTitle) otherTitle.textContent = loc.otherBranchTitle;
 
   const branch = document.getElementById('locBranchName');
   if (branch && loc.branchName) branch.textContent = loc.branchName;
@@ -1192,6 +1364,42 @@ function applyLocationData(loc) {
 // Terapkan Data Kontak & Medsos
 function applyContactData(contact) {
   if (!contact) return;
+
+  const sub = document.getElementById('contactSubtitle');
+  const title = document.getElementById('contactTitle');
+  const desc = document.getElementById('contactDesc');
+  const igBTitle = document.getElementById('contactIgBranchTitle');
+  const igBDesc = document.getElementById('contactIgBranchDesc');
+  const waTitle = document.getElementById('contactWaTitle');
+  const waDesc = document.getElementById('contactWaDesc');
+  const igOTitle = document.getElementById('contactIgOfficialTitle');
+  const igODesc = document.getElementById('contactIgOfficialDesc');
+  const partTitle = document.getElementById('contactPartnershipTitle');
+  const partDesc = document.getElementById('contactPartnershipDesc');
+  const floatWa = document.getElementById('floatingWaText');
+  const delivTitle = document.getElementById('deliveryTitle');
+  const delivSub = document.getElementById('deliverySubtitle');
+  const feedTitle = document.getElementById('feedbackBoxTitle');
+  const feedDesc = document.getElementById('feedbackBoxDesc');
+  const feedBtn = document.getElementById('feedbackSubmitBtn');
+
+  if (sub && contact.subtitle) sub.textContent = contact.subtitle;
+  if (title && contact.title) title.innerHTML = contact.title;
+  if (desc && contact.desc) desc.textContent = contact.desc;
+  if (igBTitle && contact.igBranchTitle) igBTitle.textContent = contact.igBranchTitle;
+  if (igBDesc && contact.igBranchDesc) igBDesc.textContent = contact.igBranchDesc;
+  if (waTitle && contact.waTitle) waTitle.textContent = contact.waTitle;
+  if (waDesc && contact.waDesc) waDesc.textContent = contact.waDesc;
+  if (igOTitle && contact.igOfficialTitle) igOTitle.textContent = contact.igOfficialTitle;
+  if (igODesc && contact.igOfficialDesc) igODesc.textContent = contact.igOfficialDesc;
+  if (partTitle && contact.partnershipTitle) partTitle.textContent = contact.partnershipTitle;
+  if (partDesc && contact.partnershipDesc) partDesc.textContent = contact.partnershipDesc;
+  if (floatWa && contact.floatingWaText) floatWa.textContent = contact.floatingWaText;
+  if (delivTitle && contact.deliveryTitle) delivTitle.textContent = contact.deliveryTitle;
+  if (delivSub && contact.deliverySubtitle) delivSub.textContent = contact.deliverySubtitle;
+  if (feedTitle && contact.feedbackTitle) feedTitle.textContent = contact.feedbackTitle;
+  if (feedDesc && contact.feedbackDesc) feedDesc.textContent = contact.feedbackDesc;
+  if (feedBtn && contact.feedbackSubmitBtn) feedBtn.textContent = contact.feedbackSubmitBtn;
 
   // Top announcement
   const annEl = document.getElementById('topAnnouncementText');
@@ -1271,6 +1479,30 @@ function applyContactData(contact) {
 }
 
 function loadAllData() {
+  // 0. Theme
+  try {
+    const storedTheme = localStorage.getItem(STORAGE_KEYS.THEME);
+    currentThemeData = storedTheme ? { ...DEFAULT_THEME_DATA, ...JSON.parse(storedTheme) } : { ...DEFAULT_THEME_DATA };
+  } catch (e) {
+    currentThemeData = { ...DEFAULT_THEME_DATA };
+  }
+
+  // 0. Navbar
+  try {
+    const storedNav = localStorage.getItem(STORAGE_KEYS.NAVBAR);
+    currentNavbarData = storedNav ? { ...DEFAULT_NAVBAR_DATA, ...JSON.parse(storedNav) } : { ...DEFAULT_NAVBAR_DATA };
+  } catch (e) {
+    currentNavbarData = { ...DEFAULT_NAVBAR_DATA };
+  }
+
+  // 0. Menu Section
+  try {
+    const storedMenuSec = localStorage.getItem(STORAGE_KEYS.MENU_SECTION);
+    currentMenuSectionData = storedMenuSec ? { ...DEFAULT_MENU_SECTION_DATA, ...JSON.parse(storedMenuSec) } : { ...DEFAULT_MENU_SECTION_DATA };
+  } catch (e) {
+    currentMenuSectionData = { ...DEFAULT_MENU_SECTION_DATA };
+  }
+
   // 1. Menus
   try {
     const storedMenus = localStorage.getItem(STORAGE_KEYS.MENUS);
@@ -1297,6 +1529,14 @@ function loadAllData() {
   } catch (e) {
     console.error('Gagal membaca cover dari localStorage:', e);
     currentCoverData = { ...DEFAULT_COVER_DATA };
+  }
+
+  // 2.5 Gallery Section
+  try {
+    const storedGalSec = localStorage.getItem(STORAGE_KEYS.GALLERY_SECTION);
+    currentGallerySectionData = storedGalSec ? { ...DEFAULT_GALLERY_SECTION_DATA, ...JSON.parse(storedGalSec) } : { ...DEFAULT_GALLERY_SECTION_DATA };
+  } catch (e) {
+    currentGallerySectionData = { ...DEFAULT_GALLERY_SECTION_DATA };
   }
 
   // 3. Gallery Items
@@ -1341,6 +1581,14 @@ function loadAllData() {
     currentContactData = { ...DEFAULT_CONTACT_DATA };
   }
 
+  // 5.5 Footer Data
+  try {
+    const storedFooter = localStorage.getItem(STORAGE_KEYS.FOOTER);
+    currentFooterData = storedFooter ? { ...DEFAULT_FOOTER_DATA, ...JSON.parse(storedFooter) } : { ...DEFAULT_FOOTER_DATA };
+  } catch (e) {
+    currentFooterData = { ...DEFAULT_FOOTER_DATA };
+  }
+
   // 6. Promo & Voucher Data
   try {
     const storedPromo = localStorage.getItem(STORAGE_KEYS.PROMO);
@@ -1356,11 +1604,16 @@ function loadAllData() {
   }
 
   // Render Initial Views
-  renderMenu(currentMenuItems);
+  applyThemeData(currentThemeData);
+  applyNavbarData(currentNavbarData);
   applyCoverData(currentCoverData);
+  applyMenuSectionData(currentMenuSectionData);
+  renderMenu(currentMenuItems);
+  applyGallerySectionData(currentGallerySectionData);
   renderGallery(currentGalleryItems);
   applyLocationData(currentLocationData);
   applyContactData(currentContactData);
+  applyFooterData(currentFooterData);
   renderPromoUI(currentPromoData);
   checkOpenStatus();
 
@@ -1370,6 +1623,21 @@ function loadAllData() {
       .then(res => res.json())
       .then(data => {
         if (!data) return;
+        if (data.theme) {
+          currentThemeData = { ...DEFAULT_THEME_DATA, ...data.theme };
+          localStorage.setItem(STORAGE_KEYS.THEME, JSON.stringify(currentThemeData));
+          applyThemeData(currentThemeData);
+        }
+        if (data.navbar) {
+          currentNavbarData = { ...DEFAULT_NAVBAR_DATA, ...data.navbar };
+          localStorage.setItem(STORAGE_KEYS.NAVBAR, JSON.stringify(currentNavbarData));
+          applyNavbarData(currentNavbarData);
+        }
+        if (data.menuSection) {
+          currentMenuSectionData = { ...DEFAULT_MENU_SECTION_DATA, ...data.menuSection };
+          localStorage.setItem(STORAGE_KEYS.MENU_SECTION, JSON.stringify(currentMenuSectionData));
+          applyMenuSectionData(currentMenuSectionData);
+        }
         if (data.menus && Array.isArray(data.menus) && data.menus.length > 0) {
           currentMenuItems = data.menus;
           localStorage.setItem(STORAGE_KEYS.MENUS, JSON.stringify(currentMenuItems));
@@ -1379,6 +1647,11 @@ function loadAllData() {
           currentCoverData = { ...DEFAULT_COVER_DATA, ...data.cover };
           localStorage.setItem(STORAGE_KEYS.COVER, JSON.stringify(currentCoverData));
           applyCoverData(currentCoverData);
+        }
+        if (data.gallerySection) {
+          currentGallerySectionData = { ...DEFAULT_GALLERY_SECTION_DATA, ...data.gallerySection };
+          localStorage.setItem(STORAGE_KEYS.GALLERY_SECTION, JSON.stringify(currentGallerySectionData));
+          applyGallerySectionData(currentGallerySectionData);
         }
         if (data.gallery && Array.isArray(data.gallery)) {
           currentGalleryItems = data.gallery;
@@ -1394,6 +1667,11 @@ function loadAllData() {
           currentContactData = { ...DEFAULT_CONTACT_DATA, ...data.contact };
           localStorage.setItem(STORAGE_KEYS.CONTACT, JSON.stringify(currentContactData));
           applyContactData(currentContactData);
+        }
+        if (data.footer) {
+          currentFooterData = { ...DEFAULT_FOOTER_DATA, ...data.footer };
+          localStorage.setItem(STORAGE_KEYS.FOOTER, JSON.stringify(currentFooterData));
+          applyFooterData(currentFooterData);
         }
         if (data.promo) {
           currentPromoData = { ...DEFAULT_PROMO_DATA, ...data.promo };
@@ -1419,8 +1697,6 @@ function saveMenusToStorage(items) {
 
   // Re-render
   renderMenu(currentMenuItems);
-  renderAdminMenuTable(currentMenuItems);
-  updateAdminStats();
 }
 
 function saveCoverToStorage(cover) {
@@ -1445,7 +1721,6 @@ function saveGalleryToStorage(items) {
 
   syncToServer();
   renderGallery(currentGalleryItems);
-  renderAdminGalleryTable(currentGalleryItems);
 }
 
 function saveLocationToStorage(loc) {
@@ -1490,11 +1765,16 @@ function syncToServer() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
+        theme: currentThemeData,
+        navbar: currentNavbarData,
+        menuSection: currentMenuSectionData,
         menus: currentMenuItems,
         cover: currentCoverData,
+        gallerySection: currentGallerySectionData,
         gallery: currentGalleryItems,
         location: currentLocationData,
         contact: currentContactData,
+        footer: currentFooterData,
         settings: currentSettings,
         promo: currentPromoData
       })
