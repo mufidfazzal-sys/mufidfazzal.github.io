@@ -1,0 +1,17 @@
+{
+  "name": "nasikulit-makigun-website",
+  "version": "2.0.0",
+  "description": "Website Resmi Nasi Kulit Mak Igun Cabang Surabaya Pusat",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node server.js --test"
+  },
+  "keywords": [
+    "makigun",
+    "nasi-kulit",
+    "kuliner-surabaya"
+  ],
+  "author": "Mak Igun",
+  "license": "ISC"
+}
