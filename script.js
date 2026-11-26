@@ -542,7 +542,9 @@ const STORAGE_KEYS = {
   PROMO: 'makigun_promo_v1',
   PROMO_SHOWN_SESSION: 'makigun_promo_shown_session_v1',
   AUTH: 'makigun_admin_auth_v1',
-  SESSION: 'makigun_admin_session_v1'
+  SESSION: 'makigun_admin_session_v1',
+  CART: 'makigun_cart_v1',
+  CART_VOUCHER: 'makigun_cart_voucher_v1'
 };
 
 // State Aktif Aplikasi
@@ -616,8 +618,11 @@ function initNavbar() {
     });
   }
 
-  // Active section indicator on scroll
+  // Active section indicator on scroll (for single-page hash links only)
   function highlightCurrentSection() {
+    const hasHashNav = Array.from(navLinks).some(l => (l.getAttribute('href') || '').startsWith('#'));
+    if (!hasHashNav) return;
+
     const sections = document.querySelectorAll('section[id]');
     const scrollY = window.pageYOffset + 120;
 
@@ -734,7 +739,7 @@ function initMenuSearch() {
 // 5. Modals Management
 function initModals() {
   // Modal Closes
-  document.querySelectorAll('.modal-close-btn').forEach(btn => {
+  document.querySelectorAll('.modal-close-btn, .promo-dismiss-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const modal = e.target.closest('.modal-overlay');
       if (modal) modal.classList.remove('active');
@@ -748,6 +753,14 @@ function initModals() {
         overlay.classList.remove('active');
       }
     });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-overlay.active').forEach(modal => {
+        modal.classList.remove('active');
+      });
+    }
   });
 
   // Physical menu brochure zoom button
@@ -785,15 +798,72 @@ function initModals() {
 }
 
 // 6. Cart / Order Simulation
+function loadCartState() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEYS.CART);
+    cart = raw ? JSON.parse(raw) : [];
+    if (!Array.isArray(cart)) cart = [];
+  } catch (e) {
+    cart = [];
+  }
+
+  try {
+    const rawVoucher = localStorage.getItem(STORAGE_KEYS.CART_VOUCHER);
+    appliedVoucher = rawVoucher ? JSON.parse(rawVoucher) : null;
+  } catch (e) {
+    appliedVoucher = null;
+  }
+}
+
+function saveCartState() {
+  try {
+    localStorage.setItem(STORAGE_KEYS.CART, JSON.stringify(cart));
+    if (appliedVoucher) {
+      localStorage.setItem(STORAGE_KEYS.CART_VOUCHER, JSON.stringify(appliedVoucher));
+    } else {
+      localStorage.removeItem(STORAGE_KEYS.CART_VOUCHER);
+    }
+  } catch (e) {
+    console.warn('Gagal menyimpan keranjang:', e);
+  }
+}
+
+function goToMenuPage() {
+  document.querySelectorAll('.modal-overlay.active').forEach(m => m.classList.remove('active'));
+  const menuSection = document.getElementById('menu');
+  if (menuSection) {
+    menuSection.scrollIntoView({ behavior: 'smooth' });
+  } else {
+    window.location.href = 'menu.html';
+  }
+}
+
 function initCart() {
+  loadCartState();
+  updateCartBadges();
+  updateCartModal();
+
   const cartToggleBtns = document.querySelectorAll('.cart-toggle-trigger');
   const cartModal = document.getElementById('cartModal');
   const sendWhatsAppBtn = document.getElementById('sendWhatsAppBtn');
   const applyVoucherBtn = document.getElementById('btnApplyCartVoucher');
   const voucherInput = document.getElementById('cartVoucherCodeInput');
 
+  if (voucherInput && appliedVoucher && appliedVoucher.code) {
+    voucherInput.value = appliedVoucher.code;
+  }
+
+  window.addEventListener('storage', (e) => {
+    if (e.key === STORAGE_KEYS.CART || e.key === STORAGE_KEYS.CART_VOUCHER) {
+      loadCartState();
+      updateCartBadges();
+      updateCartModal();
+    }
+  });
+
   cartToggleBtns.forEach(btn => {
     btn.addEventListener('click', () => {
+      loadCartState();
       if (cartModal) {
         updateCartModal();
         cartModal.classList.add('active');
@@ -834,7 +904,9 @@ function addToCart(itemId) {
     cart.push({ ...item, qty: 1 });
   }
 
+  saveCartState();
   updateCartBadges();
+  updateCartModal();
   showToast(`"${item.name}" ditambahkan ke pesanan! 🍗`);
 }
 
@@ -847,6 +919,11 @@ function changeCartQty(itemId, delta) {
     cart.splice(itemIndex, 1);
   }
 
+  if (cart.length === 0) {
+    appliedVoucher = null;
+  }
+
+  saveCartState();
   updateCartBadges();
   updateCartModal();
 }
@@ -881,7 +958,10 @@ function updateCartModal() {
     if (subtotalDisplay) subtotalDisplay.textContent = 'Rp 0';
     if (discountRow) discountRow.style.display = 'none';
     if (bonusNotice) bonusNotice.style.display = 'none';
-    appliedVoucher = null;
+    if (appliedVoucher) {
+      appliedVoucher = null;
+      saveCartState();
+    }
     return;
   }
 
@@ -942,6 +1022,7 @@ function applyCartVoucher(code) {
 
   if (!cleanCode) {
     appliedVoucher = null;
+    saveCartState();
     if (msgEl) {
       msgEl.style.display = 'none';
       msgEl.textContent = '';
@@ -983,6 +1064,7 @@ function applyCartVoucher(code) {
       msgEl.textContent = `❌ Kode voucher "${cleanCode}" tidak valid atau promo sudah berakhir.`;
     }
   }
+  saveCartState();
   updateCartModal();
 }
 
@@ -1890,8 +1972,12 @@ function initPromo() {
         showToast('Voucher promo berhasil dipasang di keranjang! 🎉');
       } else {
         const menuSection = document.getElementById('menu');
-        if (menuSection) menuSection.scrollIntoView({ behavior: 'smooth' });
-        showToast(`Voucher ${currentPromoData.code} aktif! Silakan pilih menu paket favorit Anda 🍗`);
+        if (menuSection) {
+          menuSection.scrollIntoView({ behavior: 'smooth' });
+          showToast(`Voucher ${currentPromoData.code} aktif! Silakan pilih menu paket favorit Anda 🍗`);
+        } else {
+          window.location.href = 'menu.html';
+        }
       }
     });
   }

@@ -60,6 +60,10 @@
   padding: 0;
 }
 
+@view-transition {
+  navigation: auto;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-height) + 16px);
@@ -659,6 +663,10 @@ button {
 .section-common {
   padding: 90px 0;
   position: relative;
+}
+
+.page-dedicated .section-common {
+  padding: 56px 0 84px;
 }
 
 .section-head {

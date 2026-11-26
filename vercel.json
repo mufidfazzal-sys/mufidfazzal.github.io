@@ -1,7 +1,12 @@
 {
   "version": 2,
+  "framework": null,
   "cleanUrls": true,
   "rewrites": [
+    { "source": "/menu", "destination": "/menu.html" },
+    { "source": "/galeri", "destination": "/galeri.html" },
+    { "source": "/alamat", "destination": "/alamat.html" },
+    { "source": "/kontak", "destination": "/kontak.html" },
     { "source": "/admin", "destination": "/admin.html" },
     { "source": "/api/data", "destination": "/api/data.js" }
   ]

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontak & Medsos - Nasi Kulit Mak Igun Surabaya Pusat</title>
+  <meta name="description" content="Hubungi WhatsApp pemesanan, Instagram resmi, info kemitraan, aplikasi delivery GoFood/GrabFood/ShopeeFood, serta kritik & saran Nasi Kulit Mak Igun.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="images/branding/logo.jpg">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Kontak & Medsos - Nasi Kulit Mak Igun Surabaya Pusat">
+  <meta property="og:description" content="Pemesanan WhatsApp, Instagram, Online Delivery, dan Kritik & Saran Nasi Kulit Mak Igun.">
+  <meta property="og:image" content="images/branding/logo.jpg">
+  <meta property="og:type" content="restaurant">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ================= TOP ANNOUNCEMENT BAR ================= -->
+  <div class="announcement-bar">
+    <span class="badge-live" id="topAnnouncementBadge">LIVE</span>
+    <span id="topAnnouncementText">🔥 Cabang Surabaya Pusat: Jl. Pregolan No. 11, Tegalsari • Buka Setiap Hari 10:00 - 00:00 WIB</span>
+  </div>
+
+  <!-- ================= PROMO RIBBON STRIP BANNER ================= -->
+  <div class="promo-strip-banner" id="promoStripBanner">
+    <div class="container promo-strip-container">
+      <div class="promo-strip-left">
+        <span class="promo-strip-badge" id="stripPromoBadge">🔥 PROMO SPESIAL GAJIAN</span>
+        <span class="promo-strip-text" id="stripPromoText">Beli 2 Paket Nasi Lengkap Diskon Langsung Rp 5.000 + GRATIS Es Teh!</span>
+      </div>
+      <div class="promo-strip-right">
+        <div class="promo-strip-code-wrap">
+          <span class="promo-strip-code-label">KODE:</span>
+          <span class="promo-strip-code-badge" id="stripPromoCode">MAKIGUNHEMAT</span>
+        </div>
+        <button class="promo-strip-btn" id="btnOpenPromoModal">
+          🎁 Klaim Promo
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= STICKY NAVBAR ================= -->
+  <header class="main-header" id="mainHeader">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-link" title="Nasi Kulit Mak Igun">
+        <img id="navBrandLogo" src="images/branding/logo.jpg" alt="Logo Nasi Kulit Mak Igun" class="brand-logo-img">
+        <div class="brand-text-wrap">
+          <span class="brand-title" id="navBrandTitle">NASI KULIT MAK IGUN</span>
+          <span class="brand-sub" id="navBrandSub">Surabaya Pusat</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Cover</a></li>
+          <li><a href="menu.html" class="nav-link">Menu Spesial</a></li>
+          <li><a href="galeri.html" class="nav-link">Galeri</a></li>
+          <li><a href="alamat.html" class="nav-link">Alamat & Lokasi</a></li>
+          <li><a href="kontak.html" class="nav-link active">Kontak & Medsos</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <button class="cart-toggle-btn cart-toggle-trigger" title="Buka Pesanan" aria-label="Buka Keranjang Pesanan">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="cart-badge-count">0</span>
+        </button>
+
+        <a href="menu.html" class="btn-primary" id="navOrderBtn" style="padding: 9px 18px; font-size: 0.88rem; display: inline-flex;">
+          <span id="navOrderBtnText">Pesan Menu</span>
+        </a>
+
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Buka Menu Navigasi">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-dedicated">
+    <!-- ================= HALAMAN 5: KONTAK & MEDSOS & ORDER ================= -->
+    <section class="section-common contact-section" id="kontak">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-head">
+          <span class="section-subtitle" id="contactSubtitle">Hubungi & Ikuti Kami</span>
+          <h1 class="section-title" id="contactTitle">Kontak & Media Sosial <span>Mak Igun</span></h1>
+          <p class="section-desc" id="contactDesc">
+            Mau pesan untuk acara kantor, kumpul keluarga, info kemitraan waralaba, atau kirim kritik dan saran? Hubungi kami langsung melalui saluran resmi berikut!
+          </p>
+        </div>
+
+        <!-- Contact Channels Grid -->
+        <div class="contact-cards-grid">
+          <!-- Instagram Surabaya Pusat -->
+          <div class="contact-channel-card channel-ig">
+            <div class="channel-icon">📸</div>
+            <h4 id="contactIgBranchTitle">Instagram Cabang</h4>
+            <p id="contactIgBranchDesc">Info menu terbaru, promo harian, dan keseruan cabang Surabaya Pusat.</p>
+            <a id="contactIgBranchLink" href="https://www.instagram.com/nasikulitmakigun.surabayapusat/?hl=en" target="_blank" rel="noopener noreferrer" class="btn-outline" style="width: 100%;">
+              @nasikulitmakigun.surabayapusat
+            </a>
+          </div>
+
+          <!-- WhatsApp Hotline -->
+          <div class="contact-channel-card channel-wa">
+            <div class="channel-icon">💬</div>
+            <h4 id="contactWaTitle">WhatsApp Pemesanan</h4>
+            <p id="contactWaDesc">Fast response untuk pesanan porsi banyak, reservasi, & kemitraan.</p>
+            <a id="contactWaLink" href="https://wa.me/6287777728228?text=Halo%20Nasi%20Kulit%20Mak%20Igun%20Surabaya%20Pusat,%20saya%20ingin%20memesan" target="_blank" rel="noopener noreferrer" class="btn-primary" style="background-color: #25D366; border-color: #128C7E; width: 100%;">
+              0877-7772-8228 (Chat WA)
+            </a>
+          </div>
+
+          <!-- Instagram Pusat -->
+          <div class="contact-channel-card channel-ig">
+            <div class="channel-icon">👑</div>
+            <h4 id="contactIgOfficialTitle">Instagram Official</h4>
+            <p id="contactIgOfficialDesc">Akun resmi pusat Nasi Kulit Mak Igun seluruh cabang Indonesia.</p>
+            <a id="contactIgOfficialLink" href="https://www.instagram.com/nasikulitmakigun/?hl=en" target="_blank" rel="noopener noreferrer" class="btn-outline" style="width: 100%;">
+              @nasikulitmakigun
+            </a>
+          </div>
+
+          <!-- Kemitraan & Kritik Saran -->
+          <div class="contact-channel-card channel-delivery">
+            <div class="channel-icon">🤝</div>
+            <h4 id="contactPartnershipTitle">Info Kemitraan</h4>
+            <p id="contactPartnershipDesc">Tertarik membuka franchise / cabang di kotamu? Hubungi manajemen.</p>
+            <a id="contactPartnershipLink" href="tel:087777728228" class="btn-outline" style="width: 100%;">
+              Hubungi Hotline 0877-7772-8228
+            </a>
+          </div>
+        </div>
+
+        <!-- Online Delivery Partner Section -->
+        <div class="delivery-partners-wrap">
+          <h3 id="deliveryTitle">Mager Keluar Rumah? Pesan via Aplikasi Delivery Favoritmu!</h3>
+          <p id="deliverySubtitle" style="color: var(--color-text-muted); font-size: 0.95rem;">
+            Cari <strong>"Nasi Kulit Mak Igun - Surabaya Pusat / Pregolan"</strong> di aplikasi favoritmu:
+          </p>
+
+          <div class="delivery-badges-row">
+            <a id="deliveryGoFoodLink" href="https://gofood.link" target="_blank" rel="noopener noreferrer" class="delivery-badge-btn badge-gofood">
+              <span>🛵 Pesan di GoFood</span>
+            </a>
+            <a id="deliveryGrabFoodLink" href="https://food.grab.com" target="_blank" rel="noopener noreferrer" class="delivery-badge-btn badge-grabfood">
+              <span>🏍️ Pesan di GrabFood</span>
+            </a>
+            <a id="deliveryShopeeFoodLink" href="https://shopee.co.id/shopeefood" target="_blank" rel="noopener noreferrer" class="delivery-badge-btn badge-shopeefood">
+              <span>🥡 Pesan di ShopeeFood</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Feedback & Review Form Box -->
+        <div class="feedback-box">
+          <h3 id="feedbackBoxTitle">Kritik & Saran untuk Mak Igun</h3>
+          <p id="feedbackBoxDesc">Kepuasan Anda adalah prioritas utama kami. Sampaikan pesan, kesan, atau saran Anda!</p>
+
+          <form id="feedbackForm">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="feedbackName">Nama Anda</label>
+                <input type="text" id="feedbackName" name="name" class="form-input" placeholder="Contoh: Budi Santoso" required />
+              </div>
+              <div class="form-group">
+                <label for="feedbackPhone">Nomor WhatsApp / HP</label>
+                <input type="tel" id="feedbackPhone" name="phone" class="form-input" placeholder="0812-xxxx-xxxx" required />
+              </div>
+              <div class="form-group full-width">
+                <label for="feedbackRating">Bagaimana Pengalaman Rasa & Layanan Anda?</label>
+                <select id="feedbackRating" name="rating" class="form-input" style="font-weight: 600;">
+                  <option value="5">⭐⭐⭐⭐⭐ Sangat Puas! Kulitnya renyah nampol</option>
+                  <option value="4">⭐⭐⭐⭐ Enak dan memuaskan</option>
+                  <option value="3">⭐⭐⭐ Cukup baik</option>
+                  <option value="2">⭐⭐ Perlu peningkatan</option>
+                </select>
+              </div>
+              <div class="form-group full-width">
+                <label for="feedbackMessage">Pesan / Masukan</label>
+                <textarea id="feedbackMessage" name="message" class="form-textarea" placeholder="Tuliskan masukan atau pengalaman Anda di sini..." required></textarea>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-primary" id="feedbackSubmitBtn" style="width: 100%;">
+              Kirim Masukan Sekarang ❤️
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= MAIN FOOTER ================= -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3 id="footerBrandTitle">NASI KULIT MAK IGUN</h3>
+          <p id="footerBrandDesc">
+            Kuliner nasi kulit ayam krispi legendaris hasil kolaborasi desainer ternama <strong>Ivan Gunawan</strong> dan MasterChef <strong>King Abdi</strong>. Gurih renyah melimpah dengan racikan sambal khas Jawa Timur.
+          </p>
+          <div style="margin-top: 14px;">
+            <span class="badge-pill badge-yellow" id="footerHalalBadge" style="font-size: 0.78rem;">⭐ 100% Halal & Higienis</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigasi Cepat</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Halaman Depan (Cover)</a></li>
+            <li><a href="menu.html">Daftar Menu & Harga</a></li>
+            <li><a href="galeri.html">Galeri Foto</a></li>
+            <li><a href="alamat.html">Lokasi Jl. Pregolan 11</a></li>
+            <li><a href="kontak.html">Kontak & Order Online</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Cabang & Info</h4>
+          <p style="font-size: 0.88rem; opacity: 0.9; margin-bottom: 8px;">
+            <strong id="footerBranchTitle">Surabaya Pusat:</strong><br>
+            <span id="footerAddressText">Jl. Pregolan No. 11, Tegalsari, Surabaya</span><br>
+            <span id="footerHoursText">Buka: 10.00 – 00.00 WIB</span>
+          </p>
+          <p style="font-size: 0.88rem; opacity: 0.9; margin-bottom: 12px;">
+            <strong>WhatsApp Hotline:</strong><br>
+            <a id="footerWaLink" href="https://wa.me/6287777728228" style="color: var(--color-yellow); text-decoration: underline;">0877-7772-8228</a>
+          </p>
+          <p style="font-size: 0.88rem; opacity: 0.9;">
+            <strong>Instagram:</strong><br>
+            <a id="footerIgLink" href="https://www.instagram.com/nasikulitmakigun.surabayapusat/?hl=en" target="_blank" rel="noopener noreferrer" style="color: var(--color-yellow);">@nasikulitmakigun.surabayapusat</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div id="footerCopyright">
+          © 2026 <strong>Nasi Kulit Mak Igun</strong>. Hak Cipta Dilindungi.
+        </div>
+        <div>
+          <span id="footerDisclaimer">Desain Website terinspirasi dari identitas resmi Instagram @nasikulitmakigun.surabayapusat</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= FLOATING ACTION BUTTONS ================= -->
+  <div class="floating-actions-container">
+    <a id="floatingWaBtn" href="https://wa.me/6287777728228?text=Halo%20Nasi%20Kulit%20Mak%20Igun%20Surabaya%20Pusat,%20saya%20mau%20order" target="_blank" rel="noopener noreferrer" class="floating-btn floating-wa-btn" title="Chat WhatsApp Fast Response">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.8 14.28c-.24.69-1.2 1.35-1.78 1.44-.54.09-1.22.13-3.66-.88-2.67-1.11-4.38-3.83-4.51-4.01-.13-.18-1.07-1.42-1.07-2.72 0-1.29.68-1.93.92-2.19.24-.26.53-.33.7-.33.18 0 .35.01.5.02.16.01.38-.06.59.45.22.53.75 1.83.82 1.96.07.13.11.29.02.47-.09.18-.13.29-.26.45-.13.16-.28.35-.4.47-.13.13-.27.28-.12.54.16.26.69 1.14 1.48 1.84 1.02.91 1.87 1.19 2.14 1.32.26.13.42.11.57-.07.16-.18.66-.77.84-1.03.18-.26.35-.22.59-.13.24.09 1.54.73 1.81.86.26.13.44.2.5.31.07.11.07.66-.17 1.35z"/></svg>
+      <span id="floatingWaText">Chat WA Cabang</span>
+    </a>
+
+    <button class="floating-btn floating-cart-btn cart-toggle-trigger" title="Buka Keranjang Pesanan">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+      <span>Pesanan (<span class="cart-badge-count">0</span>)</span>
+    </button>
+  </div>
+
+  <!-- ================= MODAL: KERANJANG & SIMULASI ORDER WA ================= -->
+  <div class="modal-overlay" id="cartModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>🛒 Keranjang Pesanan Mak Igun</h3>
+        <button class="modal-close-btn" aria-label="Tutup Modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div id="cartEmptyState" style="text-align: center; padding: 30px 10px;">
+          <div style="font-size: 3rem; margin-bottom: 10px;">🍗</div>
+          <h4 style="font-family: var(--font-heading); color: var(--color-purple);">Keranjang Anda Masih Kosong</h4>
+          <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 6px;">
+            Yuk pilih menu lezat Nasi Kulit Lengkap atau lauk oseng favorit Anda pada daftar menu!
+          </p>
+          <button class="btn-primary modal-close-btn-action" style="margin-top: 18px;" onclick="goToMenuPage()">
+            Pilih Menu Sekarang
+          </button>
+        </div>
+
+        <div id="cartItemsList" class="cart-items-list"></div>
+
+        <div id="cartOrderFormWrap" style="display: none;">
+          <div class="cart-voucher-box">
+            <label class="cart-voucher-label">🎁 Punya Kode Promo / Voucher?</label>
+            <div class="cart-voucher-input-group">
+              <input type="text" id="cartVoucherCodeInput" class="form-input voucher-code-input" placeholder="Masukkan kode (cth: MAKIGUNHEMAT)" style="text-transform: uppercase;">
+              <button type="button" id="btnApplyCartVoucher" class="btn-voucher-apply">Gunakan</button>
+            </div>
+            <div id="cartVoucherMessage" class="cart-voucher-msg" style="display: none;"></div>
+          </div>
+
+          <div class="cart-total-box">
+            <div class="cart-total-row">
+              <span>Subtotal Menu:</span>
+              <span id="cartSubtotalDisplay" style="font-weight: 700;">Rp 0</span>
+            </div>
+            <div class="cart-total-row cart-discount-row" id="cartDiscountRow" style="display: none; color: #2E7D32;">
+              <span>Potongan Voucher (<strong id="cartDiscountCodeLabel">MAKIGUNHEMAT</strong>):</span>
+              <span id="cartDiscountAmountDisplay" style="font-weight: 700;">-Rp 0</span>
+            </div>
+            <div class="cart-total-row cart-total-final" style="border-top: 1.5px dashed rgba(90, 22, 121, 0.2); padding-top: 8px; margin-top: 6px;">
+              <span style="font-size: 1.05rem; font-weight: 800;">Total Estimasi Bayar:</span>
+              <span id="cartTotalDisplay" style="color: var(--color-orange-dark); font-size: 1.25rem; font-weight: 800;">Rp 0</span>
+            </div>
+            <div id="cartBonusNotice" class="cart-bonus-notice" style="display: none;">
+              ✨ Bonus: <strong id="cartBonusNoticeText">GRATIS 1 Es Teh Manis Segar</strong>
+            </div>
+            <div style="font-size: 0.78rem; color: var(--color-text-muted); margin-top: 4px;">
+              * Belum termasuk PB 1 atau biaya ongkir jika memesan via kurir delivery.
+            </div>
+          </div>
+
+          <div style="margin-bottom: 18px;">
+            <div class="form-group" style="margin-bottom: 12px;">
+              <label for="orderCustomerName">Nama Pemesan:</label>
+              <input type="text" id="orderCustomerName" class="form-input" placeholder="Masukkan nama Anda..." />
+            </div>
+
+            <div class="form-group" style="margin-bottom: 12px;">
+              <label for="orderTypeSelect">Pilihan Santap:</label>
+              <select id="orderTypeSelect" class="form-input">
+                <option value="Makan di Tempat (Dine-in)">Makan di Tempat (Dine-in Jl. Pregolan)</option>
+                <option value="Bungkus / Takeaway">Bungkus Bawa Pulang (Takeaway)</option>
+                <option value="Pesan Antar / Delivery">Pesan Antar / Delivery ke Lokasi</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="orderCustomerNotes">Catatan Tambahan (Opsional):</label>
+              <input type="text" id="orderCustomerNotes" class="form-input" placeholder="Cth: Sambal dipisah, ganti nasi jagung, banyakin serundeng..." />
+            </div>
+          </div>
+
+          <button id="sendWhatsAppBtn" class="btn-primary" style="background-color: #25D366; border-color: #128C7E; width: 100%; font-size: 1.05rem;">
+            💬 Kirim Format Pesanan ke WhatsApp Cabang
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= FLOATING PROMO BADGE (BOTTOM-LEFT) ================= -->
+  <button id="floatingPromoBtn" class="floating-promo-btn" title="Klaim Promo Spesial Mak Igun">
+    <span class="floating-promo-pulse"></span>
+    <span class="floating-promo-icon">🎁</span>
+    <span class="floating-promo-label">Promo Spesial</span>
+  </button>
+
+  <!-- ================= MODAL: PROMO SPESIAL POP-UP ================= -->
+  <div class="modal-overlay" id="promoModal">
+    <div class="modal-card promo-modal-card">
+      <div class="modal-header promo-modal-header">
+        <div class="promo-header-badge-wrap">
+          <span class="promo-modal-pill-badge" id="promoModalBadge">🔥 PROMO SPESIAL GAJIAN</span>
+        </div>
+        <button class="modal-close-btn" aria-label="Tutup Modal">&times;</button>
+      </div>
+      <div class="modal-body promo-modal-body">
+        <div class="promo-media-container">
+          <img id="promoModalImage" src="images/menu/paket-cumi.jpg" alt="Banner Promo Mak Igun" class="promo-modal-img" />
+          <div class="promo-floating-tag" id="promoDiscountBadge">HEMAT Rp 5.000</div>
+        </div>
+        <div class="promo-content-wrap">
+          <h3 id="promoModalTitle" class="promo-display-title">PAKET BUNDLING PUAS GAJIAN!</h3>
+          <p id="promoModalSubtitle" class="promo-display-sub">Makan Enak Berdua Makin Hemat & Kenyang</p>
+          <div class="promo-description-box" id="promoModalDesc">
+            Beli 2 Paket Nasi Lengkap (Cumi / Paru / Udang), dapatkan potongan diskon langsung Rp 5.000 + GRATIS 1 Es Teh Manis Segar racikan Mak Igun!
+          </div>
+
+          <div class="promo-coupon-container">
+            <div class="promo-coupon-left">
+              <span class="promo-coupon-title">KODE VOUCHER DISKON:</span>
+              <span class="promo-coupon-code" id="promoVoucherCode">MAKIGUNHEMAT</span>
+            </div>
+            <button type="button" class="btn-copy-coupon" id="btnCopyPromoCode" title="Salin Kode Voucher">
+              📋 Salin Kode
+            </button>
+          </div>
+
+          <div class="promo-terms-row">
+            <span id="promoModalValidity">⏳ Berlaku s/d 31 Oktober 2026</span>
+            <span id="promoModalMinSpend">💰 Min. Belanja Rp 45.000</span>
+          </div>
+          <div id="promoModalBonus" class="promo-bonus-notice">
+            🎉 Bonus Ekstra: <strong id="promoModalBonusText">GRATIS 1 Es Teh Manis Segar</strong>
+          </div>
+
+          <div class="promo-action-buttons">
+            <button type="button" id="btnClaimPromoAction" class="btn-primary promo-claim-btn">
+              🍗 Klaim & Buka Menu Promo
+            </button>
+            <button type="button" class="promo-dismiss-btn modal-close-btn-action">
+              Nanti Saja
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

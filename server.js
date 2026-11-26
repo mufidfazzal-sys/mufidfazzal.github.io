@@ -72,6 +72,14 @@ const server = http.createServer((req, res) => {
 
   if (reqPath === '/' || reqPath === '') {
     reqPath = '/index.html';
+  } else if (reqPath === '/menu' || reqPath === '/menu/') {
+    reqPath = '/menu.html';
+  } else if (reqPath === '/galeri' || reqPath === '/galeri/') {
+    reqPath = '/galeri.html';
+  } else if (reqPath === '/alamat' || reqPath === '/alamat/') {
+    reqPath = '/alamat.html';
+  } else if (reqPath === '/kontak' || reqPath === '/kontak/') {
+    reqPath = '/kontak.html';
   } else if (reqPath === '/admin' || reqPath === '/admin/') {
     reqPath = '/admin.html';
   }
